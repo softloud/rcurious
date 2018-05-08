@@ -12,13 +12,18 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Hi!
+
+- [R-Ladies](https://rladies.org/)
+- [useR! 2018](https://user2018.r-project.org/)
+
 # What is R?
 
 # A fitting dataset
 
 # Installation hell
 
-# How to run code
+# How to run code?!
 
 # Importing data
 
