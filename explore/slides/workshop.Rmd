@@ -12,8 +12,6 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-
-
 ## Hi!
 
 - [R-Ladies](https://rladies.org/)
@@ -28,9 +26,17 @@ knitr::opts_chunk$set(echo = FALSE)
 knitr::include_graphics("pics/data-science.png")
 ```
 
-
-
 # A fitting dataset
+
+# Questions, questions that need answers
+
+What would you like to know?
+
+*Group discussion*
+
+# The RStudio IDE
+
+*Charles gesitculates wildly at the RStudio environment* 
 
 # Installation hell
 
@@ -39,4 +45,3 @@ knitr::include_graphics("pics/data-science.png")
 # Importing data
 
 # Exploratory data analysis
-

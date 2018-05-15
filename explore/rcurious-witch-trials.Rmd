@@ -1,0 +1,158 @@
+---
+title: "Mining Steph's *Witch Trials* analysis for rcurious"
+output: 
+  html_document: 
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+
+
+
+```
+
+
+
+
+## Introduction
+
+In this document I am mining [Steph's analysis](http://rex-analytics.com/witch-hunting-europe-discovery-missingness/) of witch hunting in Europe for the rcurious workshop. 
+
+I love that she's a *Good Omens* fan, as well. I have a very battered copy that's stayed with me with my favourite footnotes earmarked. The cover fell off a while ago. I think it's my favourite funny book. That bit about Crowley and the computer contracts, and sending it down to the souls department with a sticky note attached saying something like, "Learn, guys."
+
+> I'll post thoughts about rcurious like this. 
+
+> By answering the question, Why did Steph do that? I can expand into an introduction to R. 
+
+> Too political to put pics of Julia Gillard, Hillary Clinton, and Michelle Wolf brandeda s witches? 
+
+Anyway, on with the analysis.
+
+## Particularly useful packages for EDA
+
+> Some or all of this could be introduced at the workshop, we'll see what tasks they perform.
+
+```{r install.packages}
+library(naniar)
+library(skimr)
+library(visdat)
+library(tidyverse)
+
+```
+
+## Source
+
+A paper by [Leeson and Russ](http://www.peterleeson.com/Witch_Trials.pdf) was accompanied by freely available data for their analysis. Legends.
+
+
+## Witch Trial data
+
+```{r download data}
+# Download data from the authors' repo.
+url <- "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv"
+
+db <- read.csv(url)
+
+# Take a look.
+db %>% str()
+
+# Nice and flat!
+
+```
+
+## Cleaning the data
+
+> Consider this for a cleaning exercise. Could be a good point to talk about data structure, rows as observations and columns as variables. Talk about various data structures: matrices, data.frame vs tibble, what is tidy, model objects. 
+
+Steph renames the variable `gadm.adm0` the more informative `country`, but first she changes the decade variable to numeric, from integer. 
+
+> This would be a nice point for Steph to talk about the dataset specifically, and the paper that goes with it.
+
+```{r class}
+# Changes decade to numeric.
+db$decade %>% class()
+
+```
+
+> Discuss best practice of pipes with collaborators. When is too much? Where is the sweet spot between tidy and baseR? Perhaps this snippet be better presented as this?
+
+```{r class again}
+# Changes decade to numeric.
+class(db$decade)
+
+# 
+# Right now I'm leaning towards the latter, stylewise.
+
+db$decade <- as.numeric(db$decade)
+
+# Invoke class before and after to see how it changes.
+class(db$decade)
+
+
+```
+
+```{r change name}
+
+# Out of curiousity, what is the difference between names and objects?
+# Objects provides names of variables sorted alphabetically.
+objects(db)
+# Whereas names provides a character vector of the names in the order they appear in the df (more useful).
+names(db)
+# For reference
+head(db)
+
+names(db)
+# Anyway, change name of variable. 
+db$country <- db$gadm.adm0
+# We still have that variable.
+names(db)
+# Perhaps for beginners better to be explict about removing a variable.
+db$gadm.adm0 <- NULL
+names(db)
+
+```
+
+## Exploratory data analysis
+
+```{r}
+# useful functions.
+
+summary(db)
+
+tibble::glimpse(db) # Very handy, I didn't know about this function.
+
+# Very nice how the summaries get grouped by type. New favourite function of the day. 
+skimr::skim(db) # Also very handy. 
+
+```
+
+## Steph looks at freq of people accused and killed over time
+
+```
+bydecade <- db[,c(2,4,5)] %>% # Switch to select
+      group_by(decade) %>% 
+      summarise(deathsDecade = sum(deaths, na.rm = TRUE), 
+                triedDecade = sum(tried, na.rm = TRUE)) 
+
+ggplot(bydecade, 
+       aes(x = decade, y = deathsDecade))+ 
+  xlab("Decade")+
+  ylab("Deaths")+
+  geom_line() + 
+  theme_light()+
+  theme(legend.position="bottom")+
+  theme(
+    axis.text.x=element_text(angle=45,hjust=1, size = 10))+
+  ggtitle("Number of deaths over time")
+```
+
+## Learn about `visdat`
+
+```
+vis_dat(db, palette = "cb_safe")+
+  theme_light() 
+```
+> Interesting about colorblind - could be a really interesting topic for people like me who know nothing about the field. Perhaps Di or Steph could wax lyrical at this point with expertise. 
+
