@@ -1,0 +1,62 @@
+---
+title: "Noodling about with the data"
+author: "Charles T. Gray"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r packages}
+library(tidyverse)
+
+
+```
+
+Here I'm reading in the data myself from [Steph's analysis](http://rex-analytics.com/witch-hunting-europe-discovery-missingness/) and having an initial play. 
+
+
+## Read data
+
+```{r data}
+url <- "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv"
+
+witchdat <- read_csv(url)
+```
+
+## Take a look
+
+Before I do, I know from Steph's analysis:
+
+ - rename country 
+ - convert decade to numeric
+
+```{r Tidy up}
+witchdat <- witchdat %>% 
+  rename(country = gadm.adm1) %>% # rename country variable
+  mutate(decade = as.numeric(decade)) # convert decade to numeric
+
+```
+
+Now, I usually do this.
+
+```{r look first}
+witchdat %>% head(3)
+
+```
+
+But I really liked that skim one, I think, from Steph.
+
+```{r try skim}
+witchdat %>% skimr::skim()
+
+```
+
+Okay, so from this summary, I see 10940 trials. 
+
+> Assuming the rows are trials?
+

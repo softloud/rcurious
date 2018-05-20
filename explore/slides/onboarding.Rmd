@@ -7,14 +7,3 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Getting ready for the rcurious workshop
-
-```{r}
-# how to install r
-# how to intall rstudio
-# Can you install the tidyverse?
-# What is the easiest way to install the tidyverse right now? 
-# check that your code runs
-
-```
-

@@ -156,3 +156,5 @@ vis_dat(db, palette = "cb_safe")+
 ```
 > Interesting about colorblind - could be a really interesting topic for people like me who know nothing about the field. Perhaps Di or Steph could wax lyrical at this point with expertise. 
 
+> In addition recreating as exercises, there would be crowd-sourced questions. Answer them. 
+

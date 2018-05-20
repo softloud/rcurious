@@ -4,12 +4,14 @@ subtitle: "R-Ladies and useR! 2018"
 author: "Presented by Steph, Charles, Kim, and Di"
 output: 
   ioslides_presentation
-  # html_document
+  # html_document:
+  #   toc: true
+  #   toc_float: true
 
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Hi!
@@ -36,12 +38,147 @@ What would you like to know?
 
 # The RStudio IDE
 
-*Charles gesitculates wildly at the RStudio environment* 
+*Charles gesitculates wildly at the RStudio environment*
+
+- need to do something here that uses all four panes, I guess. 
+
+- perhaps, sidenote, talk about the benefit of launchers and how I think albert is my favourite butler ever
 
 # Installation hell
 
+## Installation overview
+
+- install R (quick) 
+- install RStudio (a little while)
+
+These instructions are an 
+
+## Install R on Mac or Windows
+
+- Go to [cran](https://cran.r-project.org/)
+
+### Install R (for Mac)
+
+- Click on **Download R for (Mac) OS X** 
+- Look at the top link under **Latest release**, which at time of writing is **R-3.5.0.pkg**, and download this if compatible with your current version mac OS (Mavericks 10.9 or higher). Otherwise download the version beneath it which is compatible for older mac OS versions. 
+
+### Install R for Windows
+
+- Click on **Download R for Windows** 
+- Then click on the link **install R for the first time** 
+- Download from the large link at the top of the page which at time of writing is **Download R 3.5.0 for Windows**. 
+
+## Install R
+
+- Then double click the downloaded **R-3.5.0.pkg** file to install the downloaded software.
+
+## Download & Install RStudio:
+
+https://www.rstudio.com/products/rstudio/download/
+For Mac: under the Installers for Supported Platforms heading click the link with Mac OS X in it. Install the downloaded software.
+For Windows: under the Installers
+
+## Linux
+
+for R
+`sudo apt-get update`
+`sudo apt-get install r-base`
+
+On most distributions:
+Download the [**.deb**]() file and double click to open the package installer.   
+
+## ? Not sure, idea: 
+
+A slide about checking the R version at the command line.
+
+## Why RStudio?
+
+Working in an RStudio project has many benefits.
+
+todo expand
+
+## Getting started in RStudio
+
+- Open RStudio and create a project via **File-New Project**
+- Select **New Directory** and choose **New Project**
+- Name your project **rcurious**
+- Save the project directory wherever suits you
+
+
+## Argh so many windows!
+
+*Charles gesticulates wildly at the three panes*
+
+Cheat sheet can be found at **Help-Cheatsheets-RStudio IDE Cheatsheet** 
+
 # How to run code?!
 
+## Intro to .Rmd 
+
+We'll do this analysis in markdown.
+
+- todo extrapolate benefits
+
+## Intro to .Rmd
+
+Open **File-New File-R Markdown** 
+
 # Importing data
+
+## Data types
+
+- todo extrapolate
+
+## Loading packages
+
+The two important functions.
+
+```
+ ```
+# For installation; i.e., first time only.
+install.packages("arbitrarypkge")
+
+# For using.
+library(arbitrarypkg)
+
+# We would like to install a package called "tidyverse". Let's try.
+ ```
+```
+
+To open a code chunk in your **.Rmd**: **control+alt+i**
+
+To knit to .html in the Viewer pane: save and **control+shift+k** 
+
+## Loading packages
+
+```{r pkgs}
+# pkg <- "tidyverse"
+# install.packages(pkg)
+
+library(tidyverse)
+
+```
+
+
+## Import example: url
+
+```{}
+# Store a string in an object.
+url <- <character string>
+
+# Read data using a tidyverse function.
+db <- read_csv(url)
+
+```
+
+
+## Import example 
+```{r import data}
+url <- "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv"
+
+witchdat <- read_csv(url)
+
+```
+
 
 # Exploratory data analysis
