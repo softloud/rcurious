@@ -1,0 +1,66 @@
+---
+title: "Onboarding"
+date: "`r  dontpanic::title_date()`"
+author: "Sarah Kaiser and Charles T. Gray"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This workshop will help new data scientists or new R users get rolling analyzing data with R and RStudio. We will help get people get their development enviroment setup, talk about how to use RStudio, and explore a dataset with the tidyverse package. The workshop materials in progress are [here](https://github.com/softloud/rcurious) including install instructions below for participants that want to do this ahead of time.
+
+- Who are we?/Introduction
+- The usecase for R
+- A "Fitting" dataset
+- Questions that need answered: What can we learn from this data?
+- Hands-on data exploration
+
+# Installation instructions 
+
+We'll go through these instructions during the workshop, so it's up to you whether you'd like to do the following ahead of time. 
+
+## Installation overview
+
+- install R (quick) 
+- install RStudio (a little while)
+
+These instructions are an 
+
+## Install R on Mac or Windows
+
+- Go to [cran](https://cran.r-project.org/)
+
+### Install R (for Mac)
+
+- Click on **Download R for (Mac) OS X** 
+- Look at the top link under **Latest release**, which at time of writing is **R-3.5.0.pkg**, and download this if compatible with your current version mac OS (Mavericks 10.9 or higher). Otherwise download the version beneath it which is compatible for older mac OS versions. 
+
+### Install R (for Windows)
+
+- Click on **Download R for Windows** 
+- Then click on the link **install R for the first time** 
+- Download from the large link at the top of the page which at time of writing is **Download R 3.5.0 for Windows**. 
+
+## Install R
+
+- Then double click the downloaded **R-3.5.0.pkg** file to install the downloaded software.
+
+## Download & Install RStudio:
+
+https://www.rstudio.com/products/rstudio/download/
+For Mac: under the Installers for Supported Platforms heading click the link with Mac OS X in it. Install the downloaded software.
+For Windows: under the Installers
+
+## Linux
+
+for R
+`sudo apt-get update`
+`sudo apt-get install r-base`
+
+On most distributions:
+Download the [**.deb**]() file and double click to open the package installer.
