@@ -8,9 +8,6 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
-
-
-
 ```
 
 
@@ -30,9 +27,13 @@ I love that she's a *Good Omens* fan, as well. I have a very battered copy that'
 
 Anyway, on with the analysis.
 
+> In the other workshop there were some people who didn't know what an IDE was, and the difference between the scripts and console. POssibly ask the question who doesn't know what is blah and blah
+
 ## Particularly useful packages for EDA
 
 > Some or all of this could be introduced at the workshop, we'll see what tasks they perform.
+
+> Discuss how to install packages first? and check that are in the global environment?
 
 ```{r install.packages}
 library(naniar)
@@ -49,20 +50,36 @@ A paper by [Leeson and Russ](http://www.peterleeson.com/Witch_Trials.pdf) was ac
 
 ## Witch Trial data
 
+The witch trial data is available in github, let's first take a look at the [website](https://github.com/JakeRuss/witch-trials/blob/master/data/trials.csv)
+
+In order to get a url to download the data we select RAW in github, and then use that raw data url.
+
 ```{r download data}
 # Download data from the authors' repo.
 url <- "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv"
 
+# Use the base read.csv function to download the raw data to a dataframe called db
 db <- read.csv(url)
 
 # Take a look.
-db %>% str()
+str(db) # This is the base r structure function
+db %>% str() # This is the piped function. Which do you prefer using?
+
+head(db) # This is the base top 6 lines head function
+db %>% head() # This is the piped function. Which do you prefer using?
 
 # Nice and flat!
 
+# use the read_csv function from the readr package in the tidyverse
+db2 <- read_csv(url)
+
+# Take a look, what is different between these functions and how these have been imported? Also look at the help ?read.csv and ?read_csv in the console or in help pane
+db2 %>% str()
 ```
 
 ## Cleaning the data
+
+> Wonder if this cleaning data could go after the initial EDA, and give them time to familiarise with the dataset, and follow your point on data structure. Then start cleaning?
 
 > Consider this for a cleaning exercise. Could be a good point to talk about data structure, rows as observations and columns as variables. Talk about various data structures: matrices, data.frame vs tibble, what is tidy, model objects. 
 
