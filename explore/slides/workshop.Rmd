@@ -19,6 +19,9 @@ knitr::opts_chunk$set(echo = TRUE)
 - [R-Ladies](https://rladies.org/)
 - [useR! 2018](https://user2018.r-project.org/)
 
+Follow us on twitter ! [ add some twitter handles here ]
+
+
 # What is R?
 
 ## What do R-users use R for?
@@ -89,7 +92,25 @@ Download the [**.deb**]() file and double click to open the package installer.
 
 ## ? Not sure, idea: 
 
-A slide about checking the R version at the command line.
+A slide about checking the R version at the command line. Good idea! Some people will have R installled but not the latest version 3.5.0...(Kim:like me !)
+
+```{r}
+# Check R version
+version
+```
+
+
+Update R and Rpackages from this [blogpost](https://www.r-statistics.com/2013/03/updating-r-from-r-on-windows-using-the-installr-package/) for Windows ??
+
+```{r}
+# installing/loading the package:
+if(!require(installr)) {
+install.packages("installr"); require(installr)} #load / install+load installr
+ 
+# using the package:
+updateR() # this will start the updating process of your R installation.  It will check for newer versions, and if one is available, will guide you through the decisions you'd need to make.
+```
+
 
 ## Why RStudio?
 
@@ -173,6 +194,10 @@ db <- read_csv(url)
 
 
 ## Import example 
+
+The github link in this import example is https://github.com/JakeRuss/witch-trials, first take a look at the link. Click on the data folder then trials.csv. In order to import the data we need a **direct** link to the data. You can find this with the button in github RAW. This is the url we want to use....
+
+
 ```{r import data}
 url <- "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv"
 
