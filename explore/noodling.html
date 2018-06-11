@@ -223,12 +223,12 @@ div.tocify {
 
 
 <pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## ── Attaching packages ──────────────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ── Attaching packages ───────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
 <pre><code>## ✔ ggplot2 2.2.1     ✔ purrr   0.2.4
 ## ✔ tibble  1.4.2     ✔ dplyr   0.7.4
-## ✔ tidyr   0.8.0     ✔ stringr 1.3.0
+## ✔ tidyr   0.8.0     ✔ stringr 1.3.1
 ## ✔ readr   1.1.1     ✔ forcats 0.3.0</code></pre>
-<pre><code>## ── Conflicts ─────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+<pre><code>## ── Conflicts ──────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 <p>Here I’m reading in the data myself from <a href="http://rex-analytics.com/witch-hunting-europe-discovery-missingness/">Steph’s analysis</a> and having an initial play.</p>
@@ -261,16 +261,16 @@ witchdat &lt;- read_csv(url)</code></pre>
 <li>convert decade to numeric</li>
 </ul>
 <pre class="r"><code>witchdat &lt;- witchdat %&gt;% 
-  rename(country = gadm.adm1) %&gt;% # rename country variable
+  rename(country = gadm.adm0) %&gt;% # rename country variable
   mutate(decade = as.numeric(decade)) # convert decade to numeric</code></pre>
 <p>Now, I usually do this.</p>
 <pre class="r"><code>witchdat %&gt;% head(3)</code></pre>
 <pre><code>## # A tibble: 3 x 12
-##    year decade century tried deaths city  gadm.adm2 country gadm.adm0
-##   &lt;int&gt;  &lt;dbl&gt;   &lt;int&gt; &lt;int&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;    
-## 1    NA   1520    1500     1      1 &lt;NA&gt;  &lt;NA&gt;      &lt;NA&gt;    Estonia  
-## 2    NA   1530    1500     1      1 &lt;NA&gt;  &lt;NA&gt;      &lt;NA&gt;    Estonia  
-## 3    NA   1540    1500     5      5 &lt;NA&gt;  &lt;NA&gt;      &lt;NA&gt;    Estonia  
+##    year decade century tried deaths city  gadm.adm2 gadm.adm1 country
+##   &lt;int&gt;  &lt;dbl&gt;   &lt;int&gt; &lt;int&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;  
+## 1    NA   1520    1500     1      1 &lt;NA&gt;  &lt;NA&gt;      &lt;NA&gt;      Estonia
+## 2    NA   1530    1500     1      1 &lt;NA&gt;  &lt;NA&gt;      &lt;NA&gt;      Estonia
+## 3    NA   1540    1500     5      5 &lt;NA&gt;  &lt;NA&gt;      &lt;NA&gt;      Estonia
 ## # ... with 3 more variables: lon &lt;dbl&gt;, lat &lt;dbl&gt;, record.source &lt;chr&gt;</code></pre>
 <p>But I really liked that skim one, I think, from Steph.</p>
 <pre class="r"><code>witchdat %&gt;% skimr::skim()</code></pre>
@@ -281,8 +281,8 @@ witchdat &lt;- read_csv(url)</code></pre>
 ## Variable type: character 
 ##       variable missing complete     n min max empty n_unique
 ##           city    5213     5727 10940   3  25     0      906
-##        country     159    10781 10940   3  26     0      113
-##      gadm.adm0       0    10940 10940   5  14     0       19
+##        country       0    10940 10940   5  14     0       19
+##      gadm.adm1     159    10781 10940   3  26     0      113
 ##      gadm.adm2    1047     9893 10940   3  23     0      365
 ##  record.source       0    10940 10940  12  29     0       38
 ## 

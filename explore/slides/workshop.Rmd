@@ -1,12 +1,12 @@
 ---
 title: "rcurious"
 subtitle: "R-Ladies and useR! 2018"
-author: "Presented by Steph, Charles, Kim, and Di"
-output: 
-  ioslides_presentation
-  # html_document:
-  #   toc: true
-  #   toc_float: true
+author: "Created by RLadies: Steph, Sarah, Charles, Kim, and Di"
+output :
+  # ioslides_presentation
+  html_document:
+    toc: true
+    toc_float: true
 
 ---
 
@@ -23,26 +23,39 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## What do R-users use R for?
 
-```{r fig.align='center', fig.cap="In the interests of time, we will leave modelling for another day."}
+```{r fig.align='center', fig.cap="In the interests of time, we will leave modelling for another day.", echo=FALSE}
 # Source: https://github.com/hadley/r4ds/blob/master/diagrams/data-science.png
-knitr::include_graphics("pics/data-science.png")
+# knitr::include_graphics("pics/data-science.png")
 ```
+
+![](pics/data-science.png)
 
 # A fitting dataset
 
+## Image search for "witch" + "michelle wolf"
+
+![](https://steemitimages.com/DQmRquBByC9rwriPGJgp3uHy4Hatg9gTQzDicgGiiX1uAzi/MichelleWolfWickedWitch_13.png)
+
+## Image search for "witch" + "julia gillard"
+
+![](https://static.ffx.io/images/$zoom_1%2C$multiply_0.512%2C$ratio_1.777778%2C$width_2000%2C$x_0%2C$y_23/t_crop_custom/t_sharpen%2Cq_auto%2Cf_auto/415251affe0440a502699c0723e8229e86270864)
+
+## Image search for "witch" + "hillary clinton"
+
+![](http://wp.production.patheos.com/blogs/panmankey/files/2016/11/1-hillary-witch-2-768x432.jpg)
+
 # Questions, questions that need answers
 
-What would you like to know?
+## What would you like to know?
 
 *Group discussion*
 
-# The RStudio IDE
+## How to answer these questions?
 
-*Charles gesitculates wildly at the RStudio environment*
+For *this* workshop:
+- language: R
+- [IDE](): RStudio
 
-- need to do something here that uses all four panes, I guess. 
-
-- perhaps, sidenote, talk about the benefit of launchers and how I think albert is my favourite butler ever
 
 # Installation hell
 
@@ -57,12 +70,12 @@ These instructions are an
 
 - Go to [cran](https://cran.r-project.org/)
 
-### Install R (for Mac)
+## Install R (for Mac)
 
 - Click on **Download R for (Mac) OS X** 
 - Look at the top link under **Latest release**, which at time of writing is **R-3.5.0.pkg**, and download this if compatible with your current version mac OS (Mavericks 10.9 or higher). Otherwise download the version beneath it which is compatible for older mac OS versions. 
 
-### Install R for Windows
+## Install R for Windows
 
 - Click on **Download R for Windows** 
 - Then click on the link **install R for the first time** 
@@ -87,7 +100,7 @@ for R
 On most distributions:
 Download the [**.deb**]() file and double click to open the package installer.   
 
-## ? Not sure, idea: 
+## The command line 
 
 A slide about checking the R version at the command line.
 
@@ -113,6 +126,18 @@ Cheat sheet can be found at **Help-Cheatsheets-RStudio IDE Cheatsheet**
 
 # How to run code?!
 
+## The console
+
+The console is located, by default, in the lower left pane. 
+
+### Installing packages
+
+NB: make sure to install all packages so they can knit. 
+
+
+
+# Rmarkdown
+
 ## Intro to .Rmd 
 
 We'll do this analysis in markdown.
@@ -133,17 +158,13 @@ Open **File-New File-R Markdown**
 
 The two important functions.
 
-```
- ```
 # For installation; i.e., first time only.
-install.packages("arbitrarypkge")
+`install.packages("arbitrarypkge")`
 
 # For using.
-library(arbitrarypkg)
+`library(arbitrarypkg)`
 
 # We would like to install a package called "tidyverse". Let's try.
- ```
-```
 
 To open a code chunk in your **.Rmd**: **control+alt+i**
 
@@ -152,8 +173,7 @@ To knit to .html in the Viewer pane: save and **control+shift+k**
 ## Loading packages
 
 ```{r pkgs}
-# pkg <- "tidyverse"
-# install.packages(pkg)
+# install.packages("tidyverse") # Run this to install.
 
 library(tidyverse)
 

@@ -234,11 +234,17 @@ div.tocify {
 <p>Too political to put pics of Julia Gillard, Hillary Clinton, and Michelle Wolf brandeda s witches?</p>
 </blockquote>
 <p>Anyway, on with the analysis.</p>
+<blockquote>
+<p>In the other workshop there were some people who didn’t know what an IDE was, and the difference between the scripts and console. POssibly ask the question who doesn’t know what is blah and blah</p>
+</blockquote>
 </div>
 <div id="particularly-useful-packages-for-eda" class="section level2">
 <h2>Particularly useful packages for EDA</h2>
 <blockquote>
 <p>Some or all of this could be introduced at the workshop, we’ll see what tasks they perform.</p>
+</blockquote>
+<blockquote>
+<p>Discuss how to install packages first? and check that are in the global environment?</p>
 </blockquote>
 <pre class="r"><code>library(naniar)
 library(skimr)</code></pre>
@@ -271,13 +277,16 @@ library(tidyverse)</code></pre>
 </div>
 <div id="witch-trial-data" class="section level2">
 <h2>Witch Trial data</h2>
+<p>The witch trial data is available in github, let’s first take a look at the <a href="https://github.com/JakeRuss/witch-trials/blob/master/data/trials.csv">website</a></p>
+<p>In order to get a url to download the data we select RAW in github, and then use that raw data url.</p>
 <pre class="r"><code># Download data from the authors' repo.
 url &lt;- &quot;https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv&quot;
 
+# Use the base read.csv function to download the raw data to a dataframe called db
 db &lt;- read.csv(url)
 
 # Take a look.
-db %&gt;% str()</code></pre>
+str(db) # This is the base r structure function</code></pre>
 <pre><code>## 'data.frame':    10940 obs. of  12 variables:
 ##  $ year         : int  NA NA NA NA NA NA NA NA NA NA ...
 ##  $ decade       : int  1520 1530 1540 1580 1590 1600 1610 1620 1630 1640 ...
@@ -291,10 +300,119 @@ db %&gt;% str()</code></pre>
 ##  $ lon          : num  NA NA NA NA NA NA NA NA NA NA ...
 ##  $ lat          : num  NA NA NA NA NA NA NA NA NA NA ...
 ##  $ record.source: Factor w/ 38 levels &quot;Bader (1945)&quot;,..: 20 20 20 20 20 20 20 20 20 20 ...</code></pre>
-<pre class="r"><code># Nice and flat!</code></pre>
+<pre class="r"><code>db %&gt;% str() # This is the piped function. Which do you prefer using?</code></pre>
+<pre><code>## 'data.frame':    10940 obs. of  12 variables:
+##  $ year         : int  NA NA NA NA NA NA NA NA NA NA ...
+##  $ decade       : int  1520 1530 1540 1580 1590 1600 1610 1620 1630 1640 ...
+##  $ century      : int  1500 1500 1500 1500 1500 1600 1600 1600 1600 1600 ...
+##  $ tried        : int  1 1 5 7 11 6 22 14 25 39 ...
+##  $ deaths       : int  1 1 5 5 0 1 18 8 4 10 ...
+##  $ city         : Factor w/ 906 levels &quot;Aalen&quot;,&quot;Aalsmeer&quot;,..: NA NA NA NA NA NA NA NA NA NA ...
+##  $ gadm.adm2    : Factor w/ 365 levels &quot;'s-Gravendeel&quot;,..: NA NA NA NA NA NA NA NA NA NA ...
+##  $ gadm.adm1    : Factor w/ 113 levels &quot;Aargau&quot;,&quot;Alsace&quot;,..: NA NA NA NA NA NA NA NA NA NA ...
+##  $ gadm.adm0    : Factor w/ 19 levels &quot;Austria&quot;,&quot;Belgium&quot;,..: 5 5 5 5 5 5 5 5 5 5 ...
+##  $ lon          : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ lat          : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ record.source: Factor w/ 38 levels &quot;Bader (1945)&quot;,..: 20 20 20 20 20 20 20 20 20 20 ...</code></pre>
+<pre class="r"><code>head(db) # This is the base top 6 lines head function</code></pre>
+<pre><code>##   year decade century tried deaths city gadm.adm2 gadm.adm1 gadm.adm0 lon
+## 1   NA   1520    1500     1      1 &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;   Estonia  NA
+## 2   NA   1530    1500     1      1 &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;   Estonia  NA
+## 3   NA   1540    1500     5      5 &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;   Estonia  NA
+## 4   NA   1580    1500     7      5 &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;   Estonia  NA
+## 5   NA   1590    1500    11      0 &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;   Estonia  NA
+## 6   NA   1600    1600     6      1 &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;   Estonia  NA
+##   lat record.source
+## 1  NA  Madar (1990)
+## 2  NA  Madar (1990)
+## 3  NA  Madar (1990)
+## 4  NA  Madar (1990)
+## 5  NA  Madar (1990)
+## 6  NA  Madar (1990)</code></pre>
+<pre class="r"><code>db %&gt;% head() # This is the piped function. Which do you prefer using?</code></pre>
+<pre><code>##   year decade century tried deaths city gadm.adm2 gadm.adm1 gadm.adm0 lon
+## 1   NA   1520    1500     1      1 &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;   Estonia  NA
+## 2   NA   1530    1500     1      1 &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;   Estonia  NA
+## 3   NA   1540    1500     5      5 &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;   Estonia  NA
+## 4   NA   1580    1500     7      5 &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;   Estonia  NA
+## 5   NA   1590    1500    11      0 &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;   Estonia  NA
+## 6   NA   1600    1600     6      1 &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;   Estonia  NA
+##   lat record.source
+## 1  NA  Madar (1990)
+## 2  NA  Madar (1990)
+## 3  NA  Madar (1990)
+## 4  NA  Madar (1990)
+## 5  NA  Madar (1990)
+## 6  NA  Madar (1990)</code></pre>
+<pre class="r"><code># Nice and flat!
+
+# use the read_csv function from the readr package in the tidyverse
+db2 &lt;- read_csv(url)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   year = col_integer(),
+##   decade = col_integer(),
+##   century = col_integer(),
+##   tried = col_integer(),
+##   deaths = col_integer(),
+##   city = col_character(),
+##   gadm.adm2 = col_character(),
+##   gadm.adm1 = col_character(),
+##   gadm.adm0 = col_character(),
+##   lon = col_double(),
+##   lat = col_double(),
+##   record.source = col_character()
+## )</code></pre>
+<pre class="r"><code># Take a look, what is different between these functions and how these have been imported? Also look at the help ?read.csv and ?read_csv in the console or in help pane
+db2 %&gt;% str()</code></pre>
+<pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    10940 obs. of  12 variables:
+##  $ year         : int  NA NA NA NA NA NA NA NA NA NA ...
+##  $ decade       : int  1520 1530 1540 1580 1590 1600 1610 1620 1630 1640 ...
+##  $ century      : int  1500 1500 1500 1500 1500 1600 1600 1600 1600 1600 ...
+##  $ tried        : int  1 1 5 7 11 6 22 14 25 39 ...
+##  $ deaths       : int  1 1 5 5 0 1 18 8 4 10 ...
+##  $ city         : chr  NA NA NA NA ...
+##  $ gadm.adm2    : chr  NA NA NA NA ...
+##  $ gadm.adm1    : chr  NA NA NA NA ...
+##  $ gadm.adm0    : chr  &quot;Estonia&quot; &quot;Estonia&quot; &quot;Estonia&quot; &quot;Estonia&quot; ...
+##  $ lon          : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ lat          : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ record.source: chr  &quot;Madar (1990)&quot; &quot;Madar (1990)&quot; &quot;Madar (1990)&quot; &quot;Madar (1990)&quot; ...
+##  - attr(*, &quot;spec&quot;)=List of 2
+##   ..$ cols   :List of 12
+##   .. ..$ year         : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ decade       : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ century      : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ tried        : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ deaths       : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ city         : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ gadm.adm2    : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ gadm.adm1    : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ gadm.adm0    : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ lon          : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   .. ..$ lat          : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   .. ..$ record.source: list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
+##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;</code></pre>
 </div>
 <div id="cleaning-the-data" class="section level2">
 <h2>Cleaning the data</h2>
+<blockquote>
+<p>Wonder if this cleaning data could go after the initial EDA, and give them time to familiarise with the dataset, and follow your point on data structure. Then start cleaning?</p>
+</blockquote>
 <blockquote>
 <p>Consider this for a cleaning exercise. Could be a good point to talk about data structure, rows as observations and columns as variables. Talk about various data structures: matrices, data.frame vs tibble, what is tidy, model objects.</p>
 </blockquote>
