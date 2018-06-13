@@ -65,8 +65,11 @@ Okay, so from this summary, I see 10940 trials.
 I'd like to know about the countries. I'd like to see them in a map. I'd love to do an animation by decade with deaths. 
 
 ```{r}
-
-
+witchdat %>% 
+  filter() %>% 
+  leaflet::leaflet() %>% 
+  leaflet::addTiles() %>% 
+  leaflet::addCircles(lng = witchdat$lon, lat = witchdat$lat)
 
 ```
 
