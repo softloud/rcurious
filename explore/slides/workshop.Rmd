@@ -19,7 +19,15 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 - [R-Ladies](https://rladies.org/)
 - [useR! 2018](https://user2018.r-project.org/)
 
-Follow us on twitter! [ add some twitter handles here ]
+Follow us on twitter!  
+
+[RLadiesSydney](https://twitter.com/rladiessydney) 
+
+[RLadiesRemote](https://twitter.com/RLadiesRemote)
+
+[RLadiesGlobal](https://twitter.com/RLadiesGlobal)
+
+[useR! 2018](https://twitter.com/useR2018_conf)
 
 # What is R?
 
@@ -27,10 +35,26 @@ Follow us on twitter! [ add some twitter handles here ]
 
 ```{r fig.align='center', fig.cap="In the interests of time, we will leave modelling for another day.", echo=FALSE}
 # Source: https://github.com/hadley/r4ds/blob/master/diagrams/data-science.png
+
+# Argh - how to put image in so that it comes out a nice size in html and in slides?
+
+# library(png)
 # knitr::include_graphics("pics/data-science.png")
+
+# hw_png <- readPNG("pics/data-science.png")
+# knitr::include_graphics(hw_png)
+
+# knitr::include_graphics(png("pics/data-science.png"))
+
+# 
 ```
 
+We're going to try to cover everything except *Model*.
+
 ![](pics/data-science.png)
+
+This image is from [R for Data Science](http://r4ds.had.co.nz/), a great text to get started with. It's available online as a free ebook.
+
 
 # A fitting dataset
 
@@ -269,3 +293,9 @@ witchdat <- read_csv(url)
 
 
 # Exploratory data analysis
+
+# Bibliography
+
+## Bibliography
+
+- [R for Data Science](http://r4ds.had.co.nz/)
