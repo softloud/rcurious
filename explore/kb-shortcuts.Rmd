@@ -1,0 +1,24 @@
+---
+title: "some favourite keyboard shortcuts"
+author: "Charles T. Gray"
+date: "14 June 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+NB: control $\equiv$ command on Mac.
+
+shortcut | description
+-|-
+alt + shift + k | see keyboard shortcuts
+control + shift + k | knit
+control + 3 | switch focus to Help pane
+control + shift + M | pipe ` %>% `
+control + enter | run this line of code
+control + 2 | switch focus to Console pane
+control + 1 | switch focus to Source pane
+alt + shift + T | switch focus to Terminal pane
+
