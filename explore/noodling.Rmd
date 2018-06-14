@@ -37,7 +37,7 @@ Before I do, I know from Steph's analysis:
 
 ```{r Tidy up}
 witchdat <- witchdat %>% 
-  rename(country = gadm.adm1) %>% # rename country variable
+  rename(country = gadm.adm0) %>% # rename country variable
   mutate(decade = as.numeric(decade)) # convert decade to numeric
 
 ```
@@ -59,4 +59,18 @@ witchdat %>% skimr::skim()
 Okay, so from this summary, I see 10940 trials. 
 
 > Assuming the rows are trials?
+
+## Complete records
+
+I'd like to know about the countries. I'd like to see them in a map. I'd love to do an animation by decade with deaths. 
+
+```{r}
+witchdat %>% 
+  filter() %>% 
+  leaflet::leaflet() %>% 
+  leaflet::addTiles() %>% 
+  leaflet::addCircles(lng = witchdat$lon, lat = witchdat$lat)
+
+```
+
 
