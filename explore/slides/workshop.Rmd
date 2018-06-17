@@ -1,13 +1,13 @@
 ---
-title: "rcurious"
-subtitle: "An R-Ladies useR! 2018 workshop for new users of R"
+title: "R-Curious"
+subtitle: "An RLadies useR! 2018 workshop for new users of R"
 author: "This workshop is brought to you by RLadies: Steph, Sarah, Charles, Kim, another Sarah, Jenny, and Di"
 output :
-  ioslides_presentation
+  # ioslides_presentation
 
-  # html_document: # Toggle this and comment out ioslides_presentation.
-  #   toc: true
-  #   toc_float: true
+  html_document: # Toggle this and comment out ioslides_presentation.
+  toc: true
+  toc_float: true
 
 ---
 
@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 
 ## Hi!
 
-- [R-Ladies](https://rladies.org/)
+- [RLadies](https://rladies.org/)
 - [useR! 2018](https://user2018.r-project.org/)
 
 Follow us on twitter!  
@@ -31,8 +31,6 @@ Follow us on twitter!
 [useR! 2018](https://twitter.com/useR2018_conf)
 
 ## Stickynote signalling
-
-### questions := always encouraged
 
 ### yellow := all good
 
@@ -82,7 +80,7 @@ A few images to explain why a dataset about witch trials might be appropriate fo
 
 *Group discussion*
 
-What would you like to know about this dataset?
+What would you like to know?
 
 *Write questions on whiteboard*
 
@@ -104,14 +102,22 @@ For *this* workshop:
 - [language](https://www.r-project.org/): R
 - [development environment](https://en.wikipedia.org/wiki/Integrated_development_environment): RStudio
 
+### Why these tools?
+
+- R was intentionally developed to be a data analysis language (aeroplane) 
+- RStudio is designed to help users use R (airport)
+
+"The plane is pretty boring without the airport around it."
+
+(Tip of the hat to Julia Lowndes for the aeroplane analogy.)
+
+
 # Installation hell
 
 ## Installation overview
 
 - install R (quick) 
 - install RStudio (a little while)
-
-
 
 ## Install R on Mac or Windows
 
@@ -169,9 +175,7 @@ Download the [**.deb**](https://www.rstudio.com/products/rstudio/download/#downl
 version
 ```
 
-> todo: finish
-
-
+> todo: finish this section
 
 ## 
 
@@ -186,13 +190,6 @@ install.packages("installr"); require(installr)} #load / install+load installr
 # updateR() # this will start the updating process of your R installation.  It will check for newer versions, and if one is available, will guide you through the decisions you'd need to make.
 ```
 
-
-## Why RStudio?
-
-Working in an RStudio project has many benefits.
-
-todo expand
-
 ## Getting started in RStudio
 
 - Open RStudio and create a project via **File-New Project**
@@ -200,25 +197,110 @@ todo expand
 - Name your project **rcurious**
 - Save the project directory wherever suits you
 
-
 ## Argh so many windows!
 
-*Charles gesticulates wildly at the three panes*
+*Charles gesticulates wildly at RStudio*
 
-Cheat sheet can be found at **Help-Cheatsheets-RStudio IDE Cheatsheet** 
+Particularly useful panes: 
+
+- Help
+- Console
+- Environment
+- Editor
+- Viewer
+
+### Cheat sheet
+
+**Help-Cheatsheets-RStudio IDE Cheatsheet** 
 
 # How to run code?!
 
-## The console
+## Running code in the Console
 
 The console is where you can execute single-line R commands.
 
 The console is located, by default, in the lower left pane. 
 
-Try `3 + 2`:
+Try typing `3 + 2` at the Console prompt `>`.
+
+***
+
+R gives you back the output of the calculation.
+
 ```{r}
 3 + 2
 ```
+
+We can store many numbers in a *vector*.
+
+```{r}
+y <- c(3, 6, 9)
+y
+```
+
+## Environment pane
+
+We can store data for use later. 
+
+I can store the number 5 in an *object* `x`.
+
+To assign a value we use an arrow `<-`.
+
+```{}
+x <- 5
+```
+
+What happens when you type `x` into the Console after assigning the value 5 to it?
+
+What do you see in the Environment pane?
+
+(**control + 8** to switch focus to Environment pane.) 
+
+***
+
+```{r}
+x <- 5
+x
+```
+
+## Data structures in R
+
+Data *objects* can be vectors of:
+- numbers
+- characters
+- logical 
+
+Or tables of data.
+
+Today we will work with a *tidy* data structure. 
+
+
+## Source
+
+We will do this analysis in *Rmarkdown* (.Rmd), a file type in which we can:
+
+- run code in *chunks*
+- write in text, LaTeX, html, outside of code chunks 
+
+# Rmarkdown
+
+## Intro to .Rmd
+
+Open **File-New File-R Markdown** 
+
+This will open an *Untitled1.Rmd* template. 
+
+# Importing data
+
+## Data types
+
+- todo extrapolate
+
+To open a code chunk in your **.Rmd**: **control+alt+i**
+
+To knit to .html in the Viewer pane: save and **control+shift+k** 
+
+
 
 ## Installing packages
 
@@ -246,29 +328,6 @@ library(tidyverse)
 
 
 
-# Rmarkdown
-
-## Intro to .Rmd 
-
-We'll do this analysis in markdown.
-
-- todo extrapolate benefits
-
-## Intro to .Rmd
-
-Open **File-New File-R Markdown** 
-
-# Importing data
-
-## Data types
-
-- todo extrapolate
-
-
-
-To open a code chunk in your **.Rmd**: **control+alt+i**
-
-To knit to .html in the Viewer pane: save and **control+shift+k** 
 
 ## Loading packages
 
@@ -298,9 +357,9 @@ The github link in this import example is https://github.com/JakeRuss/witch-tria
 
 
 ```{r import data}
-url <- "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv"
+# url <- "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv"
 
-witchdat <- read_csv(url)
+# witchdat <- read_csv(url)
 
 ```
 
@@ -314,11 +373,6 @@ witchdat <- read_csv(url)
 At some point you'll need to use the command line.
 
 To break ourselves in, let's check what version of R we are running. 
-
-*keyboard shortcuts in RStudio*
-
-- **alt** + **shift** + **t** for **terminal**
-- **control** + **1** for **source** pane
 
 ```{zsh }
 R --version
