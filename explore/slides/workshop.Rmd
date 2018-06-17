@@ -26,6 +26,8 @@ Follow us on twitter!
 
 [RLadiesRemote](https://twitter.com/RLadiesRemote)
 
+[RLadiesAKL](https://twitter.com/RLadiesAKL) 
+
 [RLadiesGlobal](https://twitter.com/RLadiesGlobal)
 
 [useR! 2018](https://twitter.com/useR2018_conf)
@@ -102,7 +104,7 @@ What would you like to know about this dataset?
 For *this* workshop:
 
 - [language](https://www.r-project.org/): R
-- [development environment](https://en.wikipedia.org/wiki/Integrated_development_environment): RStudio
+- [Integrated development environment (IDE)](https://en.wikipedia.org/wiki/Integrated_development_environment): RStudio
 
 # Installation hell
 
@@ -175,7 +177,7 @@ version
 
 ## 
 
-Update R and Rpackages from this [blogpost](https://www.r-statistics.com/2013/03/updating-r-from-r-on-windows-using-the-installr-package/) for Windows ??
+Update R and R packages from this [blogpost](https://www.r-statistics.com/2013/03/updating-r-from-r-on-windows-using-the-installr-package/) for Windows ??
 
 ```{r}
 # installing/loading the package:
@@ -191,21 +193,39 @@ install.packages("installr"); require(installr)} #load / install+load installr
 
 Working in an RStudio project has many benefits.
 
-todo expand
+- Free, open source software R in an IDE
+- Reproducible workflows
+
 
 ## Getting started in RStudio
 
-- Open RStudio and create a project via **File-New Project**
-- Select **New Directory** and choose **New Project**
-- Name your project **rcurious**
-- Save the project directory wherever suits you
-
+![](pics/Rscreen.png)
 
 ## Argh so many windows!
 
 *Charles gesticulates wildly at the three panes*
 
 Cheat sheet can be found at **Help-Cheatsheets-RStudio IDE Cheatsheet** 
+
+RStudio [projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) 
+> make it straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and source documents.
+
+A recommendation on how to organize your R project from [Good Enough Practices for Scientific Computing](https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf) as summarized by Software Carpentry 
+
+
+- Put each project in its own directory, which is named after the project.
+- Put text documents associated with the project in the doc directory.
+- Put raw data and metadata in the data directory, and files generated during cleanup and analysis in a results directory.
+- Put source for the project’s scripts and programs in the src directory, and programs brought in from elsewhere or compiled locally in the bin directory.
+- Name all files to reflect their content or function.
+
+## Your turn!
+
+Now create an R Project which divides your work in 
+- Open RStudio and create a project via **File-New Project**
+- Select **New Directory** and choose **New Project**
+- Name your project **rcurious**
+- Save the project directory wherever suits you
 
 # How to run code?!
 
@@ -215,21 +235,30 @@ The console is where you can execute single-line R commands.
 
 The console is located, by default, in the lower left pane. 
 
-Try `3 + 2`:
+Try `3 + 2` and run using ctrl-Enter or the play button:
+
 ```{r}
+# Annotate with comments using the #. If you precede anything with this sign, R will ignore it.
 3 + 2
 ```
 
+
+We can annotate a script with comments using the #. If you precede anything with this sign, R will ignore it.
+
 ## Installing packages
 
-We're going to use the metapackage `tidyverse` to help us with our data analysis. 
+In R, the fundamental unit of shareable code is an [R package](http://r-pkgs.had.co.nz/intro.html). 
+
+R packages are available from [The Comprehensive R Archive Network(CRAN)](https://cran.r-project.org/) or github.
+
+We're going to use the metapackage `tidyverse` available from CRAN to help us with our data analysis. 
 
 The two important functions.
 
 ### For installation; i.e., first time only.
 `install.packages("arbitrarypkge")`
  
-### For using.
+### For loading every time we start a new R session. Typically this is at the top of the script
 `library(arbitrarypkg)`
 
 ## Install `tidyverse`
@@ -244,13 +273,13 @@ We would like to install a package called "tidyverse". Let's try.
 library(tidyverse)
 ```
 
-
+The documentation for the R package is available [here](http://tidyverse.tidyverse.org/) and [github](https://github.com/tidyverse/tidyverse)
 
 # Rmarkdown
 
 ## Intro to .Rmd 
 
-We'll do this analysis in markdown.
+We'll do this analysis in R markdown.
 
 - todo extrapolate benefits
 
@@ -286,24 +315,31 @@ library(tidyverse)
 # Store a string in an object.
 url <- <character string>
 
-# Read data using a tidyverse function.
+# Read data using a tidyverse function. 
 db <- read_csv(url)
+# We can also write this function with the package name, ie the read_csv function from the readr package
+db <- readr::read_csv(url)
 
 ```
 
 
-## Import example 
+## Import data example 
+[suggest taking this out as it is covered into rcurious-witcg-trials.csv]
 
-The github link in this import example is https://github.com/JakeRuss/witch-trials, first take a look at the link. Click on the data folder then trials.csv. In order to import the data we need a **direct** link to the data. You can find this with the button in github RAW. This is the url we want to use....
+**Data Source**
+
+The github link in this import example is https://github.com/JakeRuss/witch-trials, first take a look at the link. Click on the data folder then trials.csv. In order to import the data we need a **direct** link to the data. You can find this with the button in github RAW. This is the url we want to use.
+
+We will use a function called **read_csv** to load the data into a variable called **witchdat**
 
 
 ```{r import data}
 url <- "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv"
 
 witchdat <- read_csv(url)
-
 ```
 
+This data has been loaded into witchdat in R, take a look at the environment window.
 
 # Exploratory data analysis
 
