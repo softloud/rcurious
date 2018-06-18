@@ -1,7 +1,7 @@
 ---
 title: "R-Curious"
-subtitle: "An RLadies useR! 2018 workshop for new users of R"
-author: "This workshop is brought to you by RLadies: Steph, Sarah, Charles, Kim, another Sarah, Jenny, and Di"
+subtitle: "An R-Ladies useR! 2018 workshop for new users of R"
+author: "This workshop is brought to you by R-Ladies: Steph, Sarah, Charles, Kim, another Sarah, Jenny, and Di"
 output :
   ioslides_presentation
   # html_document: # Toggle this and comment out ioslides_presentation.
@@ -16,18 +16,18 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Hi!
 
-- [RLadies](https://rladies.org/)
+- [R-Ladies](https://rladies.org/)
 - [useR! 2018](https://user2018.r-project.org/)
 
 Follow us on twitter!  
 
-[RLadiesSydney](https://twitter.com/rladiessydney) 
+[R-LadiesSydney](https://twitter.com/rladiessydney) 
 
-[RLadiesRemote](https://twitter.com/RLadiesRemote)
+[R-LadiesRemote](https://twitter.com/RLadiesRemote)
 
-[RLadiesAKL](https://twitter.com/RLadiesAKL) 
+[R-LadiesAKL](https://twitter.com/RLadiesAKL) 
 
-[RLadiesGlobal](https://twitter.com/RLadiesGlobal)
+[R-LadiesGlobal](https://twitter.com/RLadiesGlobal)
 
 [useR! 2018](https://twitter.com/useR2018_conf)
 
@@ -41,11 +41,13 @@ Gaming difficulty:
 - normal
 - hardcore
 
-***
+What about our other presenters?
 
-I am here to learn from you, too. 
+## Here to learn together
 
-The plan is to live code in these notes, enabling me to edit these notes live using the wonderful [`xaringan::infinite_moon_reader`](http://slides.yihui.name/xaringan/) function, incorporating feedback.
+We are here to learn from you, too. 
+
+The plan is to live code in these notes, enabling us to edit these notes live using the wonderful [`xaringan::infinite_moon_reader`](http://slides.yihui.name/xaringan/) function, incorporating feedback.
 
 ## Notes for this workshop
 
@@ -57,7 +59,9 @@ You will be able to annotate these notes or write extra code examples for yourse
 
 Indeed, there is [little code](http://cantabile.rbind.io/2018/06/17/a-coding-workshop-without-code/) provided in these notes. But there are lots of functions. We will write the code together. 
 
-## pseudo code
+## Pseudo code
+
+So that you have the experience of getting your hands dirty with code, we'll use pseudo code.
 
 ```{}
 <this is pseudo code>
@@ -75,6 +79,9 @@ install.packages("metafor")
 ```
 
 Notice that we drop the `<>`. That's not code, it's *pseudo code* to highlight where your input is.
+
+
+
 
 ## Survival tips
 
@@ -444,7 +451,40 @@ output :
      toc_float: true
 ```
 
-Knit again. We're almost ready to begin our analysis.
+Knit again. (This takes a while.) 
+
+## Slides and notes
+
+From now on, we'll refer to both the notes *and* the slides.
+
+Don't forget, if the information from a few slides ago, you can find it in your notes. 
+
+### Your turn
+
+Navigate in the Viewer pane using the *floating table of contentes* to the image of Hillary Clinton in the section called **A fitting dataset**.
+
+Navigate back to this section in your Editor pane by using the **Document Outline** provided by the button in the top right of the Editor.
+
+## Annotating these notes
+
+From now on, you can take notes directly into the script file for these slides. 
+
+Let's create a section at the top of the document called **Useful tips**.
+
+Create a heading directly above the section called **Hi**: it looks likes this at the top of the script file.
+```
+## Hi! 
+```
+
+- To create a heading use `#`. The more `###`, the smaller the heading.
+
+We can add bullet points with  `-`
+
+```
+- Euclid
+- Beanie
+
+```
 
 # Packages
 
@@ -462,7 +502,7 @@ We're going to use the metapackage `tidyverse` to help us with our data analysis
 
 We will use functions to intall and load the `tidyverse`.
 
-Functions in R take the form `function()`
+Functions in R take the form `<function()>`
 
 To learn more about a function, type `?function` into the Console, and the Help pane will display documentation. 
 
@@ -475,10 +515,10 @@ Take a look at the help documentation for the function `install.packages()`.
 ## 
 
 ### For installation; i.e., first time only.
-`install.packages("arbitrarypkg")`
+`install.packages("<name of package>")`
  
 ### For using.
-`library(arbitrarypkg)`
+`library(<name of package>)`
 
 We would like to install and use a package called "tidyverse". Let's try.
 
@@ -603,9 +643,23 @@ A recommendation on how to organize your R project from [Good Enough Practices f
 
 
 
-# References
+# Further reading
 
-## References and further reading
+## Further reading
 
 - [R for Data Science](http://r4ds.had.co.nz/)
 - The installation instructions are [adapted](https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd) from a previous workshop. 
+
+## The rstats community is the best
+
+I thought you might be interested in a conversation I had while preparing this workshop. The [rstats community](https://community.rstudio.com/) is your best resource.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">How to teach R to students so they make enough autonomous cognitive links to take more away from the experience than simply successfully running the example? <a href="https://twitter.com/samclifford?ref_src=twsrc%5Etfw">@samclifford</a> <a href="https://twitter.com/MilesMcBain?ref_src=twsrc%5Etfw">@MilesMcBain</a> <a href="https://twitter.com/thejholloway?ref_src=twsrc%5Etfw">@thejholloway</a> <a href="https://twitter.com/visnut?ref_src=twsrc%5Etfw">@visnut</a> <a href="https://t.co/PlNt3M0xY3">https://t.co/PlNt3M0xY3</a></p>&mdash; Charles T. Gray (@cantabile) <a href="https://twitter.com/cantabile/status/1008248732259790849?ref_src=twsrc%5Etfw">June 17, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Sidenote, I'd recently seen Maelle Salmon speak about the benefits of blogging to engage with the community. 
+
+This was the first time I tweeted about a blogpost; it is very reassuring to have people to bounce ideas off.
+
+## Thank you for getting your R-curious on with us!
+
