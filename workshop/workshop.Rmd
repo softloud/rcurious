@@ -43,6 +43,16 @@ Gaming difficulty:
 
 I am here to learn from you, too. 
 
+The plan is to live code in these notes, enabling me to edit these notes live using the wonderful [`xaringan::infinite_moon_reader`](http://slides.yihui.name/xaringan/) function, incorporating feedback.
+
+## Notes for this workshop
+
+We will all work from a personal copy of these slides. 
+
+After some introductory waffling, we'll download the file together.
+
+You will be able to annotate these notes or write extra code examples for yourself.
+
 ## Stickynote signalling
 
 ### yellow 
@@ -147,7 +157,7 @@ For *this* workshop:
 - install R (quick) 
 - install RStudio (a little while)
 
-The installation instructions [adapted](https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd) with appreciation from a previous workshop. 
+Installation instructions [adapted](https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd) with appreciation from a previous workshop. 
 
 ## Install R on Mac or Windows
 
@@ -433,15 +443,32 @@ library(tidyverse)
 
 Since the data is stored on an online repository, we can import it via url. 
 
+We can import this data using the `read_csv()` function from the `tidyverse`. 
+
+**This function takes one argument, the url, which goes between the () as a "character string".**   
+
+## Your turn
+
 The data is found here: "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv"
 
-We can import this data using the `read_csv()` function from the `tidyverse`. We pass the url between the () as a "character string".   
+Try importing the data at the console with `read_csv`. What output do you see?
 
-### Your turn
+`read_csv` with the argument url produces a data object. An object we can assign.
 
-Open a code chunk *here* and assign `<-` the data to an object called `witchdat`
+Open a code chunk *here* and read the data in using `read_csv` and assign `<-` the data to an object called `witchdat`
 
-**control+alt+i** to open a code chunk.
+- **control+alt+i** to open a code chunk. 
+- press green **play** to run chunk.
+
+## Take a look
+
+What do you see in your Environment?
+
+Click on it!
+
+## Data wrangling
+
+This workshop is based on Steph de Silva's wonderful 
 
 
 ## Installing packages
