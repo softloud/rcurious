@@ -48,7 +48,7 @@ library(tidyverse)
 A paper by [Leeson and Russ](http://www.peterleeson.com/Witch_Trials.pdf) was accompanied by freely available data for their analysis. Legends.
 
 
-## Witch Trial data
+## Import Witch Trial data
 
 The witch trial data is available in github, let's first take a look at the [website](https://github.com/JakeRuss/witch-trials/blob/master/data/trials.csv)
 
@@ -60,7 +60,11 @@ url <- "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/tria
 
 # Use the base read.csv function to download the raw data to a dataframe called db
 db <- read.csv(url)
+```
 
+There are several functions that will provide information about the structure of the dataframe: str(), head(),dim() (part of base R)
+
+```{r view data}
 # Take a look.
 str(db) # This is the base r structure function
 db %>% str() # This is the piped function. Which do you prefer using?
@@ -68,13 +72,26 @@ db %>% str() # This is the piped function. Which do you prefer using?
 head(db) # This is the base top 6 lines head function
 db %>% head() # This is the piped function. Which do you prefer using?
 
-# Nice and flat!
+dim(db) # This is the number of rows and columns function
+db %>% dim() # This is the piped function. Which do you prefer using?
 
+# Nice and flat!
+```
+
+```{r}
 # use the read_csv function from the readr package in the tidyverse
 db2 <- read_csv(url)
 
 # Take a look, what is different between these functions and how these have been imported? Also look at the help ?read.csv and ?read_csv in the console or in help pane
 db2 %>% str()
+db2 %>% head()
+db2 %>% dim()
+```
+
+
+```{r}
+# We can also see the data in a new pane using View
+View(db2)
 ```
 
 ## Cleaning the data
@@ -96,7 +113,7 @@ db$decade %>% class()
 > Discuss best practice of pipes with collaborators. When is too much? Where is the sweet spot between tidy and baseR? Perhaps this snippet be better presented as this?
 
 ```{r class again}
-# Changes decade to numeric.
+# Changes decade to numeric. We use the $ to access this variable decade
 class(db$decade)
 
 # 
@@ -111,7 +128,6 @@ class(db$decade)
 ```
 
 ```{r change name}
-
 # Out of curiousity, what is the difference between names and objects?
 # Objects provides names of variables sorted alphabetically.
 objects(db)
@@ -133,8 +149,10 @@ names(db)
 
 ## Exploratory data analysis
 
+Exploratory data Analysis(EDA) is summarising, visualising and discovering the data. We can use functions to produce summaries of the data.
+
 ```{r}
-# useful functions.
+# useful functions fore EDA
 
 summary(db)
 
@@ -145,33 +163,102 @@ skimr::skim(db) # Also very handy.
 
 ```
 
+Next let's produce a simple plots of the data using base R. 
+
+```{r}
+plot(db$year,db$deaths)
+plot(db$century,db$deaths)
+```
+Next let's use the [ggplot2](https://github.com/tidyverse/ggplot2) R Package created by [Hadley Wickham](http://hadley.nz/). This package is part of the tidyverse.
+
+The building blocks of a ggplot include:
+
+- a dataset
+- an aesthetic (position (x and y), color, shape, size, linetype, fill)
+- a set of geoms--they define how data will be plotted (e.g geom_point is for scatterplots, while geom_bar is for bar plots)
+
+The building blocks are added with a '+' the ggplot() function.
+
+```{r}
+# reproduce the base scatterplot using ggplot2
+ggplot(db, aes(year,deaths)) + geom_point()
+# reproduce the base barplot using ggplot2
+ggplot(db, aes(decade,deaths)) + geom_col()
+```
+
+### Data wrangling with the dplyr package
+
+The dplyr package is based on the concepts of functions as verbs that manipulate data frames, the core of dplyr lies in the 5 main verbs:
+
+- filter(): pick rows matching criteria
+- select(): pick columns by name
+- group_by(): group rows based on columns
+- summarise(): reduce groups to values
+- mutate(): add new variables
+
+Each one of these functions can be performed individually but the real power comes in when we string them together using the pipe (%>%) operator. This allows us to perform multiple operations in one line of code.
+
+Let's explore some of these functions!
+
+
+
+
+We can use the [dplyr](https://github.com/tidyverse/dplyr) to maniupalte the data
+
 ## Steph looks at freq of people accused and killed over time
 
-```
-bydecade <- db[,c(2,4,5)] %>% # Switch to select
-      group_by(decade) %>% 
-      summarise(deathsDecade = sum(deaths, na.rm = TRUE), 
-                triedDecade = sum(tried, na.rm = TRUE)) 
+```{r}
+bydecade <- db %>% 
+  select(decade,tried,deaths) %>% # pick the columns decade, tried, deaths 
+  group_by(decade) %>% # group the rows based on these columns
+    summarise(deathsDecade = sum(deaths, na.rm = TRUE), 
+                triedDecade = sum(tried, na.rm = TRUE)) # Now perform summaries on these group, sum the deaths by decade and the tried by decade. We saw that there were NA or missing values earlier let's remove these with na.rm =TRUE
 
 ggplot(bydecade, 
        aes(x = decade, y = deathsDecade))+ 
   xlab("Decade")+
   ylab("Deaths")+
   geom_line() + 
-  theme_light()+
-  theme(legend.position="bottom")+
+  theme_light() + # add a ggplot theme
+  theme(legend.position="bottom") + 
+  theme(axis.text.x=element_text(angle=45,hjust=1, size = 10)) +
+  ggtitle("Sum of deaths over the decades") # add a heading
+```
+
+Now take a look by adding the country to the summary
+
+```{r}
+bycountry <- db %>% 
+  select(decade,tried,deaths,country) %>% # pick the columns decade, tried, deaths and country 
+  group_by(country,decade) %>% # group the rows based on these columns
+  summarise(deathsDecade = sum(deaths, na.rm = TRUE), 
+                triedDecade = sum(tried, na.rm = TRUE)) 
+```
+
+```{r}
+ggplot(bycountry, 
+       aes(x = decade, y = deathsDecade,fill=factor(country)))+ 
+  xlab("Decade")+
+  ylab("Deaths")+
+  geom_col() + 
+  theme_light() + # add a ggplot theme
+  theme(legend.position="bottom") + 
   theme(
     axis.text.x=element_text(angle=45,hjust=1, size = 10))+
-  ggtitle("Number of deaths over time")
+  ggtitle("Sum of deaths over the decades") # add a heading
 ```
+
 
 ## Learn about `visdat`
 
-```
-vis_dat(db, palette = "cb_safe")+
+```{r}
+vis_dat(db, palette = "cb_safe") +
   theme_light() 
 ```
 > Interesting about colorblind - could be a really interesting topic for people like me who know nothing about the field. Perhaps Di or Steph could wax lyrical at this point with expertise. 
+
+
+```
 
 > In addition recreating as exercises, there would be crowd-sourced questions. Answer them. 
 

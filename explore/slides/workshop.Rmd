@@ -6,8 +6,8 @@ output :
   # ioslides_presentation
 
   html_document: # Toggle this and comment out ioslides_presentation.
-  toc: true
-  toc_float: true
+    toc: true
+    toc_float: true
 
 ---
 
@@ -25,6 +25,8 @@ Follow us on twitter!
 [RLadiesSydney](https://twitter.com/rladiessydney) 
 
 [RLadiesRemote](https://twitter.com/RLadiesRemote)
+
+[RLadiesAKL](https://twitter.com/RLadiesAKL) 
 
 [RLadiesGlobal](https://twitter.com/RLadiesGlobal)
 
@@ -45,7 +47,9 @@ Follow us on twitter!
 
 We're going to try to cover everything except *Model*.
 
-![](pics/data-science.png)
+<center>
+![](https://github.com/hadley/r4ds/blob/master/diagrams/data-science-explore.png?raw=true)
+</center>
 
 This image is from [R for Data Science](http://r4ds.had.co.nz/), a great text to get started with. It's available online as a free ebook.
 
@@ -100,7 +104,7 @@ What would you like to know?
 For *this* workshop:
 
 - [language](https://www.r-project.org/): R
-- [development environment](https://en.wikipedia.org/wiki/Integrated_development_environment): RStudio
+- [Integrated development environment (IDE)](https://en.wikipedia.org/wiki/Integrated_development_environment): RStudio
 
 ### Why these tools?
 
@@ -118,6 +122,8 @@ For *this* workshop:
 
 - install R (quick) 
 - install RStudio (a little while)
+
+The installation instructions [adapted](https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd) with appreciation from a previous workshop. 
 
 ## Install R on Mac or Windows
 
@@ -179,7 +185,7 @@ version
 
 ## 
 
-Update R and Rpackages from this [blogpost](https://www.r-statistics.com/2013/03/updating-r-from-r-on-windows-using-the-installr-package/) for Windows ??
+Update R and R packages from this [blogpost](https://www.r-statistics.com/2013/03/updating-r-from-r-on-windows-using-the-installr-package/) for Windows ??
 
 ```{r}
 # installing/loading the package:
@@ -190,16 +196,17 @@ install.packages("installr"); require(installr)} #load / install+load installr
 # updateR() # this will start the updating process of your R installation.  It will check for newer versions, and if one is available, will guide you through the decisions you'd need to make.
 ```
 
+
+## Why RStudio?
+
+Working in an RStudio project has many benefits.
+
+- Free, open source software R in an IDE
+- Reproducible workflows
+
 ## Getting started in RStudio
 
-- Open RStudio and create a project via **File-New Project**
-- Select **New Directory** and choose **New Project**
-- Name your project **rcurious**
-- Save the project directory wherever suits you
-
-## Argh so many windows!
-
-*Charles gesticulates wildly at RStudio*
+*R-Ladies presenters gesticulate wildly at RStudio*
 
 Particularly useful panes: 
 
@@ -213,6 +220,25 @@ Particularly useful panes:
 
 **Help-Cheatsheets-RStudio IDE Cheatsheet** 
 
+RStudio [projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) 
+> make it straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and source documents.
+
+A recommendation on how to organize your R project from [Good Enough Practices for Scientific Computing](https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf) as summarized by Software Carpentry 
+
+- Put each project in its own directory, which is named after the project.
+- Put text documents associated with the project in the doc directory.
+- Put raw data and metadata in the data directory, and files generated during cleanup and analysis in a results directory.
+- Put source for the project’s scripts and programs in the src directory, and programs brought in from elsewhere or compiled locally in the bin directory.
+- Name all files to reflect their content or function.
+
+## Your turn!
+
+Now create an R Project which divides your work in 
+- Open RStudio and create a project via **File-New Project**
+- Select **New Directory** and choose **New Project**
+- Name your project **rcurious**
+- Save the project directory wherever suits you
+
 # How to run code?!
 
 ## Running code in the Console
@@ -221,26 +247,30 @@ The console is where you can execute single-line R commands.
 
 The console is located, by default, in the lower left pane. 
 
-Try typing `3 + 2` at the Console prompt `>`.
-
-***
-
-R gives you back the output of the calculation.
+Try `3 + 2` and run using **ctrl-enter** or the play button:
 
 ```{r}
+# Annotate with comments using the #. If you precede anything with this sign, R will ignore it.
 3 + 2
 ```
 
-We can store many numbers in a *vector*.
+We can annotate a script with comments using the #. If you precede anything with this sign, R will ignore it.
 
-```{r}
-y <- c(3, 6, 9)
-y
-```
+## Installing packages
 
-## Environment pane
+In R, the fundamental unit of shareable code is an [R package](http://r-pkgs.had.co.nz/intro.html). 
 
-We can store data for use later. 
+R packages are available from [The Comprehensive R Archive Network(CRAN)](https://cran.r-project.org/) or github.
+
+We're going to use the metapackage `tidyverse` available from CRAN to help us with our data analysis. 
+
+***
+
+### For installation; i.e., first time only.
+`install.packages("arbitrarypkg")`
+ 
+### For loading every time we start a new R session. Typically this is at the top of the script.
+`library(arbitrarypkg)`
 
 I can store the number 5 in an *object* `x`.
 
@@ -263,6 +293,7 @@ x <- 5
 x
 ```
 
+<<<<<<< HEAD
 ## Data structures in R
 
 Data *objects* can be vectors of:
@@ -274,13 +305,16 @@ Or tables of data.
 
 Today we will work with a *tidy* data structure. 
 
+The documentation for the R package `tidyverse::` is available [here](http://tidyverse.tidyverse.org/) and [github](https://github.com/tidyverse/tidyverse)
+
 
 ## Source
 
-We will do this analysis in *Rmarkdown* (.Rmd), a file type in which we can:
+We'll do this analysis in R markdown.
 
 - run code in *chunks*
 - write in text, LaTeX, html, outside of code chunks 
+- make websites, presentations, 
 
 # Rmarkdown
 
@@ -345,24 +379,31 @@ library(tidyverse)
 # Store a string in an object.
 url <- <character string>
 
-# Read data using a tidyverse function.
+# Read data using a tidyverse function. 
 db <- read_csv(url)
+# We can also write this function with the package name, ie the read_csv function from the readr package
+db <- readr::read_csv(url)
 
 ```
 
 
-## Import example 
+## Import data example 
+[suggest taking this out as it is covered into rcurious-witcg-trials.csv]
 
-The github link in this import example is https://github.com/JakeRuss/witch-trials, first take a look at the link. Click on the data folder then trials.csv. In order to import the data we need a **direct** link to the data. You can find this with the button in github RAW. This is the url we want to use....
+**Data Source**
+
+The github link in this import example is https://github.com/JakeRuss/witch-trials, first take a look at the link. Click on the data folder then trials.csv. In order to import the data we need a **direct** link to the data. You can find this with the button in github RAW. This is the url we want to use.
+
+We will use a function called **read_csv** to load the data into a variable called **witchdat**
 
 
 ```{r import data}
-# url <- "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv"
+url <- "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv"
 
-# witchdat <- read_csv(url)
-
+witchdat <- read_csv(url)
 ```
 
+This data has been loaded into witchdat in R, take a look at the environment window.
 
 # Exploratory data analysis
 
@@ -381,7 +422,7 @@ R --version
 
 # References
 
-## References
+## References and further reading
 
 - [R for Data Science](http://r4ds.had.co.nz/)
 - The installation instructions are [adapted](https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd) from a previous workshop. 
