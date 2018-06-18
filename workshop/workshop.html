@@ -130,6 +130,16 @@
 
 <p>I am here to learn from you, too.</p>
 
+<p>The plan is to live code in these notes, enabling me to edit these notes live using the wonderful <a href='http://slides.yihui.name/xaringan/' title=''><code>xaringan::infinite_moon_reader</code></a> function, incorporating feedback.</p>
+
+</article></slide><slide class=""><hgroup><h2>Notes for this workshop</h2></hgroup><article  id="notes-for-this-workshop">
+
+<p>We will all work from a personal copy of these slides.</p>
+
+<p>After some introductory waffling, we&#39;ll download the file together.</p>
+
+<p>You will be able to annotate these notes or write extra code examples for yourself.</p>
+
 </article></slide><slide class=""><hgroup><h2>Stickynote signalling</h2></hgroup><article  id="stickynote-signalling">
 
 <h3>yellow</h3>
@@ -241,7 +251,7 @@
 <li>install RStudio (a little while)</li>
 </ul>
 
-<p>The installation instructions <a href='https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd' title=''>adapted</a> with appreciation from a previous workshop.</p>
+<p>Installation instructions <a href='https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd' title=''>adapted</a> with appreciation from a previous workshop.</p>
 
 </article></slide><slide class=""><hgroup><h2>Install R on Mac or Windows</h2></hgroup><article  id="install-r-on-mac-or-windows">
 
@@ -527,15 +537,34 @@ library(tidyverse)</pre>
 
 <p>Since the data is stored on an online repository, we can import it via url.</p>
 
+<p>We can import this data using the <code>read_csv()</code> function from the <code>tidyverse</code>.</p>
+
+<p><strong>This function takes one argument, the url, which goes between the () as a &quot;character string&quot;.</strong></p>
+
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn">
+
 <p>The data is found here: &quot;<a href='https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv' title=''>https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv</a>&quot;</p>
 
-<p>We can import this data using the <code>read_csv()</code> function from the <code>tidyverse</code>. We pass the url between the () as a &quot;character string&quot;.</p>
+<p>Try importing the data at the console with <code>read_csv</code>. What output do you see?</p>
 
-<h3>Your turn</h3>
+<p><code>read_csv</code> with the argument url produces a data object. An object we can assign.</p>
 
-<p>Open a code chunk <em>here</em> and assign <code>&lt;-</code> the data to an object called <code>witchdat</code></p>
+<p>Open a code chunk <em>here</em> and read the data in using <code>read_csv</code> and assign <code>&lt;-</code> the data to an object called <code>witchdat</code></p>
 
-<p><strong>control+alt+i</strong> to open a code chunk.</p>
+<ul>
+<li><strong>control+alt+i</strong> to open a code chunk.</li>
+<li>press green <strong>play</strong> to run chunk.</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Take a look</h2></hgroup><article  id="take-a-look">
+
+<p>What do you see in your Environment?</p>
+
+<p>Click on it!</p>
+
+</article></slide><slide class=""><hgroup><h2>Data wrangling</h2></hgroup><article  id="data-wrangling">
+
+<p>This workshop is based on Steph de Silva&#39;s wonderful</p>
 
 </article></slide><slide class=""><hgroup><h2>Installing packages</h2></hgroup><article  id="installing-packages">
 
