@@ -3,8 +3,7 @@ title: "R-Curious"
 subtitle: "An RLadies useR! 2018 workshop for new users of R"
 author: "This workshop is brought to you by RLadies: Steph, Sarah, Charles, Kim, another Sarah, Jenny, and Di"
 output :
-   ioslides_presentation
-
+  ioslides_presentation
   # html_document: # Toggle this and comment out ioslides_presentation.
   #   toc: true
   #   toc_float: true
@@ -58,7 +57,6 @@ Also, I think I broke the internet.
 <center>
 <img src="https://memegenerator.net/img/instances/71995321.jpg" style="width:50%">
 </center>
-
 
 # What is R?
 
@@ -345,23 +343,106 @@ Press the wheel next to the **knit** icon at the top of the Editor pane and sele
 
 Now we will *knit* our document.
 
+## The tutorial document
+
+A treasure trove! 
+
 ## Get these notes
 
-Look up `softloud rcurious workshop.Rmd`
+Delete everything in your .Rmd file.
 
-You want to navigate to: https://github.com/softloud/rcurious
+Look up `softloud charles gray github`
 
-Click on the *explore*
+You want to navigate to: https://github.com/softloud
+
+Click on **rcurious** in my Pinned repositories.
+
+Click on **workshop** and then **workshop.Rmd** and then click the **Raw** button and copy and paste the text into your .Rmd file.
+
+- **control + a** to select all 
+- **control + c** to copy
+- **control + v** to paste
+
+## Knit the notes
+
+**control + shift + k** to knit
+
+But it is annoying having a pop out window, so let's view these notes in the Viewer pane.
+
+We are going to modify the YAML at the top of the document so that you can see how to toggle a presentation into notes. 
+
+Change the output settings at the top of this document to:
+
+```
+output :
+  # ioslides_presentation 
+  html_document: 
+     toc: true
+     toc_float: true
+```
+
+We're almost ready to begin our analysis.
+
+# Packages
+
+## Packages
+
+Packages are collections of other people's code.
+
+Often someone has already written a script that does what you want to do.
+
+For example, we want to import the witch trials data. We will use a package that helps with data wrangling tasks like this, the [`tidyverse`](https://www.tidyverse.org/). 
+
+## Installing and loading packages
+
+We're going to use the metapackage `tidyverse` to help us with our data analysis. 
+
+The two important functions.
+
+Functions in R take the form `function()`
+
+### For installation; i.e., first time only.
+`install.packages("arbitrarypkge")`
+ 
+### For using.
+`library(arbitrarypkg)`
+
+We would like to install and use a package called "tidyverse". Let's try.
+
+## Let's load the tidyverse 
+
+Press the little document outline button in the top right corner of the Editor pane.
+
+Navigate to this part of your notes.
+
+```{r Load the tidyverse package}
+# This is a code chunk. 
+
+# We can write informative comments with a hash # at the start.
+
+# Load the tidyverse using the library() function.
+library(tidyverse)
+
+```
 
 # Importing data
 
-## Data types
 
-- todo extrapolate
 
-To open a code chunk in your **.Rmd**: **control+alt+i**
+## Import the witch trials data
 
-To knit to .html in the Viewer pane: save and **control+shift+k** 
+Since the data is stored on an online repository, we can import it via url. 
+
+The data is found here: "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv"
+
+We can import this data using the `read_csv()` function from the `tidyverse`. We pass the url between the () as a "character string".   
+
+### Your turn
+
+Open a code chunk *here* and assign `<-` the data to an object called `witchdat`
+
+**control+alt+i** to open a code chunk.
+
 
 ## Installing packages
 
@@ -370,53 +451,6 @@ In R, the fundamental unit of shareable code is an [R package](http://r-pkgs.had
 R packages are available from [The Comprehensive R Archive Network(CRAN)](https://cran.r-project.org/) or github.
 
 We're going to use the metapackage `tidyverse` available from CRAN to help us with our data analysis. 
-
-***
-
-### For installation; i.e., first time only.
-`install.packages("arbitrarypkg")`
- 
-### For loading every time we start a new R session. Typically this is at the top of the script.
-`library(arbitrarypkg)`
-
-
-<<<<<<< HEAD
-
-## Installing packages
-
-We're going to use the metapackage `tidyverse` to help us with our data analysis. 
-
-The two important functions.
-
-### For installation; i.e., first time only.
-`install.packages("arbitrarypkge")`
- 
-### For using.
-`library(arbitrarypkg)`
-
-## Install `tidyverse`
-
-We would like to install a package called "tidyverse". Let's try.
-
-## Load tidyverse
-
-```{r}
-# I ran: install.packages("tidyverse") in the console the first time.
-
-library(tidyverse)
-```
-
-
-
-
-## Loading packages
-
-```{r pkgs}
-# install.packages("tidyverse") # Run this to install.
-
-library(tidyverse)
-
-```
 
 
 ## Import example: url
