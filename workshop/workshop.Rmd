@@ -49,9 +49,11 @@ The plan is to live code in these notes, enabling me to edit these notes live us
 
 We will all work from a personal copy of these slides. 
 
-After some introductory waffling, we'll download the file together.
+After some introductory waffling, and set-up, we'll download the file together.
 
 You will be able to annotate these notes or write extra code examples for yourself.
+
+Indeed, there is [little code](http://cantabile.rbind.io/2018/06/17/a-coding-workshop-without-code/) provided in these notes. But there are lots of functions. We will write the code together. 
 
 ## Stickynote signalling
 
