@@ -1,13 +1,13 @@
 ---
-title: "rcurious"
-subtitle: "An R-Ladies useR! 2018 workshop for new users of R"
+title: "R-Curious"
+subtitle: "An RLadies useR! 2018 workshop for new users of R"
 author: "This workshop is brought to you by RLadies: Steph, Sarah, Charles, Kim, another Sarah, Jenny, and Di"
 output :
-  ioslides_presentation
+  # ioslides_presentation
 
-  # html_document: # Toggle this and comment out ioslides_presentation.
-  #   toc: true
-  #   toc_float: true
+  html_document: # Toggle this and comment out ioslides_presentation.
+    toc: true
+    toc_float: true
 
 ---
 
@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 
 ## Hi!
 
-- [R-Ladies](https://rladies.org/)
+- [RLadies](https://rladies.org/)
 - [useR! 2018](https://user2018.r-project.org/)
 
 Follow us on twitter!  
@@ -34,8 +34,6 @@ Follow us on twitter!
 
 ## Stickynote signalling
 
-### questions := always encouraged
-
 ### yellow := all good
 
 ### pink := some assistance would be greatly appreciated  
@@ -49,7 +47,9 @@ Follow us on twitter!
 
 We're going to try to cover everything except *Model*.
 
-![](pics/data-science.png)
+<center>
+![](https://github.com/hadley/r4ds/blob/master/diagrams/data-science-explore.png?raw=true)
+</center>
 
 This image is from [R for Data Science](http://r4ds.had.co.nz/), a great text to get started with. It's available online as a free ebook.
 
@@ -84,7 +84,7 @@ A few images to explain why a dataset about witch trials might be appropriate fo
 
 *Group discussion*
 
-What would you like to know about this dataset?
+What would you like to know?
 
 *Write questions on whiteboard*
 
@@ -106,6 +106,16 @@ For *this* workshop:
 - [language](https://www.r-project.org/): R
 - [Integrated development environment (IDE)](https://en.wikipedia.org/wiki/Integrated_development_environment): RStudio
 
+### Why these tools?
+
+- R was intentionally developed to be a data analysis language (aeroplane) 
+- RStudio is designed to help users use R (airport)
+
+"The plane is pretty boring without the airport around it."
+
+(Tip of the hat to Julia Lowndes for the aeroplane analogy.)
+
+
 # Installation hell
 
 ## Installation overview
@@ -113,7 +123,7 @@ For *this* workshop:
 - install R (quick) 
 - install RStudio (a little while)
 
-
+The installation instructions [adapted](https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd) with appreciation from a previous workshop. 
 
 ## Install R on Mac or Windows
 
@@ -171,9 +181,7 @@ Download the [**.deb**](https://www.rstudio.com/products/rstudio/download/#downl
 version
 ```
 
-> todo: finish
-
-
+> todo: finish this section
 
 ## 
 
@@ -196,22 +204,26 @@ Working in an RStudio project has many benefits.
 - Free, open source software R in an IDE
 - Reproducible workflows
 
-
 ## Getting started in RStudio
 
-![](pics/Rscreen.png)
+*R-Ladies presenters gesticulate wildly at RStudio*
 
-## Argh so many windows!
+Particularly useful panes: 
 
-*Charles gesticulates wildly at the three panes*
+- Help
+- Console
+- Environment
+- Editor
+- Viewer
 
-Cheat sheet can be found at **Help-Cheatsheets-RStudio IDE Cheatsheet** 
+### Cheat sheet
+
+**Help-Cheatsheets-RStudio IDE Cheatsheet** 
 
 RStudio [projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) 
 > make it straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and source documents.
 
 A recommendation on how to organize your R project from [Good Enough Practices for Scientific Computing](https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf) as summarized by Software Carpentry 
-
 
 - Put each project in its own directory, which is named after the project.
 - Put text documents associated with the project in the doc directory.
@@ -229,19 +241,18 @@ Now create an R Project which divides your work in
 
 # How to run code?!
 
-## The console
+## Running code in the Console
 
 The console is where you can execute single-line R commands.
 
 The console is located, by default, in the lower left pane. 
 
-Try `3 + 2` and run using ctrl-Enter or the play button:
+Try `3 + 2` and run using **ctrl-enter** or the play button:
 
 ```{r}
 # Annotate with comments using the #. If you precede anything with this sign, R will ignore it.
 3 + 2
 ```
-
 
 We can annotate a script with comments using the #. If you precede anything with this sign, R will ignore it.
 
@@ -253,12 +264,88 @@ R packages are available from [The Comprehensive R Archive Network(CRAN)](https:
 
 We're going to use the metapackage `tidyverse` available from CRAN to help us with our data analysis. 
 
+***
+
+### For installation; i.e., first time only.
+`install.packages("arbitrarypkg")`
+ 
+### For loading every time we start a new R session. Typically this is at the top of the script.
+`library(arbitrarypkg)`
+
+I can store the number 5 in an *object* `x`.
+
+To assign a value we use an arrow `<-`.
+
+```{}
+x <- 5
+```
+
+What happens when you type `x` into the Console after assigning the value 5 to it?
+
+What do you see in the Environment pane?
+
+(**control + 8** to switch focus to Environment pane.) 
+
+***
+
+```{r}
+x <- 5
+x
+```
+
+<<<<<<< HEAD
+## Data structures in R
+
+Data *objects* can be vectors of:
+- numbers
+- characters
+- logical 
+
+Or tables of data.
+
+Today we will work with a *tidy* data structure. 
+
+The documentation for the R package `tidyverse::` is available [here](http://tidyverse.tidyverse.org/) and [github](https://github.com/tidyverse/tidyverse)
+
+
+## Source
+
+We'll do this analysis in R markdown.
+
+- run code in *chunks*
+- write in text, LaTeX, html, outside of code chunks 
+- make websites, presentations, 
+
+# Rmarkdown
+
+## Intro to .Rmd
+
+Open **File-New File-R Markdown** 
+
+This will open an *Untitled1.Rmd* template. 
+
+# Importing data
+
+## Data types
+
+- todo extrapolate
+
+To open a code chunk in your **.Rmd**: **control+alt+i**
+
+To knit to .html in the Viewer pane: save and **control+shift+k** 
+
+
+
+## Installing packages
+
+We're going to use the metapackage `tidyverse` to help us with our data analysis. 
+
 The two important functions.
 
 ### For installation; i.e., first time only.
 `install.packages("arbitrarypkge")`
  
-### For loading every time we start a new R session. Typically this is at the top of the script
+### For using.
 `library(arbitrarypkg)`
 
 ## Install `tidyverse`
@@ -273,31 +360,8 @@ We would like to install a package called "tidyverse". Let's try.
 library(tidyverse)
 ```
 
-The documentation for the R package is available [here](http://tidyverse.tidyverse.org/) and [github](https://github.com/tidyverse/tidyverse)
-
-# Rmarkdown
-
-## Intro to .Rmd 
-
-We'll do this analysis in R markdown.
-
-- todo extrapolate benefits
-
-## Intro to .Rmd
-
-Open **File-New File-R Markdown** 
-
-# Importing data
-
-## Data types
-
-- todo extrapolate
 
 
-
-To open a code chunk in your **.Rmd**: **control+alt+i**
-
-To knit to .html in the Viewer pane: save and **control+shift+k** 
 
 ## Loading packages
 
@@ -351,11 +415,6 @@ At some point you'll need to use the command line.
 
 To break ourselves in, let's check what version of R we are running. 
 
-*keyboard shortcuts in RStudio*
-
-- **alt** + **shift** + **t** for **terminal**
-- **control** + **1** for **source** pane
-
 ```{zsh }
 R --version
 ```
@@ -363,7 +422,7 @@ R --version
 
 # References
 
-## References
+## References and further reading
 
 - [R for Data Science](http://r4ds.had.co.nz/)
 - The installation instructions are [adapted](https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd) from a previous workshop. 

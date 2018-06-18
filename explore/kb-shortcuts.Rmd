@@ -14,6 +14,7 @@ NB: control $\equiv$ command on Mac.
 shortcut | description
 -|-
 alt + shift + k | see keyboard shortcuts
+control + enter | run this code 
 control + shift + k | knit
 control + 3 | switch focus to Help pane
 control + shift + M | pipe ` %>% `
