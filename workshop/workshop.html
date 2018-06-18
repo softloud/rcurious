@@ -123,10 +123,12 @@
 <p>Gaming difficulty:</p>
 
 <ul>
-<li>the pew-pew sound my gun makes startles me</li>
+<li>the pew-pew sound my gun makes startles me (this workshop)</li>
 <li>normal</li>
 <li>hardcore</li>
 </ul>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
 
 <p>I am here to learn from you, too.</p>
 
@@ -136,9 +138,50 @@
 
 <p>We will all work from a personal copy of these slides.</p>
 
-<p>After some introductory waffling, we&#39;ll download the file together.</p>
+<p>After some introductory waffling, and set-up, we&#39;ll download the file together.</p>
 
 <p>You will be able to annotate these notes or write extra code examples for yourself.</p>
+
+<p>Indeed, there is <a href='http://cantabile.rbind.io/2018/06/17/a-coding-workshop-without-code/' title=''>little code</a> provided in these notes. But there are lots of functions. We will write the code together.</p>
+
+</article></slide><slide class=""><hgroup><h2>pseudo code</h2></hgroup><article  id="pseudo-code">
+
+<pre >&lt;this is pseudo code&gt;
+
+install.packages(&quot;&lt;you write code here&gt;&quot;)
+
+</pre>
+
+<p>If I wanted to install a package called <code>metafor</code>, I would use the code</p>
+
+<pre >install.packages(&quot;metafor&quot;)
+</pre>
+
+<p>Notice that we drop the <code>&lt;&gt;</code>. That&#39;s not code, it&#39;s <em>pseudo code</em> to highlight where your input is.</p>
+
+</article></slide><slide class=""><hgroup><h2>Survival tips</h2></hgroup><article  id="survival-tips">
+
+<p>Don&#39;t be afraid to harness all tools available:</p>
+
+<ul>
+<li>Modern day coding practice comprises almost entirely searching &quot;how do I do <code>&lt;x&gt;</code> in <code>&lt;language&gt;</code>&quot;.</li>
+<li>The <a href='https://community.rstudio.com/' title=''>community</a> is your best resource; talk to each other and make friends and future collaborators.<br/></li>
+<li>Cheatsheets (<strong>Help-Cheatsheets</strong>)</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<p>Finally, everyone needs to <a href='https://www.urbandictionary.com/define.php?term=ragequit' title=''>ragequit</a> at sometimes.</p>
+
+<iframe src="https://giphy.com/embed/EtB1yylKGGAUg" width="320" height="250" frameBorder="0" class="giphy-embed" allowFullScreen>
+
+</iframe>
+
+<p>
+
+<a href="https://giphy.com/gifs/the-office-panda-rage-EtB1yylKGGAUg">via GIPHY</a>
+
+</p>
 
 </article></slide><slide class=""><hgroup><h2>Stickynote signalling</h2></hgroup><article  id="stickynote-signalling">
 
@@ -146,7 +189,7 @@
 
 <p>Yup, all good.</p>
 
-<h3>pink</h3>
+<h3>pink (the ragequit option)</h3>
 
 <p>Some assistance would be greatly appreciated. Also, I think I broke the internet.</p>
 
@@ -160,6 +203,8 @@
 
 </article></slide><slide class=""><hgroup><h2>What do R-users use R for?</h2></hgroup><article  id="what-do-r-users-use-r-for">
 
+<p>R users are data detectives.</p>
+
 <p>We&#39;re going to try to cover everything except <em>Model</em>.</p>
 
 <center>
@@ -169,6 +214,8 @@
 </center>
 
 <p>This image is from <a href='http://r4ds.had.co.nz/' title=''>R for Data Science</a>, a great text to get started with. It&#39;s available online as a free ebook.</p>
+
+<p>For us to learn how to be data detectives, we&#39;ll need some data.</p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>A fitting dataset</h2></hgroup><article  id="a-fitting-dataset">
 
@@ -190,7 +237,7 @@
 
 </center>
 
-</article></slide><slide class=""><hgroup><h2>Image search: &quot;witch&quot; + &quot;julia gillard&quot;</h2></hgroup><article  id="image-search-witch-julia-gillard">
+</article></slide><slide class=""><hgroup><h2>Image search for &quot;witch&quot; + &quot;julia gillard&quot;</h2></hgroup><article  id="image-search-for-witch-julia-gillard">
 
 <center>
 
@@ -218,7 +265,7 @@
 
 <center>
 
-<img src="https://alloftheones.files.wordpress.com/2014/04/ezgif-save.gif" style="width:70%">
+<img src="https://alloftheones.files.wordpress.com/2014/04/ezgif-save.gif" style="width:60%">
 
 </center>
 
@@ -404,18 +451,24 @@
 
 <ul>
 <li>numbers</li>
-<li>characters</li>
-<li>logical</li>
-<li>list</li>
+<li>characters &quot;this is a character string&quot;</li>
+<li>logicals (TRUE/FALSE)</li>
+<li>list (mixed)</li>
 </ul>
 
 <p>Or tables of combinations of the above.</p>
+
+<pre >##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa</pre>
+
+<p>And much more.</p>
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
 
 <p>The witch trials dataset is a table.</p>
 
-<p>It is a <em>tidy</em> data structure:</p>
+<p>It is a <a href='https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html' title=''><em>tidy</em></a> data structure:</p>
 
 <ul>
 <li>rows are <em>observations</em></li>
@@ -488,7 +541,7 @@
      toc: true
      toc_float: true</pre>
 
-<p>We&#39;re almost ready to begin our analysis.</p>
+<p>Knit again. We&#39;re almost ready to begin our analysis.</p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Packages</h2></hgroup><article  id="packages">
 
@@ -500,17 +553,27 @@
 
 <p>For example, we want to import the witch trials data. We will use a package that helps with data wrangling tasks like this, the <a href='https://www.tidyverse.org/' title=''><code>tidyverse</code></a>.</p>
 
-</article></slide><slide class=""><hgroup><h2>Installing and loading packages</h2></hgroup><article  id="installing-and-loading-packages">
-
 <p>We&#39;re going to use the metapackage <code>tidyverse</code> to help us with our data analysis.</p>
 
-<p>The two important functions.</p>
+</article></slide><slide class=""><hgroup><h2>Functions</h2></hgroup><article  id="functions">
+
+<p>We will use functions to intall and load the <code>tidyverse</code>.</p>
 
 <p>Functions in R take the form <code>function()</code></p>
 
+<p>To learn more about a function, type <code>?function</code> into the Console, and the Help pane will display documentation.</p>
+
+<h3>Your turn</h3>
+
+<p>We want to install the package <code>tidyverse</code>.</p>
+
+<p>Take a look at the help documentation for the function <code>install.packages()</code>.</p>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-1">
+
 <h3>For installation; i.e., first time only.</h3>
 
-<p><code>install.packages(&quot;arbitrarypkge&quot;)</code></p>
+<p><code>install.packages(&quot;arbitrarypkg&quot;)</code></p>
 
 <h3>For using.</h3>
 
@@ -541,7 +604,7 @@ library(tidyverse)</pre>
 
 <p><strong>This function takes one argument, the url, which goes between the () as a &quot;character string&quot;.</strong></p>
 
-</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn">
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-1">
 
 <p>The data is found here: &quot;<a href='https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv' title=''>https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv</a>&quot;</p>
 

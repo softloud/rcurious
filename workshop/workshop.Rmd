@@ -37,9 +37,11 @@ Charles T. Gray plays on **normal** tidyverse difficulty setting.
 
 Gaming difficulty:
 
-- the pew-pew sound my gun makes startles me
+- the pew-pew sound my gun makes startles me (this workshop)
 - normal
 - hardcore
+
+***
 
 I am here to learn from you, too. 
 
@@ -49,9 +51,45 @@ The plan is to live code in these notes, enabling me to edit these notes live us
 
 We will all work from a personal copy of these slides. 
 
-After some introductory waffling, we'll download the file together.
+After some introductory waffling, and set-up, we'll download the file together.
 
 You will be able to annotate these notes or write extra code examples for yourself.
+
+Indeed, there is [little code](http://cantabile.rbind.io/2018/06/17/a-coding-workshop-without-code/) provided in these notes. But there are lots of functions. We will write the code together. 
+
+## pseudo code
+
+```{}
+<this is pseudo code>
+
+install.packages("<you write code here>")
+
+
+```
+
+If I wanted to install a package called `metafor`, I would use the code
+
+```{}
+install.packages("metafor")
+
+```
+
+Notice that we drop the `<>`. That's not code, it's *pseudo code* to highlight where your input is.
+
+## Survival tips
+
+Don't be afraid to harness all tools available:
+
+- Modern day coding practice comprises almost entirely searching "how do I do `<x>` in `<language>`".
+- The [community](https://community.rstudio.com/) is your best resource; talk to each other and make friends and future collaborators.  
+- Cheatsheets (**Help-Cheatsheets**)
+
+*** 
+
+Finally, everyone needs to  [ragequit](https://www.urbandictionary.com/define.php?term=ragequit) at sometimes.
+
+<iframe src="https://giphy.com/embed/EtB1yylKGGAUg" width="320" height="250" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/the-office-panda-rage-EtB1yylKGGAUg">via GIPHY</a></p>
+
 
 ## Stickynote signalling
 
@@ -59,7 +97,7 @@ You will be able to annotate these notes or write extra code examples for yourse
 
 Yup, all good.
 
-### pink 
+### pink (the ragequit option)
 
 Some assistance would be greatly appreciated. 
 Also, I think I broke the internet. 
@@ -68,9 +106,14 @@ Also, I think I broke the internet.
 <img src="https://memegenerator.net/img/instances/71995321.jpg" style="width:50%">
 </center>
 
+
+
+
 # What is R?
 
 ## What do R-users use R for?
+
+R users are data detectives.
 
 We're going to try to cover everything except *Model*.
 
@@ -79,6 +122,8 @@ We're going to try to cover everything except *Model*.
 </center>
 
 This image is from [R for Data Science](http://r4ds.had.co.nz/), a great text to get started with. It's available online as a free ebook.
+
+For us to learn how to be data detectives, we'll need some data.
 
 # A fitting dataset
 
@@ -98,7 +143,7 @@ A few images to explain why a dataset about witch trials might be appropriate fo
 <img src="https://steemitimages.com/DQmRquBByC9rwriPGJgp3uHy4Hatg9gTQzDicgGiiX1uAzi/MichelleWolfWickedWitch_13.png" style="width:60%">
 </center>
 
-## Image search: "witch" + "julia gillard"
+## Image search for "witch" + "julia gillard"
 
 <center>
 <img src="https://static.ffx.io/images/$zoom_1%2C$multiply_0.512%2C$ratio_1.777778%2C$width_2000%2C$x_0%2C$y_23/t_crop_custom/t_sharpen%2Cq_auto%2Cf_auto/415251affe0440a502699c0723e8229e86270864" style="width:70%">
@@ -130,7 +175,7 @@ What would you like to know?
 ```
 
 <center>
-<img src="https://alloftheones.files.wordpress.com/2014/04/ezgif-save.gif" style="width:70%">
+<img src="https://alloftheones.files.wordpress.com/2014/04/ezgif-save.gif" style="width:60%">
 </center>
 
 ## How to answer these questions?
@@ -308,17 +353,28 @@ There are many complex data types in R.
 Data *objects* can be made of
 
 - numbers
-- characters
-- logical 
-- list
+- characters "this is a character string"
+- logicals (TRUE/FALSE) 
+- list (mixed)
 
 Or tables of combinations of the above.
+
+```{r, echo = FALSE}
+# The head() function displays the top of the table. Here I asked to see the top 2 lines of the preloaded iris dataset in R. These small preloaded datasets are very handy for trying things out.
+
+head(iris, 2)
+
+# Notice, also, that setting echo = FALSE in this chunk prevents the code and commments from displaying in the knitted document.
+```
+
+
+And much more.
 
 ***
 
 The witch trials dataset is a table.
 
-It is a *tidy* data structure:
+It is a [*tidy*](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) data structure:
 
 - rows are *observations*
 - columns are *variables* (attributes)
@@ -330,9 +386,6 @@ We'll do this analysis in R markdown.
 - run code in *chunks*
 - write in text, LaTeX, html, outside of code chunks 
 - make websites, presentations, books 
-
-
-
 
 
 # Rmarkdown
@@ -391,7 +444,7 @@ output :
      toc_float: true
 ```
 
-We're almost ready to begin our analysis.
+Knit again. We're almost ready to begin our analysis.
 
 # Packages
 
@@ -403,16 +456,26 @@ Often someone has already written a script that does what you want to do.
 
 For example, we want to import the witch trials data. We will use a package that helps with data wrangling tasks like this, the [`tidyverse`](https://www.tidyverse.org/). 
 
-## Installing and loading packages
-
 We're going to use the metapackage `tidyverse` to help us with our data analysis. 
 
-The two important functions.
+## Functions
+
+We will use functions to intall and load the `tidyverse`.
 
 Functions in R take the form `function()`
 
+To learn more about a function, type `?function` into the Console, and the Help pane will display documentation. 
+
+### Your turn
+
+We want to install the package `tidyverse`.
+
+Take a look at the help documentation for the function `install.packages()`.
+
+## 
+
 ### For installation; i.e., first time only.
-`install.packages("arbitrarypkge")`
+`install.packages("arbitrarypkg")`
  
 ### For using.
 `library(arbitrarypkg)`
