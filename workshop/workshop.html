@@ -21,7 +21,7 @@
       // Slide settings
       settings: {
                 title: 'R-Curious',
-                        subtitle: 'An RLadies useR! 2018 workshop for new users of R',
+                        subtitle: 'An R-Ladies useR! 2018 workshop for new users of R',
                 useBuilds: true,
         usePrettify: true,
         enableSlideAreas: true,
@@ -31,7 +31,7 @@
       // Author information
       presenters: [
             {
-        name:  'This workshop is brought to you by RLadies: Steph, Sarah, Charles, Kim, another Sarah, Jenny, and Di' ,
+        name:  'This workshop is brought to you by R-Ladies: Steph, Sarah, Charles, Kim, another Sarah, Jenny, and Di' ,
         company: '',
         gplus: '',
         twitter: '',
@@ -100,19 +100,19 @@
 <slide class=""><hgroup><h2>Hi!</h2></hgroup><article  id="hi">
 
 <ul>
-<li><a href='https://rladies.org/' title=''>RLadies</a></li>
+<li><a href='https://rladies.org/' title=''>R-Ladies</a></li>
 <li><a href='https://user2018.r-project.org/' title=''>useR! 2018</a></li>
 </ul>
 
 <p>Follow us on twitter!</p>
 
-<p><a href='https://twitter.com/rladiessydney' title=''>RLadiesSydney</a></p>
+<p><a href='https://twitter.com/rladiessydney' title=''>R-LadiesSydney</a></p>
 
-<p><a href='https://twitter.com/RLadiesRemote' title=''>RLadiesRemote</a></p>
+<p><a href='https://twitter.com/RLadiesRemote' title=''>R-LadiesRemote</a></p>
 
-<p><a href='https://twitter.com/RLadiesAKL' title=''>RLadiesAKL</a></p>
+<p><a href='https://twitter.com/RLadiesAKL' title=''>R-LadiesAKL</a></p>
 
-<p><a href='https://twitter.com/RLadiesGlobal' title=''>RLadiesGlobal</a></p>
+<p><a href='https://twitter.com/RLadiesGlobal' title=''>R-LadiesGlobal</a></p>
 
 <p><a href='https://twitter.com/useR2018_conf' title=''>useR! 2018</a></p>
 
@@ -128,11 +128,13 @@
 <li>hardcore</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+<p>What about our other presenters?</p>
 
-<p>I am here to learn from you, too.</p>
+</article></slide><slide class=""><hgroup><h2>Here to learn together</h2></hgroup><article  id="here-to-learn-together">
 
-<p>The plan is to live code in these notes, enabling me to edit these notes live using the wonderful <a href='http://slides.yihui.name/xaringan/' title=''><code>xaringan::infinite_moon_reader</code></a> function, incorporating feedback.</p>
+<p>We are here to learn from you, too.</p>
+
+<p>The plan is to live code in these notes, enabling us to edit these notes live using the wonderful <a href='http://slides.yihui.name/xaringan/' title=''><code>xaringan::infinite_moon_reader</code></a> function, incorporating feedback.</p>
 
 </article></slide><slide class=""><hgroup><h2>Notes for this workshop</h2></hgroup><article  id="notes-for-this-workshop">
 
@@ -144,7 +146,9 @@
 
 <p>Indeed, there is <a href='http://cantabile.rbind.io/2018/06/17/a-coding-workshop-without-code/' title=''>little code</a> provided in these notes. But there are lots of functions. We will write the code together.</p>
 
-</article></slide><slide class=""><hgroup><h2>pseudo code</h2></hgroup><article  id="pseudo-code">
+</article></slide><slide class=""><hgroup><h2>Pseudo code</h2></hgroup><article  id="pseudo-code">
+
+<p>So that you have the experience of getting your hands dirty with code, we&#39;ll use pseudo code.</p>
 
 <pre >&lt;this is pseudo code&gt;
 
@@ -541,7 +545,39 @@ install.packages(&quot;&lt;you write code here&gt;&quot;)
      toc: true
      toc_float: true</pre>
 
-<p>Knit again. We&#39;re almost ready to begin our analysis.</p>
+<p>Knit again. (This takes a while.)</p>
+
+</article></slide><slide class=""><hgroup><h2>Slides and notes</h2></hgroup><article  id="slides-and-notes">
+
+<p>From now on, we&#39;ll refer to both the notes <em>and</em> the slides.</p>
+
+<p>Don&#39;t forget, if the information from a few slides ago, you can find it in your notes.</p>
+
+<h3>Your turn</h3>
+
+<p>Navigate in the Viewer pane using the <em>floating table of contentes</em> to the image of Hillary Clinton in the section called <strong>A fitting dataset</strong>.</p>
+
+<p>Navigate back to this section in your Editor pane by using the <strong>Document Outline</strong> provided by the button in the top right of the Editor.</p>
+
+</article></slide><slide class=""><hgroup><h2>Annotating these notes</h2></hgroup><article  id="annotating-these-notes">
+
+<p>From now on, you can take notes directly into the script file for these slides.</p>
+
+<p>Let&#39;s create a section at the top of the document called <strong>Useful tips</strong>.</p>
+
+<p>Create a heading directly above the section called <strong>Hi</strong>: it looks likes this at the top of the script file.</p>
+
+<pre >## Hi! </pre>
+
+<ul>
+<li>To create a heading use <code>#</code>. The more <code>###</code>, the smaller the heading.</li>
+</ul>
+
+<p>We can add bullet points with <code>-</code></p>
+
+<pre >- Euclid
+- Beanie
+</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Packages</h2></hgroup><article  id="packages">
 
@@ -559,7 +595,7 @@ install.packages(&quot;&lt;you write code here&gt;&quot;)
 
 <p>We will use functions to intall and load the <code>tidyverse</code>.</p>
 
-<p>Functions in R take the form <code>function()</code></p>
+<p>Functions in R take the form <code>&lt;function()&gt;</code></p>
 
 <p>To learn more about a function, type <code>?function</code> into the Console, and the Help pane will display documentation.</p>
 
@@ -573,11 +609,11 @@ install.packages(&quot;&lt;you write code here&gt;&quot;)
 
 <h3>For installation; i.e., first time only.</h3>
 
-<p><code>install.packages(&quot;arbitrarypkg&quot;)</code></p>
+<p><code>install.packages(&quot;&lt;name of package&gt;&quot;)</code></p>
 
 <h3>For using.</h3>
 
-<p><code>library(arbitrarypkg)</code></p>
+<p><code>library(&lt;name of package&gt;)</code></p>
 
 <p>We would like to install and use a package called &quot;tidyverse&quot;. Let&#39;s try.</p>
 
@@ -604,7 +640,7 @@ library(tidyverse)</pre>
 
 <p><strong>This function takes one argument, the url, which goes between the () as a &quot;character string&quot;.</strong></p>
 
-</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-1">
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-2">
 
 <p>The data is found here: &quot;<a href='https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv' title=''>https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv</a>&quot;</p>
 
@@ -708,14 +744,38 @@ witchdat &lt;- read_csv(url)</pre>
 
 <p>A recommendation on how to organize your R project from <a href='https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf' title=''>Good Enough Practices for Scientific Computing</a> as summarized by Software Carpentry</p>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>References</h2></hgroup><article  id="references">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Further reading</h2></hgroup><article  id="further-reading">
 
-</article></slide><slide class=""><hgroup><h2>References and further reading</h2></hgroup><article  id="references-and-further-reading">
+</article></slide><slide class=""><hgroup><h2>Further reading</h2></hgroup><article  id="further-reading-1">
 
 <ul>
 <li><a href='http://r4ds.had.co.nz/' title=''>R for Data Science</a></li>
 <li>The installation instructions are <a href='https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd' title=''>adapted</a> from a previous workshop.</li>
-</ul></article></slide>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>The rstats community is the best</h2></hgroup><article  id="the-rstats-community-is-the-best">
+
+<p>I thought you might be interested in a conversation I had while preparing this workshop. The <a href='https://community.rstudio.com/' title=''>rstats community</a> is your best resource.</p>
+
+<blockquote class="twitter-tweet" data-lang="en">
+
+<p lang="en" dir="ltr">
+
+How to teach R to students so they make enough autonomous cognitive links to take more away from the experience than simply successfully running the example? <a href="https://twitter.com/samclifford?ref_src=twsrc%5Etfw"><span class="cite">@samclifford</span></a> <a href="https://twitter.com/MilesMcBain?ref_src=twsrc%5Etfw"><span class="cite">@MilesMcBain</span></a> <a href="https://twitter.com/thejholloway?ref_src=twsrc%5Etfw"><span class="cite">@thejholloway</span></a> <a href="https://twitter.com/visnut?ref_src=twsrc%5Etfw"><span class="cite">@visnut</span></a> <a href="https://t.co/PlNt3M0xY3">https://t.co/PlNt3M0xY3</a>
+
+</p>
+
+— Charles T. Gray (<span class="cite">@cantabile</span>) <a href="https://twitter.com/cantabile/status/1008248732259790849?ref_src=twsrc%5Etfw">June 17, 2018</a>
+
+</blockquote>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Sidenote, I&#39;d recently seen Maelle Salmon speak about the benefits of blogging to engage with the community.</p>
+
+<p>This was the first time I tweeted about a blogpost; it is very reassuring to have people to bounce ideas off.</p>
+
+</article></slide><slide class=""><hgroup><h2>Thank you for getting your R-curious on with us!</h2></hgroup><article  id="thank-you-for-getting-your-r-curious-on-with-us"></article></slide>
 
 
   <slide class="backdrop"></slide>
