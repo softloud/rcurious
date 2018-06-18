@@ -3,11 +3,11 @@ title: "R-Curious"
 subtitle: "An RLadies useR! 2018 workshop for new users of R"
 author: "This workshop is brought to you by RLadies: Steph, Sarah, Charles, Kim, another Sarah, Jenny, and Di"
 output :
-  # ioslides_presentation
+   ioslides_presentation
 
-  html_document: # Toggle this and comment out ioslides_presentation.
-    toc: true
-    toc_float: true
+  # html_document: # Toggle this and comment out ioslides_presentation.
+  #   toc: true
+  #   toc_float: true
 
 ---
 
@@ -32,13 +32,32 @@ Follow us on twitter!
 
 [useR! 2018](https://twitter.com/useR2018_conf)
 
+## Difficulty setting
+
+Charles T. Gray plays on **normal** tidyverse difficulty setting.
+
+Gaming difficulty:
+
+- the pew-pew sound my gun makes startles me
+- normal
+- hardcore
+
+I am here to learn from you, too. 
+
 ## Stickynote signalling
 
-### yellow := all good
+### yellow 
 
-### pink := some assistance would be greatly appreciated  
+Yup, all good.
 
-![](https://memegenerator.net/img/instances/71995321.jpg)
+### pink 
+
+Some assistance would be greatly appreciated. 
+Also, I think I broke the internet. 
+
+<center>
+<img src="https://memegenerator.net/img/instances/71995321.jpg" style="width:50%">
+</center>
 
 
 # What is R?
@@ -67,15 +86,22 @@ A few images to explain why a dataset about witch trials might be appropriate fo
 
 ## Image search for "witch" + "michelle wolf"
 
-![](https://steemitimages.com/DQmRquBByC9rwriPGJgp3uHy4Hatg9gTQzDicgGiiX1uAzi/MichelleWolfWickedWitch_13.png)
+<center>
+<img src="https://steemitimages.com/DQmRquBByC9rwriPGJgp3uHy4Hatg9gTQzDicgGiiX1uAzi/MichelleWolfWickedWitch_13.png" style="width:60%">
+</center>
 
-## Image search for "witch" + "julia gillard"
+## Image search: "witch" + "julia gillard"
 
-![](https://static.ffx.io/images/$zoom_1%2C$multiply_0.512%2C$ratio_1.777778%2C$width_2000%2C$x_0%2C$y_23/t_crop_custom/t_sharpen%2Cq_auto%2Cf_auto/415251affe0440a502699c0723e8229e86270864)
+<center>
+<img src="https://static.ffx.io/images/$zoom_1%2C$multiply_0.512%2C$ratio_1.777778%2C$width_2000%2C$x_0%2C$y_23/t_crop_custom/t_sharpen%2Cq_auto%2Cf_auto/415251affe0440a502699c0723e8229e86270864" style="width:70%">
+</center>
+
 
 ## Image search for "witch" + "hillary clinton"
 
-![](http://wp.production.patheos.com/blogs/panmankey/files/2016/11/1-hillary-witch-2-768x432.jpg)
+<center>
+<img src="http://wp.production.patheos.com/blogs/panmankey/files/2016/11/1-hillary-witch-2-768x432.jpg" style="width:80%">
+</center>
 
 # Questions, questions that need answering
 
@@ -96,7 +122,7 @@ What would you like to know?
 ```
 
 <center>
-![](https://alloftheones.files.wordpress.com/2014/04/ezgif-save.gif)
+<img src="https://alloftheones.files.wordpress.com/2014/04/ezgif-save.gif" style="width:70%">
 </center>
 
 ## How to answer these questions?
@@ -178,7 +204,7 @@ Download the [**.deb**](https://www.rstudio.com/products/rstudio/download/#downl
 
 ```{r}
 # Check R version
-version
+# version
 ```
 
 > todo: finish this section
@@ -188,9 +214,12 @@ version
 Update R and R packages from this [blogpost](https://www.r-statistics.com/2013/03/updating-r-from-r-on-windows-using-the-installr-package/) for Windows ??
 
 ```{r}
+# I'm wondering if it will not make much difference if they just reinstall it. 
+
+
 # installing/loading the package:
-if(!require(installr)) {
-install.packages("installr"); require(installr)} #load / install+load installr
+# if(!require(installr)) {
+# install.packages("installr"); require(installr)} #load / install+load installr
  
 # using the package:
 # updateR() # this will start the updating process of your R installation.  It will check for newer versions, and if one is available, will guide you through the decisions you'd need to make.
@@ -199,45 +228,33 @@ install.packages("installr"); require(installr)} #load / install+load installr
 
 ## Why RStudio?
 
-Working in an RStudio project has many benefits.
+Working in an RStudio [project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) has **many** benefits.
 
 - Free, open source software R in an IDE
 - Reproducible workflows
 
-## Getting started in RStudio
+# Getting started in RStudio
 
-*R-Ladies presenters gesticulate wildly at RStudio*
+## Create a project
 
-Particularly useful panes: 
-
-- Help
-- Console
-- Environment
-- Editor
-- Viewer
-
-### Cheat sheet
-
-**Help-Cheatsheets-RStudio IDE Cheatsheet** 
-
-RStudio [projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) 
-> make it straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and source documents.
-
-A recommendation on how to organize your R project from [Good Enough Practices for Scientific Computing](https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf) as summarized by Software Carpentry 
-
-- Put each project in its own directory, which is named after the project.
-- Put text documents associated with the project in the doc directory.
-- Put raw data and metadata in the data directory, and files generated during cleanup and analysis in a results directory.
-- Put source for the project’s scripts and programs in the src directory, and programs brought in from elsewhere or compiled locally in the bin directory.
-- Name all files to reflect their content or function.
-
-## Your turn!
-
-Now create an R Project which divides your work in 
 - Open RStudio and create a project via **File-New Project**
 - Select **New Directory** and choose **New Project**
 - Name your project **rcurious**
 - Save the project directory wherever suits you
+
+
+## Argh, so many windows
+
+*R-Ladies presenters gesticulate wildly at RStudio*
+
+Let's start with a couple useful panes.
+
+- Console
+- Environment
+
+### Cheat sheet
+
+**Help-Cheatsheets-RStudio IDE Cheatsheet** 
 
 # How to run code?!
 
@@ -247,14 +264,104 @@ The console is where you can execute single-line R commands.
 
 The console is located, by default, in the lower left pane. 
 
-Try `3 + 2` and run using **ctrl-enter** or the play button:
+Try `3 + 2` and press **enter**:
 
 ```{r}
-# Annotate with comments using the #. If you precede anything with this sign, R will ignore it.
-3 + 2
+# Type 3 + 2 here. Here's hoping infinite moon reader works. 
+
 ```
 
-We can annotate a script with comments using the #. If you precede anything with this sign, R will ignore it.
+## Environment
+
+I can store the number 5 in an *object* `x`.
+
+To assign a value we use an arrow `<-`.
+
+```{}
+x <- 5
+```
+
+What happens when you type `x` into the Console after assigning the value 5 to it?
+
+What do you see in the Environment pane?
+
+***
+
+If I assign the value 5 to the *object* `x`, and call it in the console, it returns the value assigned.
+
+```{r}
+# Assign 5 to x and call x.
+```
+
+There are many complex data types in R.
+
+## Data structures in R
+
+Data *objects* can be made of
+
+- numbers
+- characters
+- logical 
+- list
+
+Or tables of combinations of the above.
+
+***
+
+The witch trials dataset is a table.
+
+It is a *tidy* data structure:
+
+- rows are *observations*
+- columns are *variables* (attributes)
+
+## Editor
+
+We'll do this analysis in R markdown.
+
+- run code in *chunks*
+- write in text, LaTeX, html, outside of code chunks 
+- make websites, presentations, books 
+
+
+
+
+
+# Rmarkdown
+
+## Opening an .Rmd
+
+Open **File-New File-R Markdown** 
+
+Follow the prompts to install the required *packages*.  
+
+Give your document a title and press **ok**.
+
+This will open an *Untitled2* template. 
+
+Save your document - note, you have given your document a title, not saved it!
+
+Press the wheel next to the **knit** icon at the top of the Editor pane and select Viewer.
+
+Now we will *knit* our document.
+
+## Get these notes
+
+Look up `softloud rcurious workshop.Rmd`
+
+You want to navigate to: https://github.com/softloud/rcurious
+
+Click on the *explore*
+
+# Importing data
+
+## Data types
+
+- todo extrapolate
+
+To open a code chunk in your **.Rmd**: **control+alt+i**
+
+To knit to .html in the Viewer pane: save and **control+shift+k** 
 
 ## Installing packages
 
@@ -272,69 +379,8 @@ We're going to use the metapackage `tidyverse` available from CRAN to help us wi
 ### For loading every time we start a new R session. Typically this is at the top of the script.
 `library(arbitrarypkg)`
 
-I can store the number 5 in an *object* `x`.
-
-To assign a value we use an arrow `<-`.
-
-```{}
-x <- 5
-```
-
-What happens when you type `x` into the Console after assigning the value 5 to it?
-
-What do you see in the Environment pane?
-
-(**control + 8** to switch focus to Environment pane.) 
-
-***
-
-```{r}
-x <- 5
-x
-```
 
 <<<<<<< HEAD
-## Data structures in R
-
-Data *objects* can be vectors of:
-- numbers
-- characters
-- logical 
-
-Or tables of data.
-
-Today we will work with a *tidy* data structure. 
-
-The documentation for the R package `tidyverse::` is available [here](http://tidyverse.tidyverse.org/) and [github](https://github.com/tidyverse/tidyverse)
-
-
-## Source
-
-We'll do this analysis in R markdown.
-
-- run code in *chunks*
-- write in text, LaTeX, html, outside of code chunks 
-- make websites, presentations, 
-
-# Rmarkdown
-
-## Intro to .Rmd
-
-Open **File-New File-R Markdown** 
-
-This will open an *Untitled1.Rmd* template. 
-
-# Importing data
-
-## Data types
-
-- todo extrapolate
-
-To open a code chunk in your **.Rmd**: **control+alt+i**
-
-To knit to .html in the Viewer pane: save and **control+shift+k** 
-
-
 
 ## Installing packages
 
@@ -416,8 +462,21 @@ At some point you'll need to use the command line.
 To break ourselves in, let's check what version of R we are running. 
 
 ```{zsh }
-R --version
+# R --version
 ```
+
+## Working in projects
+
+- Put each project in its own directory, which is named after the project.
+- Put text documents associated with the project in the doc directory.
+- Put raw data and metadata in the data directory, and files generated during cleanup and analysis in a results directory.
+- Put source for the project’s scripts and programs in the src directory, and programs brought in from elsewhere or compiled locally in the bin directory.
+- Name all files to reflect their content or function.
+
+***
+
+A recommendation on how to organize your R project from [Good Enough Practices for Scientific Computing](https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf) as summarized by Software Carpentry 
+
 
 
 # References
