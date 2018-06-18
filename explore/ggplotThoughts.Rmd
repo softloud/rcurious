@@ -1,0 +1,83 @@
+---
+title: "ggplot2"
+author: "Sarah Romanes"
+date: "18 June 2018"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(tidyverse)
+# Download data from the authors' repo.
+url <- "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv"
+
+# Use the base read.csv function to download the raw data to a dataframe called db
+db <- read.csv(url)
+head(db)
+```
+
+What questions can we ask from this dataset?
+
+A few that come to my mind:
+
+* What source provided the most data to this study?
+* Is there a relationship between the number of tried/deaths? Did all trials result in deaths?
+* Is there a peak decade in which the trials occured? When did it start to ramp down?
+* Were some countries more prollific in their trials than others?
+
+
+# Simple Bar plot (1 qualitative variable)
+```{r}
+p <- ggplot(db, aes(x=record.source))
+p <- p + geom_bar()
+p
+```
+
+As we can see, the text is super squished on the x axis! We can use `element_text` to fix this.
+
+```{r}
+p <- p + theme(axis.text.x = element_text(angle=90, hjust = 1))
+p
+```
+
+
+# Histogram (1 quantitative variable)
+
+```{r}
+p1 <- ggplot(db, aes(x=decade))
+p1 <- p1 +geom_histogram()
+p1
+```
+
+
+We can spice it up by adding an aesthetic (qualitative variable)
+
+```{r}
+p1 <- p1 +geom_histogram(aes(fill=gadm.adm0))
+p1
+```
+
+# Simple Scatterplot [2 quant]
+
+```{r}
+p2 <- ggplot(db, aes(x=tried, y=deaths))
+p2 <- p2+geom_point()
+p2
+```
+
+
+# Boxplot [1 quant, divided by 1 qual]
+
+```{r}
+p3 <- ggplot(db, aes(x=gadm.adm0, y=deaths))
+p3 <- p3+geom_boxplot() + theme(axis.text.x = element_text(angle=90, hjust = 1))
+p3
+```
+
+# Boxplot [1 quant, divided by 1 qual] with scaled y axis
+
+```{r}
+p3 + scale_y_log10()
+```
+
