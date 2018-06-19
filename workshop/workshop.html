@@ -195,7 +195,9 @@ install.packages(&quot;&lt;you write code here&gt;&quot;)
 
 <h3>pink (the ragequit option)</h3>
 
-<p>Some assistance would be greatly appreciated. Also, I think I broke the internet.</p>
+<p>Some assistance would be greatly appreciated.</p>
+
+<p>Also, I think I broke the internet.</p>
 
 <center>
 
@@ -256,6 +258,16 @@ install.packages(&quot;&lt;you write code here&gt;&quot;)
 <img src="http://wp.production.patheos.com/blogs/panmankey/files/2016/11/1-hillary-witch-2-768x432.jpg" style="width:80%">
 
 </center>
+
+</article></slide><slide class=""><hgroup><h2>A fitting dataset</h2></hgroup><article  id="a-fitting-dataset-2">
+
+<blockquote>
+<p>todo discuss witchtrials dataset here - but not too much information</p>
+</blockquote>
+
+<blockquote>
+<p>Perhaps Steph would like to write something here - perhaps just adapt a bit from her analysis.</p>
+</blockquote>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Questions, questions that need answering</h2></hgroup><article  id="questions-questions-that-need-answering">
 
@@ -344,43 +356,6 @@ install.packages(&quot;&lt;you write code here&gt;&quot;)
 <p>Click the green button to download <strong>RStudio Desktop Open Source License</strong> and select appropriate installer for your operating system.</p>
 
 <p>Double click the installer and follow the prompts to set up RStudio.</p>
-
-</article></slide><slide class=""><hgroup><h2>Linux</h2></hgroup><article  id="linux">
-
-<p>To install R:</p>
-
-<p><code>sudo apt-get update</code> to update first</p>
-
-<p>then</p>
-
-<p><code>sudo apt-get install r-base</code> to install R</p>
-
-<p>On most distributions:</p>
-
-<p>Download the <a href='https://www.rstudio.com/products/rstudio/download/#download' title=''><strong>.deb</strong></a> file and double click to open the package installer.</p>
-
-</article></slide><slide class=""><hgroup><h2>Updating R and RStudio</h2></hgroup><article  id="updating-r-and-rstudio">
-
-<pre class = 'prettyprint lang-r'># Check R version
-# version</pre>
-
-<blockquote>
-<p>todo: finish this section</p>
-</blockquote>
-
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section">
-
-<p>Update R and R packages from this <a href='https://www.r-statistics.com/2013/03/updating-r-from-r-on-windows-using-the-installr-package/' title=''>blogpost</a> for Windows ??</p>
-
-<pre class = 'prettyprint lang-r'># I&#39;m wondering if it will not make much difference if they just reinstall it. 
-
-
-# installing/loading the package:
-# if(!require(installr)) {
-# install.packages(&quot;installr&quot;); require(installr)} #load / install+load installr
- 
-# using the package:
-# updateR() # this will start the updating process of your R installation.  It will check for newer versions, and if one is available, will guide you through the decisions you&#39;d need to make.</pre>
 
 </article></slide><slide class=""><hgroup><h2>Why RStudio?</h2></hgroup><article  id="why-rstudio">
 
@@ -537,6 +512,8 @@ install.packages(&quot;&lt;you write code here&gt;&quot;)
 
 <p>We are going to modify the YAML at the top of the document so that you can see how to toggle a presentation into notes.</p>
 
+<p>Press the little document outline button in the top right corner of the Editor pane, then you can jump to the top easier.</p>
+
 <p>Change the output settings at the top of this document to:</p>
 
 <pre >output :
@@ -551,7 +528,9 @@ install.packages(&quot;&lt;you write code here&gt;&quot;)
 
 <p>From now on, we&#39;ll refer to both the notes <em>and</em> the slides.</p>
 
-<p>Don&#39;t forget, if the information from a few slides ago, you can find it in your notes.</p>
+<p>Your notes are made from the same code as the slides we&#39;re looking at.</p>
+
+<p><strong>If you want information from a few slides ago, you can find it in your notes.</strong></p>
 
 <h3>Your turn</h3>
 
@@ -561,11 +540,13 @@ install.packages(&quot;&lt;you write code here&gt;&quot;)
 
 </article></slide><slide class=""><hgroup><h2>Annotating these notes</h2></hgroup><article  id="annotating-these-notes">
 
-<p>From now on, you can take notes directly into the script file for these slides.</p>
+<p>Now you can take notes directly into the script file for these slides.</p>
 
 <p>Let&#39;s create a section at the top of the document called <strong>Useful tips</strong>.</p>
 
-<p>Create a heading directly above the section called <strong>Hi</strong>: it looks likes this at the top of the script file.</p>
+<p>We&#39;ll create a heading directly above the section called <strong>Hi</strong>. (Use your Document Outline to navigate there.)</p>
+
+<p>It looks likes this at the top of the script file.</p>
 
 <pre >## Hi! </pre>
 
@@ -573,11 +554,36 @@ install.packages(&quot;&lt;you write code here&gt;&quot;)
 <li>To create a heading use <code>#</code>. The more <code>###</code>, the smaller the heading.</li>
 </ul>
 
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
 <p>We can add bullet points with <code>-</code></p>
 
 <pre >- Euclid
 - Beanie
 </pre>
+
+<p>It renders in your output like this:</p>
+
+<ul>
+<li>Euclid</li>
+<li>Beanie</li>
+</ul>
+
+<h3>Cheatsheet</h3>
+
+<p>There are two cheatsheets on RMarkdown in <strong>Help-Cheatsheets</strong>.</p>
+
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-1">
+
+<p>Ask around for a &quot;what I wish I&#39;d known&quot; story about R or investigate a cheatsheet.</p>
+
+<p>Find a tip that sounds useful to you and add it to your notes in your <strong>Useful tips</strong> section as a bullet point.</p>
+
+<p>Knit your document and bask in the pretty!</p>
+
+<h3>Knitting taking too long?</h3>
+
+<p>Try deleting the images. You can always download a fresh copy of the notes if you want to get them back.</p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Packages</h2></hgroup><article  id="packages">
 
@@ -593,19 +599,23 @@ install.packages(&quot;&lt;you write code here&gt;&quot;)
 
 </article></slide><slide class=""><hgroup><h2>Functions</h2></hgroup><article  id="functions">
 
+<p>The most common element of packages are functions. R also comes preloaded with a <em>base</em> of functions commonly used.</p>
+
+<p>Functions run other people&#39;s code for us, so that we don&#39;t have to reinvent the wheel.</p>
+
 <p>We will use functions to intall and load the <code>tidyverse</code>.</p>
+
+<h3>How to spot a function</h3>
 
 <p>Functions in R take the form <code>&lt;function()&gt;</code></p>
 
 <p>To learn more about a function, type <code>?function</code> into the Console, and the Help pane will display documentation.</p>
 
-<h3>Your turn</h3>
+</article></slide><slide class=""><hgroup><h2>Installing packages</h2></hgroup><article  id="installing-packages">
 
 <p>We want to install the package <code>tidyverse</code>.</p>
 
 <p>Take a look at the help documentation for the function <code>install.packages()</code>.</p>
-
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-1">
 
 <h3>For installation; i.e., first time only.</h3>
 
@@ -615,7 +625,15 @@ install.packages(&quot;&lt;you write code here&gt;&quot;)
 
 <p><code>library(&lt;name of package&gt;)</code></p>
 
-<p>We would like to install and use a package called &quot;tidyverse&quot;. Let&#39;s try.</p>
+<h3>Pseudo code</h3>
+
+<p>A friendly reminder that <code>&lt;&gt;</code> indicates pseudo code. You can navigate back to that section in your notes in your Viewer.</p>
+
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-2">
+
+<p>We would like to install and use a package called &quot;tidyverse&quot;.</p>
+
+<p>Let&#39;s try.</p>
 
 </article></slide><slide class=""><hgroup><h2>Let&#39;s load the tidyverse</h2></hgroup><article  id="lets-load-the-tidyverse">
 
@@ -640,7 +658,11 @@ library(tidyverse)</pre>
 
 <p><strong>This function takes one argument, the url, which goes between the () as a &quot;character string&quot;.</strong></p>
 
-</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-2">
+<p>There are many types file types, which often need special care.</p>
+
+<p><em>Presenters discuss different file types and old battle stories of importing data.</em></p>
+
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-3">
 
 <p>The data is found here: &quot;<a href='https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv' title=''>https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv</a>&quot;</p>
 
@@ -661,74 +683,57 @@ library(tidyverse)</pre>
 
 <p>Click on it!</p>
 
-</article></slide><slide class=""><hgroup><h2>Data wrangling</h2></hgroup><article  id="data-wrangling">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Data wrangling</h2></hgroup><article  id="data-wrangling">
 
-<p>This workshop is based on Steph de Silva&#39;s wonderful</p>
+</article></slide><slide class=""><hgroup><h2>The fine art of wrangling</h2></hgroup><article  id="the-fine-art-of-wrangling">
 
-</article></slide><slide class=""><hgroup><h2>Installing packages</h2></hgroup><article  id="installing-packages">
+<center>
 
-<p>In R, the fundamental unit of shareable code is an <a href='http://r-pkgs.had.co.nz/intro.html' title=''>R package</a>.</p>
+<img src="http://p.migdal.pl/imgs/2016-03-15-dark-side-of-science-meme.jpg" style="width:80%">
 
-<p>R packages are available from <a href='https://cran.r-project.org/' title=''>The Comprehensive R Archive Network(CRAN)</a> or github.</p>
+</center>
 
-<p>We&#39;re going to use the metapackage <code>tidyverse</code> available from CRAN to help us with our data analysis.</p>
+</article></slide><slide class=""><hgroup><h2>Data wrangling</h2></hgroup><article  id="data-wrangling-1">
 
-</article></slide><slide class=""><hgroup><h2>Import example: url</h2></hgroup><article  id="import-example-url">
+<p>This workshop is based on Steph de Silva&#39;s wonderful <a href='http://rex-analytics.com/witch-hunting-europe-discovery-missingness/' title=''>analysis</a> <em>Witch Hunting in Europe: A discovery of missingness</em>.</p>
 
-<pre ># Store a string in an object.
-url &lt;- &lt;character string&gt;
-
-# Read data using a tidyverse function. 
-db &lt;- read_csv(url)
-# We can also write this function with the package name, ie the read_csv function from the readr package
-db &lt;- readr::read_csv(url)
-</pre>
-
-</article></slide><slide class=""><hgroup><h2>Import data example</h2></hgroup><article  id="import-data-example">
-
-<p>[suggest taking this out as it is covered into rcurious-witcg-trials.csv]</p>
-
-<p><strong>Data Source</strong></p>
-
-<p>The github link in this import example is <a href='https://github.com/JakeRuss/witch-trials' title=''>https://github.com/JakeRuss/witch-trials</a>, first take a look at the link. Click on the data folder then trials.csv. In order to import the data we need a <strong>direct</strong> link to the data. You can find this with the button in github RAW. This is the url we want to use.</p>
-
-<p>We will use a function called <strong>read_csv</strong> to load the data into a variable called <strong>witchdat</strong></p>
-
-<pre class = 'prettyprint lang-r'>url &lt;- &quot;https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv&quot;
-
-witchdat &lt;- read_csv(url)</pre>
-
-<pre >## Parsed with column specification:
-## cols(
-##   year = col_integer(),
-##   decade = col_integer(),
-##   century = col_integer(),
-##   tried = col_integer(),
-##   deaths = col_integer(),
-##   city = col_character(),
-##   gadm.adm2 = col_character(),
-##   gadm.adm1 = col_character(),
-##   gadm.adm0 = col_character(),
-##   lon = col_double(),
-##   lat = col_double(),
-##   record.source = col_character()
-## )</pre>
-
-<p>This data has been loaded into witchdat in R, take a look at the environment window.</p>
+<p>One of the first things that Steph does is change the name of a column to something more human-interpretable.</p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Exploratory data analysis</h2></hgroup><article  id="exploratory-data-analysis">
 
-</article></slide><slide class=""><hgroup><h2>The command line</h2></hgroup><article  id="the-command-line">
+</article></slide><slide class=""><hgroup><h2>Summary</h2></hgroup><article  id="summary">
 
-<blockquote>
-<p>todo: move this slide somewhere else, perhaps - sticking it here for now.</p>
-</blockquote>
+<p>Lots of objects in R <code>&lt;an R object&gt;</code> are friendly to the <code>summary(&lt;an R object&gt;)</code> function.</p>
 
-<p>At some point you&#39;ll need to use the command line.</p>
+<h3>Your turn</h3>
 
-<p>To break ourselves in, let&#39;s check what version of R we are running.</p>
+<p>What&#39;s is the output of <code>summary</code> for <code>witchdat</code>?</p>
 
-<pre class = 'prettyprint lang-zsh'># R --version</pre>
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<h3>An alternative to <code>summary</code></h3>
+
+<p>An alternative is the <code>skim()</code> function from from the <code>skimr</code> package.</p>
+
+<h3>Your turn</h3>
+
+<ul>
+<li>install the <code>skimr</code> package</li>
+<li>Open a code chunk here and load the <code>skimr</code> package in your notes</li>
+<li>apply the <code>skim</code>function to the <code>witchdat</code> data</li>
+</ul>
+
+<p>What is the difference between the output of <code>summary</code> and <code>skim</code>? Which do you like better and why?</p>
+
+<p><em>Group discussion</em></p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Visualisation</h2></hgroup><article  id="visualisation">
+
+</article></slide><slide class=""><hgroup><h2>The structure of a ggplot</h2></hgroup><article  id="the-structure-of-a-ggplot">
+
+<p>The tidy way of plotting data is with the <code>ggplot2</code> package, which comes with the <code>tidyverse</code>.</p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Workflow</h2></hgroup><article  id="workflow">
 
 </article></slide><slide class=""><hgroup><h2>Working in projects</h2></hgroup><article  id="working-in-projects">
 
@@ -775,7 +780,13 @@ How to teach R to students so they make enough autonomous cognitive links to tak
 
 <p>This was the first time I tweeted about a blogpost; it is very reassuring to have people to bounce ideas off.</p>
 
-</article></slide><slide class=""><hgroup><h2>Thank you for getting your R-curious on with us!</h2></hgroup><article  id="thank-you-for-getting-your-r-curious-on-with-us"></article></slide>
+</article></slide><slide class=""><hgroup><h2>Thank you for getting your R-curious on with us!</h2></hgroup><article  id="thank-you-for-getting-your-r-curious-on-with-us">
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Draft notes</h2></hgroup><article  id="draft-notes">
+
+</article></slide><slide class=""><hgroup><h2>Installing packages</h2></hgroup><article  id="installing-packages-1">
+
+<p>In R, the fundamental unit of shareable code is an <a href='http://r-pkgs.had.co.nz/intro.html' title=''>R package</a>.</p></article></slide>
 
 
   <slide class="backdrop"></slide>

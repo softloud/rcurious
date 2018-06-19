@@ -107,6 +107,7 @@ Yup, all good.
 ### pink (the ragequit option)
 
 Some assistance would be greatly appreciated. 
+
 Also, I think I broke the internet. 
 
 <center>
@@ -162,6 +163,12 @@ A few images to explain why a dataset about witch trials might be appropriate fo
 <center>
 <img src="http://wp.production.patheos.com/blogs/panmankey/files/2016/11/1-hillary-witch-2-768x432.jpg" style="width:80%">
 </center>
+
+## A fitting dataset
+
+> todo discuss witchtrials dataset here - but not too much information
+
+> Perhaps Steph would like to write something here - perhaps just adapt a bit from her analysis.
 
 # Questions, questions that need answering
 
@@ -245,46 +252,6 @@ Choose **RStudio** and scroll down to the blue **Download RStudio Desktop** butt
 Click the green button to download **RStudio Desktop Open Source License** and select appropriate installer for your operating system.
 
 Double click the installer and follow the prompts to set up RStudio. 
-
-## Linux
-
-To install R:
-
-`sudo apt-get update` to update first
-
-then
-
-`sudo apt-get install r-base` to install R
-
-On most distributions:
-
-Download the [**.deb**](https://www.rstudio.com/products/rstudio/download/#download) file and double click to open the package installer.   
-
-## Updating R and RStudio
-
-```{r}
-# Check R version
-# version
-```
-
-> todo: finish this section
-
-## 
-
-Update R and R packages from this [blogpost](https://www.r-statistics.com/2013/03/updating-r-from-r-on-windows-using-the-installr-package/) for Windows ??
-
-```{r}
-# I'm wondering if it will not make much difference if they just reinstall it. 
-
-
-# installing/loading the package:
-# if(!require(installr)) {
-# install.packages("installr"); require(installr)} #load / install+load installr
- 
-# using the package:
-# updateR() # this will start the updating process of your R installation.  It will check for newer versions, and if one is available, will guide you through the decisions you'd need to make.
-```
-
 
 ## Why RStudio?
 
@@ -441,6 +408,8 @@ But it is annoying having a pop out window, so let's view these notes in the Vie
 
 We are going to modify the YAML at the top of the document so that you can see how to toggle a presentation into notes. 
 
+Press the little document outline button in the top right corner of the Editor pane, then you can jump to the top easier.
+
 Change the output settings at the top of this document to:
 
 ```
@@ -457,7 +426,9 @@ Knit again. (This takes a while.)
 
 From now on, we'll refer to both the notes *and* the slides.
 
-Don't forget, if the information from a few slides ago, you can find it in your notes. 
+Your notes are made from the same code as the slides we're looking at.
+
+**If you want information from a few slides ago, you can find it in your notes.** 
 
 ### Your turn
 
@@ -467,16 +438,20 @@ Navigate back to this section in your Editor pane by using the **Document Outlin
 
 ## Annotating these notes
 
-From now on, you can take notes directly into the script file for these slides. 
+Now you can take notes directly into the script file for these slides. 
 
 Let's create a section at the top of the document called **Useful tips**.
 
-Create a heading directly above the section called **Hi**: it looks likes this at the top of the script file.
+We'll create a heading directly above the section called **Hi**. (Use your Document Outline to navigate there.)
+
+It looks likes this at the top of the script file.
 ```
 ## Hi! 
 ```
 
 - To create a heading use `#`. The more `###`, the smaller the heading.
+
+***
 
 We can add bullet points with  `-`
 
@@ -485,6 +460,29 @@ We can add bullet points with  `-`
 - Beanie
 
 ```
+
+It renders in your output like this:
+
+- Euclid
+- Beanie
+
+
+### Cheatsheet
+
+There are two cheatsheets on RMarkdown in **Help-Cheatsheets**. 
+
+## Your turn
+
+Ask around for a "what I wish I'd known" story about R or investigate a cheatsheet.
+
+Find a tip that sounds useful to you and add it to your notes in your **Useful tips** section as a bullet point.
+
+Knit your document and bask in the pretty!
+
+### Knitting taking too long?
+
+Try deleting the images. You can always download a fresh copy of the notes if you want to get them back.
+
 
 # Packages
 
@@ -500,19 +498,23 @@ We're going to use the metapackage `tidyverse` to help us with our data analysis
 
 ## Functions
 
+The most common element of packages are functions. R also comes preloaded with a *base* of functions commonly used. 
+
+Functions run other people's code for us, so that we don't have to reinvent the wheel. 
+
 We will use functions to intall and load the `tidyverse`.
+
+### How to spot a function
 
 Functions in R take the form `<function()>`
 
 To learn more about a function, type `?function` into the Console, and the Help pane will display documentation. 
 
-### Your turn
+## Installing packages
 
 We want to install the package `tidyverse`.
 
 Take a look at the help documentation for the function `install.packages()`.
-
-## 
 
 ### For installation; i.e., first time only.
 `install.packages("<name of package>")`
@@ -520,7 +522,15 @@ Take a look at the help documentation for the function `install.packages()`.
 ### For using.
 `library(<name of package>)`
 
-We would like to install and use a package called "tidyverse". Let's try.
+### Pseudo code
+
+A friendly reminder that `<>` indicates pseudo code. You can navigate back to that section in your notes in your Viewer. 
+
+## Your turn
+
+We would like to install and use a package called "tidyverse". 
+
+Let's try. 
 
 ## Let's load the tidyverse 
 
@@ -540,8 +550,6 @@ library(tidyverse)
 
 # Importing data
 
-
-
 ## Import the witch trials data
 
 Since the data is stored on an online repository, we can import it via url. 
@@ -549,6 +557,10 @@ Since the data is stored on an online repository, we can import it via url.
 We can import this data using the `read_csv()` function from the `tidyverse`. 
 
 **This function takes one argument, the url, which goes between the () as a "character string".**   
+
+There are many types file types, which often need special care. 
+
+*Presenters discuss different file types and old battle stories of importing data.*
 
 ## Your turn
 
@@ -569,65 +581,58 @@ What do you see in your Environment?
 
 Click on it!
 
+# Data wrangling
+
+## The fine art of wrangling
+
+<center>
+<img src="http://p.migdal.pl/imgs/2016-03-15-dark-side-of-science-meme.jpg" style="width:80%">
+</center>
+
 ## Data wrangling
 
-This workshop is based on Steph de Silva's wonderful 
+This workshop is based on Steph de Silva's wonderful [analysis](http://rex-analytics.com/witch-hunting-europe-discovery-missingness/) *Witch Hunting in Europe: A discovery of missingness*.
 
+One of the first things that Steph does is change the name of a column to something more human-interpretable.
 
-## Installing packages
-
-In R, the fundamental unit of shareable code is an [R package](http://r-pkgs.had.co.nz/intro.html). 
-
-R packages are available from [The Comprehensive R Archive Network(CRAN)](https://cran.r-project.org/) or github.
-
-We're going to use the metapackage `tidyverse` available from CRAN to help us with our data analysis. 
-
-
-## Import example: url
-
-```{}
-# Store a string in an object.
-url <- <character string>
-
-# Read data using a tidyverse function. 
-db <- read_csv(url)
-# We can also write this function with the package name, ie the read_csv function from the readr package
-db <- readr::read_csv(url)
-
-```
-
-
-## Import data example 
-[suggest taking this out as it is covered into rcurious-witcg-trials.csv]
-
-**Data Source**
-
-The github link in this import example is https://github.com/JakeRuss/witch-trials, first take a look at the link. Click on the data folder then trials.csv. In order to import the data we need a **direct** link to the data. You can find this with the button in github RAW. This is the url we want to use.
-
-We will use a function called **read_csv** to load the data into a variable called **witchdat**
-
-
-```{r import data}
-url <- "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv"
-
-witchdat <- read_csv(url)
-```
-
-This data has been loaded into witchdat in R, take a look at the environment window.
 
 # Exploratory data analysis
 
-## The command line 
+## Summary
 
-> todo: move this slide somewhere else, perhaps - sticking it here for now.
+Lots of objects in R `<an R object>` are friendly to the `summary(<an R object>)` function. 
 
-At some point you'll need to use the command line.
+### Your turn
 
-To break ourselves in, let's check what version of R we are running. 
+What's is the output of `summary` for `witchdat`?
 
-```{zsh }
-# R --version
-```
+***
+
+### An alternative to `summary`
+
+An alternative is the `skim()` function from from the `skimr` package.
+
+### Your turn
+
+- install the `skimr` package
+- Open a code chunk here and load the `skimr` package in your notes
+- apply the `skim`function to the `witchdat` data
+
+What is the difference between the output of `summary` and `skim`? Which do you like better and why?
+
+*Group discussion*
+
+# Visualisation
+
+## The structure of a ggplot
+
+The tidy way of plotting data is with the `ggplot2` package, which comes with the `tidyverse`.
+
+
+
+
+
+# Workflow
 
 ## Working in projects
 
@@ -662,4 +667,17 @@ Sidenote, I'd recently seen Maelle Salmon speak about the benefits of blogging t
 This was the first time I tweeted about a blogpost; it is very reassuring to have people to bounce ideas off.
 
 ## Thank you for getting your R-curious on with us!
+
+# Draft notes
+
+
+## Installing packages
+
+In R, the fundamental unit of shareable code is an [R package](http://r-pkgs.had.co.nz/intro.html). 
+
+
+
+
+
+
 
