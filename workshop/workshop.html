@@ -683,25 +683,19 @@ library(tidyverse)</pre>
 
 <p>Click on it!</p>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Data wrangling</h2></hgroup><article  id="data-wrangling">
-
-</article></slide><slide class=""><hgroup><h2>The fine art of wrangling</h2></hgroup><article  id="the-fine-art-of-wrangling">
-
-<center>
-
-<img src="http://p.migdal.pl/imgs/2016-03-15-dark-side-of-science-meme.jpg" style="width:80%">
-
-</center>
-
-</article></slide><slide class=""><hgroup><h2>Data wrangling</h2></hgroup><article  id="data-wrangling-1">
-
-<p>This workshop is based on Steph de Silva&#39;s wonderful <a href='http://rex-analytics.com/witch-hunting-europe-discovery-missingness/' title=''>analysis</a> <em>Witch Hunting in Europe: A discovery of missingness</em>.</p>
-
-<p>One of the first things that Steph does is change the name of a column to something more human-interpretable.</p>
-
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Exploratory data analysis</h2></hgroup><article  id="exploratory-data-analysis">
 
-</article></slide><slide class=""><hgroup><h2>Summary</h2></hgroup><article  id="summary">
+</article></slide><slide class=""><hgroup><h2>Exploratory data analysis</h2></hgroup><article  id="exploratory-data-analysis-1">
+
+<p>Let&#39;s explore the information in this table.</p>
+
+<ul>
+<li>summary</li>
+<li>wrangling and cleaning</li>
+<li>visualisation</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Summary functions</h2></hgroup><article  id="summary-functions">
 
 <p>Lots of objects in R <code>&lt;an R object&gt;</code> are friendly to the <code>summary(&lt;an R object&gt;)</code> function.</p>
 
@@ -720,12 +714,40 @@ library(tidyverse)</pre>
 <ul>
 <li>install the <code>skimr</code> package</li>
 <li>Open a code chunk here and load the <code>skimr</code> package in your notes</li>
-<li>apply the <code>skim</code>function to the <code>witchdat</code> data</li>
+<li>apply the <code>skim</code> function to the <code>witchdat</code> data</li>
 </ul>
 
 <p>What is the difference between the output of <code>summary</code> and <code>skim</code>? Which do you like better and why?</p>
 
-<p><em>Group discussion</em></p>
+</article></slide><slide class=""><hgroup><h2>Group discussion</h2></hgroup><article  id="group-discussion">
+
+<p><em>Based on this new information, what questions do we add or update?</em></p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Data wrangling</h2></hgroup><article  id="data-wrangling">
+
+</article></slide><slide class=""><hgroup><h2>The fine art of wrangling</h2></hgroup><article  id="the-fine-art-of-wrangling">
+
+<center>
+
+<img src="http://p.migdal.pl/imgs/2016-03-15-dark-side-of-science-meme.jpg" style="width:80%">
+
+</center>
+
+</article></slide><slide class=""><hgroup><h2>Change the name of a variable</h2></hgroup><article  id="change-the-name-of-a-variable">
+
+<p>This workshop is based on Steph de Silva&#39;s wonderful <a href='http://rex-analytics.com/witch-hunting-europe-discovery-missingness/' title=''>analysis</a> <em>Witch Hunting in Europe: A discovery of missingness</em>.</p>
+
+<p>One of the first things that Steph does is change the name of a column <code>gadm.adm0</code> to something more human-interpretable, <code>country</code>.</p>
+
+<p>Steph notes, &quot;This is a gross oversimplification of geography in the middle ages of Europe, but it describes the location of the trial in terms that will be most familiar to many modern users.&quot;</p>
+
+</article></slide><slide class=""><hgroup><h2>Follow in the footsteps of greatness</h2></hgroup><article  id="follow-in-the-footsteps-of-greatness">
+
+<p>Let&#39;s use the <code>rename()</code> function to change the name of the variable (column) <code>gadm.adm0</code> to <code>country</code>.</p>
+
+<p>To do this, we&#39;ll learn a very useful operator, the pipe <code>%&gt;%</code>.</p>
+
+</article></slide><slide class=""><hgroup><h2>The pipe</h2></hgroup><article  id="the-pipe">
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Visualisation</h2></hgroup><article  id="visualisation">
 
