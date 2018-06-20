@@ -3,10 +3,10 @@ title: "R-Curious"
 subtitle: "An R-Ladies useR! 2018 workshop for new users of R"
 author: "This workshop is brought to you by R-Ladies: Steph, Sarah, Charles, Kim, another Sarah, Jenny, and Di"
 output :
-  ioslides_presentation
-  # html_document: # Toggle this and comment out ioslides_presentation.
-  #   toc: true
-  #   toc_float: true
+  # ioslides_presentation
+  html_document: # Toggle this and comment out ioslides_presentation.
+    toc: true
+    toc_float: true
 
 ---
 
@@ -93,7 +93,7 @@ Don't be afraid to harness all tools available:
 
 *** 
 
-Finally, everyone needs to  [ragequit](https://www.urbandictionary.com/define.php?term=ragequit) at sometimes.
+Finally, everyone needs to  [ragequit](https://www.urbandictionary.com/define.php?term=ragequit) sometimes.
 
 <iframe src="https://giphy.com/embed/EtB1yylKGGAUg" width="320" height="250" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/the-office-panda-rage-EtB1yylKGGAUg">via GIPHY</a></p>
 
@@ -432,7 +432,7 @@ Your notes are made from the same code as the slides we're looking at.
 
 ### Your turn
 
-Navigate in the Viewer pane using the *floating table of contentes* to the image of Hillary Clinton in the section called **A fitting dataset**.
+Navigate in the Viewer pane using the *floating table of contents* to the image of Hillary Clinton in the section called **A fitting dataset**.
 
 Navigate back to this section in your Editor pane by using the **Document Outline** provided by the button in the top right of the Editor.
 
@@ -581,24 +581,18 @@ What do you see in your Environment?
 
 Click on it!
 
-# Data wrangling
-
-## The fine art of wrangling
-
-<center>
-<img src="http://p.migdal.pl/imgs/2016-03-15-dark-side-of-science-meme.jpg" style="width:80%">
-</center>
-
-## Data wrangling
-
-This workshop is based on Steph de Silva's wonderful [analysis](http://rex-analytics.com/witch-hunting-europe-discovery-missingness/) *Witch Hunting in Europe: A discovery of missingness*.
-
-One of the first things that Steph does is change the name of a column to something more human-interpretable.
-
 
 # Exploratory data analysis
 
-## Summary
+## Exploratory data analysis
+
+Let's explore the information in this table.
+
+- summary
+- wrangling and cleaning 
+- visualisation
+
+## Summary functions
 
 Lots of objects in R `<an R object>` are friendly to the `summary(<an R object>)` function. 
 
@@ -616,11 +610,48 @@ An alternative is the `skim()` function from from the `skimr` package.
 
 - install the `skimr` package
 - Open a code chunk here and load the `skimr` package in your notes
-- apply the `skim`function to the `witchdat` data
+- apply the `skim` function to the `witchdat` data
 
 What is the difference between the output of `summary` and `skim`? Which do you like better and why?
 
-*Group discussion*
+## Group discussion
+
+*Based on this new information, what questions do we add or update?*
+
+At this point, we often wish to manipulate the data in some way. 
+
+This is variously known as wrangling, cleaning, and scrubbing.
+
+# Data wrangling
+
+## The fine art of wrangling
+
+<center>
+<img src="http://p.migdal.pl/imgs/2016-03-15-dark-side-of-science-meme.jpg" style="width:80%">
+</center>
+
+## Change the name of a variable
+
+This workshop is based on Steph de Silva's wonderful [analysis](http://rex-analytics.com/witch-hunting-europe-discovery-missingness/) *Witch Hunting in Europe: a discovery of missingness*.
+
+
+One of the first things that Steph does is change the name of the column `gadm.adm0` to something more human-interpretable, `country`.
+
+Steph notes, "This is a gross oversimplification of geography in the middle ages of Europe, but it describes the location of the trial in terms that will be most familiar to many modern users."
+
+## Follow in the footsteps of greatness
+
+Let's use the `rename()` function to change the name of the variable (column) `gadm.adm0` to `country`.
+
+To do this, we'll learn a very useful operator, the pipe ` %>% `. 
+
+## The pipe
+
+
+
+
+
+
 
 # Visualisation
 
@@ -667,6 +698,19 @@ Sidenote, I'd recently seen Maelle Salmon speak about the benefits of blogging t
 This was the first time I tweeted about a blogpost; it is very reassuring to have people to bounce ideas off.
 
 ## Thank you for getting your R-curious on with us!
+
+We hope you had fun.
+
+### Special thanks
+
+- All the R-Ladies who contributed to this workshop
+    - Di
+    - Kim
+    - Steph
+    - Sarah K.
+    - Sarah R.
+- Miles for git support 
+- test specimen Dr X  
 
 # Draft notes
 

@@ -1,0 +1,51 @@
+---
+title: "Why use your powers for good when you can use them for awesome?"
+subtitle: "datapunks, unconfs, and open science "
+author: "Charles T. Gray"
+output:
+  xaringan::moon_reader:
+    css: ["default", "rladies", "rladies-fonts"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+
+background-image: url(https://d1u1mce87gyfbn.cloudfront.net/media/wallpaper/dva-wallpaper-wide.jpg)
+
+# new character
+
+---
+class: inverse
+background-image: url(https://i.kinja-img.com/gawker-media/image/upload/t_original/ndsmrp4cgjvsw5ptb2ff.jpg)
+
+# new maps
+
+---
+class: inverse
+background-image: url(http://fancyfishgames.com/img/difficulty_curve.png)
+
+
+---
+class: bottom, right
+
+background-image: url(http://unconf18.ropensci.org/images/Seattle.svg)
+
+# `l33t` is in the eye of the beholder: rOpenSci Unconf 2018
+
+---
+class: top, right
+
+background-image: url(https://github.com/ropenscilabs/mchtoolbox/raw/master/man/figures/imgHexSmall.png)
+
+# meritget: `w00t`
+
+Thanks for listening
+
+
