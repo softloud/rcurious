@@ -3,10 +3,10 @@ title: "R-Curious"
 subtitle: "An R-Ladies useR! 2018 workshop for new users of R"
 author: "This workshop is brought to you by R-Ladies: Steph, Sarah, Charles, Kim, another Sarah, Jenny, and Di"
 output :
-  # ioslides_presentation
-  html_document: # Toggle this and comment out ioslides_presentation.
-    toc: true
-    toc_float: true
+  ioslides_presentation
+  # html_document: # Toggle this and comment out ioslides_presentation.
+    #toc: true
+    #toc_float: true
 
 ---
 
@@ -81,8 +81,6 @@ install.packages("metafor")
 Notice that we drop the `<>`. That's not code, it's *pseudo code* to highlight where your input is.
 
 
-
-
 ## Survival tips
 
 Don't be afraid to harness all tools available:
@@ -90,6 +88,14 @@ Don't be afraid to harness all tools available:
 - Modern day coding practice comprises almost entirely searching "how do I do `<x>` in `<language>`".
 - The [community](https://community.rstudio.com/) is your best resource; talk to each other and make friends and future collaborators.  
 - Cheatsheets (**Help-Cheatsheets**)
+
+```{r}
+# This is a test chunk.
+3 + 5
+
+```
+
+
 
 *** 
 
@@ -408,9 +414,7 @@ But it is annoying having a pop out window, so let's view these notes in the Vie
 
 We are going to modify the YAML at the top of the document so that you can see how to toggle a presentation into notes. 
 
-Press the little document outline button in the top right corner of the Editor pane, then you can jump to the top easier.
-
-Change the output settings at the top of this document to:
+Press the little document outline button in the top right corner of the Editor pane, and navigate to the top of the document.
 
 ```
 output :
@@ -453,21 +457,22 @@ It looks likes this at the top of the script file.
 
 ***
 
-We can add bullet points with  `-`
+We can add bullet points with  `-`. So,
 
 ```
 - Euclid
 - Beanie
-
 ```
 
-It renders in your output like this:
+renders in your output like this:
 
 - Euclid
 - Beanie
 
 
 ### Cheatsheet
+
+You can make tables, insert images and videos, and much more! 
 
 There are two cheatsheets on RMarkdown in **Help-Cheatsheets**. 
 
@@ -506,7 +511,9 @@ We will use functions to intall and load the `tidyverse`.
 
 ### How to spot a function
 
-Functions in R take the form `<function()>`
+- *functions* in R take the form `<function()>`
+
+### Getting more information 
 
 To learn more about a function, type `?function` into the Console, and the Help pane will display documentation. 
 
@@ -647,11 +654,34 @@ To do this, we'll learn a very useful operator, the pipe ` %>% `.
 
 ## The pipe
 
+Piping makes code easier to read (arguably).  
 
+For example, we saw a snapshot of the preloaded iris data earlier.
 
+The `head()` function takes one argument, a table: 
+```{}
+head(<some data table>). 
+```
 
+But we could also *pipe* `%>%` the data into the function.
+```{}
+<some data table> %>% head() 
+```
 
+### Your turn
 
+Use the pipe function to present the top of the `witchdat` dataset. 
+
+## Rename a column
+
+We can rename a column by constructing a pipe from the table to the `rename` function
+```
+<my data> %>% 
+  rename(<newname> = <oldname>)
+```
+### Your turn
+
+Pipe `witchdat` to the `rename` function and change `gadm.adm0` to `country`. 
 
 # Visualisation
 
@@ -659,25 +689,58 @@ To do this, we'll learn a very useful operator, the pipe ` %>% `.
 
 The tidy way of plotting data is with the `ggplot2` package, which comes with the `tidyverse`.
 
+```
+<some data> %>% # pipe the data to ggplot()
+
+```
+
+###  Your turn
+
+What happens when you `%>%` the `witchdat` table into `ggplot()`?
+
+## Aesthetics
+
+We define x and y axes of the plot with aesthetics in `ggplot`.
+
+```{}
+<some data> %>% 
+  ggplot(aes(x = <column name>, y = <column name>))
+```
+
+### Your turn
+
+What happens if you set x and y axes to column names in `aes`? 
+
+## Your turn: my first ggplot
+
+Let's see how many women were murdered as witches over time.  
+
+We'll add a plot layer `+` to our ggplot using `geom_point` for a scatterplot. 
+
+Set the x axis to *year* and the y axis to *deaths*.
+
+```{r}
+<data> %>% 
+  ggplot(aes(x = <column with year>, y = <column with deaths>)) +
+  geom_point() # Adds a scatterplot.
+```
 
 
+## Your turn
 
+Using the data visualisation cheatsheet (**Help-Cheatsheets**) to figure out how to add a title layer to your plot. 
 
-# Workflow
+# Workshop
 
-## Working in projects
+## Let's answer our questions together
 
-- Put each project in its own directory, which is named after the project.
-- Put text documents associated with the project in the doc directory.
-- Put raw data and metadata in the data directory, and files generated during cleanup and analysis in a results directory.
-- Put source for the project’s scripts and programs in the src directory, and programs brought in from elsewhere or compiled locally in the bin directory.
-- Name all files to reflect their content or function.
+In groups or alone, choose a question to answer.
 
-***
+Use cheatsheets, talk to eachother, 
 
-A recommendation on how to organize your R project from [Good Enough Practices for Scientific Computing](https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf) as summarized by Software Carpentry 
+### Who's up for presenting their results? 
 
-
+### What did we discover? 
 
 # Further reading
 
@@ -711,17 +774,3 @@ We hope you had fun.
     - Sarah R.
 - Miles for git support 
 - test specimen Dr X  
-
-# Draft notes
-
-
-## Installing packages
-
-In R, the fundamental unit of shareable code is an [R package](http://r-pkgs.had.co.nz/intro.html). 
-
-
-
-
-
-
-
