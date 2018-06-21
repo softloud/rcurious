@@ -654,7 +654,7 @@ install.packages(&quot;&lt;you write code here&gt;&quot;)
 # We can write informative comments with a hash # at the start.
 
 # Load the tidyverse using the library() function.
-library(tidyverse)</pre>
+# library(tidyverse)</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Importing data</h2></hgroup><article  id="importing-data">
 
@@ -812,25 +812,33 @@ library(tidyverse)</pre>
 
 <p>What happens if you set x and y axes to column names in <code>aes</code>?</p>
 
-</article></slide><slide class=""><hgroup><h2>Layers</h2></hgroup><article  id="layers">
+</article></slide><slide class=""><hgroup><h2>Your turn: my first ggplot</h2></hgroup><article  id="your-turn-my-first-ggplot">
 
-<p>We build layers of a plot with <code>+</code>.</p>
+<p>Let&#39;s see how many women were murdered as witches over time.</p>
 
-<p>We have the axes.</p>
+<p>We&#39;ll add a plot layer <code>+</code> to our ggplot using <code>geom_point</code> for a scatterplot.</p>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Workflow</h2></hgroup><article  id="workflow">
+<p>Set the x axis to <em>year</em> and the y axis to <em>deaths</em>.</p>
 
-</article></slide><slide class=""><hgroup><h2>Working in projects</h2></hgroup><article  id="working-in-projects">
+<pre >&lt;data&gt; %&gt;% 
+  ggplot(aes(x = &lt;column with year&gt;, y = &lt;column with deaths&gt;)) +
+  geom_point() # Adds a scatterplot.</pre>
 
-<ul>
-<li>Put each project in its own directory, which is named after the project.</li>
-<li>Put text documents associated with the project in the doc directory.</li>
-<li>Put raw data and metadata in the data directory, and files generated during cleanup and analysis in a results directory.</li>
-<li>Put source for the project’s scripts and programs in the src directory, and programs brought in from elsewhere or compiled locally in the bin directory.</li>
-<li>Name all files to reflect their content or function.</li>
-</ul>
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-10">
 
-<p>A recommendation on how to organize your R project from <a href='https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf' title=''>Good Enough Practices for Scientific Computing</a> as summarized by Software Carpentry</p>
+<p>Using the data visualisation cheatsheet (<strong>Help-Cheatsheets</strong>) to figure out how to add a title layer to your plot.</p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Workshop</h2></hgroup><article  id="workshop">
+
+</article></slide><slide class=""><hgroup><h2>Let&#39;s answer our questions together</h2></hgroup><article  id="lets-answer-our-questions-together">
+
+<p>In groups or alone, choose a question to answer.</p>
+
+<p>Use cheatsheets, talk to eachother,</p>
+
+<h3>Who&#39;s up for presenting their results?</h3>
+
+<h3>What did we discover?</h3>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Further reading</h2></hgroup><article  id="further-reading">
 

@@ -551,7 +551,7 @@ Navigate to this part of your notes.
 # We can write informative comments with a hash # at the start.
 
 # Load the tidyverse using the library() function.
-library(tidyverse)
+# library(tidyverse)
 
 ```
 
@@ -719,7 +719,7 @@ We'll add a plot layer `+` to our ggplot using `geom_point` for a scatterplot.
 
 Set the x axis to *year* and the y axis to *deaths*.
 
-```{r}
+```{}
 <data> %>% 
   ggplot(aes(x = <column with year>, y = <column with deaths>)) +
   geom_point() # Adds a scatterplot.
