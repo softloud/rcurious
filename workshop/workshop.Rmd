@@ -106,11 +106,11 @@ Finally, everyone needs to  [ragequit](https://www.urbandictionary.com/define.ph
 
 ## Stickynote signalling
 
-### yellow 
+<h3 style="color:yellow">yellow</h3>
 
 Yup, all good.
 
-### pink (the ragequit option)
+<h3><span style="color:pink">pink</span> (the ragequit option)</h3>
 
 Some assistance would be greatly appreciated. 
 
