@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>rcurious</title>
+  <title>R-Curious</title>
 
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -20,7 +20,7 @@
     var SLIDE_CONFIG = {
       // Slide settings
       settings: {
-                title: 'rcurious',
+                title: 'R-Curious',
                         subtitle: 'An R-Ladies useR! 2018 workshop for new users of R',
                 useBuilds: true,
         usePrettify: true,
@@ -31,7 +31,7 @@
       // Author information
       presenters: [
             {
-        name:  'This workshop is brought to you by RLadies: Steph, Sarah, Charles, Kim, another Sarah, Jenny, and Di' ,
+        name:  'This workshop is brought to you by R-Ladies: Steph, Sarah, Charles, Kim, another Sarah, Jenny, and Di' ,
         company: '',
         gplus: '',
         twitter: '',
@@ -106,33 +106,136 @@
 
 <p>Follow us on twitter!</p>
 
-<p><a href='https://twitter.com/rladiessydney' title=''>RLadiesSydney</a></p>
+<p><a href='https://twitter.com/rladiessydney' title=''>R-LadiesSydney</a></p>
 
-<p><a href='https://twitter.com/RLadiesRemote' title=''>RLadiesRemote</a></p>
+<p><a href='https://twitter.com/RLadiesRemote' title=''>R-LadiesRemote</a></p>
 
-<p><a href='https://twitter.com/RLadiesGlobal' title=''>RLadiesGlobal</a></p>
+<p><a href='https://twitter.com/RLadiesAKL' title=''>R-LadiesAKL</a></p>
+
+<p><a href='https://twitter.com/RLadiesGlobal' title=''>R-LadiesGlobal</a></p>
 
 <p><a href='https://twitter.com/useR2018_conf' title=''>useR! 2018</a></p>
 
+</article></slide><slide class=""><hgroup><h2>Difficulty setting</h2></hgroup><article  id="difficulty-setting">
+
+<p>Charles T. Gray plays on <strong>normal</strong> tidyverse difficulty setting.</p>
+
+<p>Gaming difficulty:</p>
+
+<ul>
+<li>the pew-pew sound my gun makes startles me (this workshop)</li>
+<li>normal</li>
+<li>hardcore</li>
+</ul>
+
+<p>What about our other presenters?</p>
+
+</article></slide><slide class=""><hgroup><h2>Here to learn together</h2></hgroup><article  id="here-to-learn-together">
+
+<p>We are here to learn from you, too.</p>
+
+<p>The plan is to live code in these notes, enabling us to edit these notes live using the wonderful <a href='http://slides.yihui.name/xaringan/' title=''><code>xaringan::infinite_moon_reader</code></a> function, incorporating feedback.</p>
+
+</article></slide><slide class=""><hgroup><h2>Notes for this workshop</h2></hgroup><article  id="notes-for-this-workshop">
+
+<p>We will all work from a personal copy of these slides.</p>
+
+<p>After some introductory waffling, and set-up, we&#39;ll download the file together.</p>
+
+<p>You will be able to annotate these notes or write extra code examples for yourself.</p>
+
+<p>Indeed, there is <a href='http://cantabile.rbind.io/2018/06/17/a-coding-workshop-without-code/' title=''>little code</a> provided in these notes. But there are lots of functions. We will write the code together.</p>
+
+</article></slide><slide class=""><hgroup><h2>Pseudo code</h2></hgroup><article  id="pseudo-code">
+
+<p>So that you have the experience of getting your hands dirty with code, we&#39;ll use pseudo code.</p>
+
+<pre >&lt;this is pseudo code&gt;
+
+install.packages(&quot;&lt;you write code here&gt;&quot;)
+
+</pre>
+
+<p>If I wanted to install a package called <code>metafor</code>, I would use the code</p>
+
+<pre >install.packages(&quot;metafor&quot;)
+</pre>
+
+<p>Notice that we drop the <code>&lt;&gt;</code>. That&#39;s not code, it&#39;s <em>pseudo code</em> to highlight where your input is.</p>
+
+</article></slide><slide class=""><hgroup><h2>Survival tips</h2></hgroup><article  id="survival-tips">
+
+<p>Don&#39;t be afraid to harness all tools available:</p>
+
+<ul>
+<li>Modern day coding practice comprises almost entirely searching &quot;how do I do <code>&lt;x&gt;</code> in <code>&lt;language&gt;</code>&quot;.</li>
+<li>The <a href='https://community.rstudio.com/' title=''>community</a> is your best resource; talk to each other and make friends and future collaborators.<br/></li>
+<li>Cheatsheets (<strong>Help-Cheatsheets</strong>)</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'># This is a test chunk.
+3 + 5</pre>
+
+<pre >## [1] 8</pre>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<p>Finally, everyone needs to <a href='https://www.urbandictionary.com/define.php?term=ragequit' title=''>ragequit</a> sometimes.</p>
+
+<iframe src="https://giphy.com/embed/EtB1yylKGGAUg" width="320" height="250" frameBorder="0" class="giphy-embed" allowFullScreen>
+
+</iframe>
+
+<p>
+
+<a href="https://giphy.com/gifs/the-office-panda-rage-EtB1yylKGGAUg">via GIPHY</a>
+
+</p>
+
 </article></slide><slide class=""><hgroup><h2>Stickynote signalling</h2></hgroup><article  id="stickynote-signalling">
 
-<h3>questions := always encouraged</h3>
+<h3 style="color:yellow">
 
-<h3>yellow := all good</h3>
+yellow
 
-<h3>pink := some assistance would be greatly appreciated</h3>
+</h3>
 
-<img src='https://memegenerator.net/img/instances/71995321.jpg' title='fig:'/>
+<p>Yup, all good.</p>
+
+<h3>
+
+<span style="color:pink">
+pink</span> (the ragequit option)
+
+</h3>
+
+<p>Some assistance would be greatly appreciated.</p>
+
+<p>Also, I think I broke the internet.</p>
+
+<center>
+
+<img src="https://memegenerator.net/img/instances/71995321.jpg" style="width:50%">
+
+</center>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>What is R?</h2></hgroup><article  id="what-is-r">
 
 </article></slide><slide class=""><hgroup><h2>What do R-users use R for?</h2></hgroup><article  id="what-do-r-users-use-r-for">
 
+<p>R users are data detectives.</p>
+
 <p>We&#39;re going to try to cover everything except <em>Model</em>.</p>
 
-<img src='data:image/png;base64,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' title='fig:'/>
+<center>
+
+<img src='https://github.com/hadley/r4ds/blob/master/diagrams/data-science-explore.png?raw=true' title=''/>
+
+</center>
 
 <p>This image is from <a href='http://r4ds.had.co.nz/' title=''>R for Data Science</a>, a great text to get started with. It&#39;s available online as a free ebook.</p>
+
+<p>For us to learn how to be data detectives, we&#39;ll need some data.</p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>A fitting dataset</h2></hgroup><article  id="a-fitting-dataset">
 
@@ -148,15 +251,37 @@
 
 </article></slide><slide class=""><hgroup><h2>Image search for &quot;witch&quot; + &quot;michelle wolf&quot;</h2></hgroup><article  id="image-search-for-witch-michelle-wolf">
 
-<img src='https://steemitimages.com/DQmRquBByC9rwriPGJgp3uHy4Hatg9gTQzDicgGiiX1uAzi/MichelleWolfWickedWitch_13.png' title='fig:'/>
+<center>
+
+<img src="https://steemitimages.com/DQmRquBByC9rwriPGJgp3uHy4Hatg9gTQzDicgGiiX1uAzi/MichelleWolfWickedWitch_13.png" style="width:60%">
+
+</center>
 
 </article></slide><slide class=""><hgroup><h2>Image search for &quot;witch&quot; + &quot;julia gillard&quot;</h2></hgroup><article  id="image-search-for-witch-julia-gillard">
 
-<img src='https://static.ffx.io/images/$zoom_1%2C$multiply_0.512%2C$ratio_1.777778%2C$width_2000%2C$x_0%2C$y_23/t_crop_custom/t_sharpen%2Cq_auto%2Cf_auto/415251affe0440a502699c0723e8229e86270864' title='fig:'/>
+<center>
+
+<img src="https://static.ffx.io/images/$zoom_1%2C$multiply_0.512%2C$ratio_1.777778%2C$width_2000%2C$x_0%2C$y_23/t_crop_custom/t_sharpen%2Cq_auto%2Cf_auto/415251affe0440a502699c0723e8229e86270864" style="width:70%">
+
+</center>
 
 </article></slide><slide class=""><hgroup><h2>Image search for &quot;witch&quot; + &quot;hillary clinton&quot;</h2></hgroup><article  id="image-search-for-witch-hillary-clinton">
 
-<img src='http://wp.production.patheos.com/blogs/panmankey/files/2016/11/1-hillary-witch-2-768x432.jpg' title='fig:'/>
+<center>
+
+<img src="http://wp.production.patheos.com/blogs/panmankey/files/2016/11/1-hillary-witch-2-768x432.jpg" style="width:80%">
+
+</center>
+
+</article></slide><slide class=""><hgroup><h2>A fitting dataset</h2></hgroup><article  id="a-fitting-dataset-2">
+
+<blockquote>
+<p>todo discuss witchtrials dataset here - but not too much information</p>
+</blockquote>
+
+<blockquote>
+<p>Perhaps Steph would like to write something here - perhaps just adapt a bit from her analysis.</p>
+</blockquote>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Questions, questions that need answering</h2></hgroup><article  id="questions-questions-that-need-answering">
 
@@ -164,13 +289,13 @@
 
 <p><em>Group discussion</em></p>
 
-<p>What would you like to know about this dataset?</p>
+<p>What would you like to know?</p>
 
 <p><em>Write questions on whiteboard</em></p>
 
 <center>
 
-<img src='https://alloftheones.files.wordpress.com/2014/04/ezgif-save.gif' title=''/>
+<img src="https://alloftheones.files.wordpress.com/2014/04/ezgif-save.gif" style="width:60%">
 
 </center>
 
@@ -180,8 +305,19 @@
 
 <ul>
 <li><a href='https://www.r-project.org/' title=''>language</a>: R</li>
-<li><a href='https://en.wikipedia.org/wiki/Integrated_development_environment' title=''>development environment</a>: RStudio</li>
+<li><a href='https://en.wikipedia.org/wiki/Integrated_development_environment' title=''>Integrated development environment (IDE)</a>: RStudio</li>
 </ul>
+
+<h3>Why these tools?</h3>
+
+<ul>
+<li>R was intentionally developed to be a data analysis language (aeroplane)</li>
+<li>RStudio is designed to help users use R (airport)</li>
+</ul>
+
+<p>&quot;The plane is pretty boring without the airport around it.&quot;</p>
+
+<p>(Tip of the hat to Julia Lowndes for the aeroplane analogy.)</p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Installation hell</h2></hgroup><article  id="installation-hell">
 
@@ -191,6 +327,8 @@
 <li>install R (quick)</li>
 <li>install RStudio (a little while)</li>
 </ul>
+
+<p>Installation instructions <a href='https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd' title=''>adapted</a> with appreciation from a previous workshop.</p>
 
 </article></slide><slide class=""><hgroup><h2>Install R on Mac or Windows</h2></hgroup><article  id="install-r-on-mac-or-windows">
 
@@ -233,79 +371,18 @@
 
 <p>Double click the installer and follow the prompts to set up RStudio.</p>
 
-</article></slide><slide class=""><hgroup><h2>Linux</h2></hgroup><article  id="linux">
-
-<p>To install R:</p>
-
-<p><code>sudo apt-get update</code> to update first</p>
-
-<p>then</p>
-
-<p><code>sudo apt-get install r-base</code> to install R</p>
-
-<p>On most distributions:</p>
-
-<p>Download the <a href='https://www.rstudio.com/products/rstudio/download/#download' title=''><strong>.deb</strong></a> file and double click to open the package installer.</p>
-
-</article></slide><slide class=""><hgroup><h2>Updating R and RStudio</h2></hgroup><article  id="updating-r-and-rstudio">
-
-<pre class = 'prettyprint lang-r'># Check R version
-version</pre>
-
-<pre >##                _                           
-## platform       x86_64-pc-linux-gnu         
-## arch           x86_64                      
-## os             linux-gnu                   
-## system         x86_64, linux-gnu           
-## status                                     
-## major          3                           
-## minor          4.4                         
-## year           2018                        
-## month          03                          
-## day            15                          
-## svn rev        74408                       
-## language       R                           
-## version.string R version 3.4.4 (2018-03-15)
-## nickname       Someone to Lean On</pre>
-
-<blockquote>
-<p>todo: finish</p>
-</blockquote>
-
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section">
-
-<p>Update R and Rpackages from this <a href='https://www.r-statistics.com/2013/03/updating-r-from-r-on-windows-using-the-installr-package/' title=''>blogpost</a> for Windows ??</p>
-
-<pre class = 'prettyprint lang-r'># installing/loading the package:
-if(!require(installr)) {
-install.packages(&quot;installr&quot;); require(installr)} #load / install+load installr</pre>
-
-<pre >## Loading required package: installr</pre>
-
-<pre >## Warning in library(package, lib.loc = lib.loc, character.only = TRUE,
-## logical.return = TRUE, : there is no package called &#39;installr&#39;</pre>
-
-<pre >## Installing package into &#39;/home/pandagrrl/R/x86_64-pc-linux-gnu-library/3.4&#39;
-## (as &#39;lib&#39; is unspecified)</pre>
-
-<pre >## Warning in install.packages :
-##   package &#39;installr&#39; is not available (for R version 3.4.4)</pre>
-
-<pre >## Loading required package: installr</pre>
-
-<pre >## Warning in library(package, lib.loc = lib.loc, character.only = TRUE,
-## logical.return = TRUE, : there is no package called &#39;installr&#39;</pre>
-
-<pre class = 'prettyprint lang-r'># using the package:
-# updateR() # this will start the updating process of your R installation.  It will check for newer versions, and if one is available, will guide you through the decisions you&#39;d need to make.</pre>
-
 </article></slide><slide class=""><hgroup><h2>Why RStudio?</h2></hgroup><article  id="why-rstudio">
 
-<p>Working in an RStudio project has many benefits.</p>
+<p>Working in an RStudio <a href='https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects' title=''>project</a> has <strong>many</strong> benefits.</p>
 
-<p>todo expand</p>
+<ul>
+<li>Free, open source software R in an IDE</li>
+<li>Reproducible workflows</li>
+</ul>
 
-</article></slide><slide class=""><hgroup><h2>Getting started in RStudio</h2></hgroup><article  id="getting-started-in-rstudio">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Getting started in RStudio</h2></hgroup><article  id="getting-started-in-rstudio">
+
+</article></slide><slide class=""><hgroup><h2>Create a project</h2></hgroup><article  id="create-a-project">
 
 <ul>
 <li>Open RStudio and create a project via <strong>File-New Project</strong></li>
@@ -314,153 +391,513 @@ install.packages(&quot;installr&quot;); require(installr)} #load / install+load 
 <li>Save the project directory wherever suits you</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Argh so many windows!</h2></hgroup><article  id="argh-so-many-windows">
+</article></slide><slide class=""><hgroup><h2>Argh, so many windows</h2></hgroup><article  id="argh-so-many-windows">
 
-<p><em>Charles gesticulates wildly at the three panes</em></p>
+<p><em>R-Ladies presenters gesticulate wildly at RStudio</em></p>
 
-<p>Cheat sheet can be found at <strong>Help-Cheatsheets-RStudio IDE Cheatsheet</strong></p>
+<p>Let&#39;s start with a couple useful panes.</p>
+
+<ul>
+<li>Console</li>
+<li>Environment</li>
+</ul>
+
+<h3>Cheat sheet</h3>
+
+<p><strong>Help-Cheatsheets-RStudio IDE Cheatsheet</strong></p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>How to run code?!</h2></hgroup><article  id="how-to-run-code">
 
-</article></slide><slide class=""><hgroup><h2>The console</h2></hgroup><article  id="the-console">
+</article></slide><slide class=""><hgroup><h2>Running code in the Console</h2></hgroup><article  id="running-code-in-the-console">
 
 <p>The console is where you can execute single-line R commands.</p>
 
 <p>The console is located, by default, in the lower left pane.</p>
 
-<p>Try <code>3 + 2</code>:</p>
+<p>Try <code>3 + 2</code> and press <strong>enter</strong>:</p>
 
-<pre class = 'prettyprint lang-r'>3 + 2</pre>
+<pre class = 'prettyprint lang-r'># Type 3 + 2 here. Here&#39;s hoping infinite moon reader works. </pre>
 
-<pre >## [1] 5</pre>
+</article></slide><slide class=""><hgroup><h2>Environment</h2></hgroup><article  id="environment">
 
-</article></slide><slide class=""><hgroup><h2>Installing packages</h2></hgroup><article  id="installing-packages">
+<p>I can store the number 5 in an <em>object</em> <code>x</code>.</p>
 
-<p>We&#39;re going to use the metapackage <code>tidyverse</code> to help us with our data analysis.</p>
+<p>To assign a value we use an arrow <code>&lt;-</code>.</p>
 
-<p>The two important functions.</p>
+<pre >x &lt;- 5</pre>
 
-<h3>For installation; i.e., first time only.</h3>
+<p>What happens when you type <code>x</code> into the Console after assigning the value 5 to it?</p>
 
-<p><code>install.packages(&quot;arbitrarypkge&quot;)</code></p>
+<p>What do you see in the Environment pane?</p>
 
-<h3>For using.</h3>
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
 
-<p><code>library(arbitrarypkg)</code></p>
+<p>If I assign the value 5 to the <em>object</em> <code>x</code>, and call it in the console, it returns the value assigned.</p>
 
-</article></slide><slide class=""><hgroup><h2>Install <code>tidyverse</code></h2></hgroup><article  id="install-tidyverse">
+<pre class = 'prettyprint lang-r'># Assign 5 to x and call x.</pre>
 
-<p>We would like to install a package called &quot;tidyverse&quot;. Let&#39;s try.</p>
+<p>There are many complex data types in R.</p>
 
-</article></slide><slide class=""><hgroup><h2>Load tidyverse</h2></hgroup><article  id="load-tidyverse">
+</article></slide><slide class=""><hgroup><h2>Data structures in R</h2></hgroup><article  id="data-structures-in-r">
 
-<pre class = 'prettyprint lang-r'># I ran: install.packages(&quot;tidyverse&quot;) in the console the first time.
+<p>Data <em>objects</em> can be made of</p>
 
-library(tidyverse)</pre>
+<ul>
+<li>numbers</li>
+<li>characters &quot;this is a character string&quot;</li>
+<li>logicals (TRUE/FALSE)</li>
+<li>list (mixed)</li>
+</ul>
+
+<p>Or tables of combinations of the above.</p>
+
+<pre >##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa</pre>
+
+<p>And much more.</p>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<p>The witch trials dataset is a table.</p>
+
+<p>It is a <a href='https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html' title=''><em>tidy</em></a> data structure:</p>
+
+<ul>
+<li>rows are <em>observations</em></li>
+<li>columns are <em>variables</em> (attributes)</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Editor</h2></hgroup><article  id="editor">
+
+<p>We&#39;ll do this analysis in R markdown.</p>
+
+<ul>
+<li>run code in <em>chunks</em></li>
+<li>write in text, LaTeX, html, outside of code chunks</li>
+<li>make websites, presentations, books</li>
+</ul>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Rmarkdown</h2></hgroup><article  id="rmarkdown">
 
-</article></slide><slide class=""><hgroup><h2>Intro to .Rmd</h2></hgroup><article  id="intro-to-.rmd">
-
-<p>We&#39;ll do this analysis in markdown.</p>
-
-<ul>
-<li>todo extrapolate benefits</li>
-</ul>
-
-</article></slide><slide class=""><hgroup><h2>Intro to .Rmd</h2></hgroup><article  id="intro-to-.rmd-1">
+</article></slide><slide class=""><hgroup><h2>Opening an .Rmd</h2></hgroup><article  id="opening-an-.rmd">
 
 <p>Open <strong>File-New File-R Markdown</strong></p>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Importing data</h2></hgroup><article  id="importing-data">
+<p>Follow the prompts to install the required <em>packages</em>.</p>
 
-</article></slide><slide class=""><hgroup><h2>Data types</h2></hgroup><article  id="data-types">
+<p>Give your document a title and press <strong>ok</strong>.</p>
+
+<p>This will open an <em>Untitled2</em> template.</p>
+
+<p>Save your document - note, you have given your document a title, not saved it!</p>
+
+<p>Press the wheel next to the <strong>knit</strong> icon at the top of the Editor pane and select Viewer.</p>
+
+<p>Now we will <em>knit</em> our document.</p>
+
+</article></slide><slide class=""><hgroup><h2>The tutorial document</h2></hgroup><article  id="the-tutorial-document">
+
+<p>A treasure trove!</p>
+
+</article></slide><slide class=""><hgroup><h2>Get these notes</h2></hgroup><article  id="get-these-notes">
+
+<p>Delete everything in your .Rmd file.</p>
+
+<p>Look up <code>softloud charles gray github</code></p>
+
+<p>You want to navigate to: <a href='https://github.com/softloud' title=''>https://github.com/softloud</a></p>
+
+<p>Click on <strong>rcurious</strong> in my Pinned repositories.</p>
+
+<p>Click on <strong>workshop</strong> and then <strong>workshop.Rmd</strong> and then click the <strong>Raw</strong> button and copy and paste the text into your .Rmd file.</p>
 
 <ul>
-<li>todo extrapolate</li>
+<li><strong>control + a</strong> to select all</li>
+<li><strong>control + c</strong> to copy</li>
+<li><strong>control + v</strong> to paste</li>
 </ul>
 
-<p>To open a code chunk in your <strong>.Rmd</strong>: <strong>control+alt+i</strong></p>
+</article></slide><slide class=""><hgroup><h2>Knit the notes</h2></hgroup><article  id="knit-the-notes">
 
-<p>To knit to .html in the Viewer pane: save and <strong>control+shift+k</strong></p>
+<p><strong>control + shift + k</strong> to knit</p>
 
-</article></slide><slide class=""><hgroup><h2>Loading packages</h2></hgroup><article  id="loading-packages">
+<p>But it is annoying having a pop out window, so let&#39;s view these notes in the Viewer pane.</p>
 
-<pre class = 'prettyprint lang-r'># install.packages(&quot;tidyverse&quot;) # Run this to install.
+<p>We are going to modify the YAML at the top of the document so that you can see how to toggle a presentation into notes.</p>
 
-library(tidyverse)</pre>
+<p>Press the little document outline button in the top right corner of the Editor pane, and navigate to the top of the document.</p>
 
-</article></slide><slide class=""><hgroup><h2>Import example: url</h2></hgroup><article  id="import-example-url">
+<pre >output :
+  # ioslides_presentation 
+  html_document: 
+     toc: true
+     toc_float: true</pre>
 
-<pre ># Store a string in an object.
-url &lt;- &lt;character string&gt;
+<p>Knit again. (This takes a while.)</p>
 
-# Read data using a tidyverse function.
-db &lt;- read_csv(url)
-</pre>
+</article></slide><slide class=""><hgroup><h2>Slides and notes</h2></hgroup><article  id="slides-and-notes">
 
-</article></slide><slide class=""><hgroup><h2>Import example</h2></hgroup><article  id="import-example">
+<p>From now on, we&#39;ll refer to both the notes <em>and</em> the slides.</p>
 
-<p>The github link in this import example is <a href='https://github.com/JakeRuss/witch-trials' title=''>https://github.com/JakeRuss/witch-trials</a>, first take a look at the link. Click on the data folder then trials.csv. In order to import the data we need a <strong>direct</strong> link to the data. You can find this with the button in github RAW. This is the url we want to use&#8230;.</p>
+<p>Your notes are made from the same code as the slides we&#39;re looking at.</p>
 
-<pre class = 'prettyprint lang-r'>url &lt;- &quot;https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv&quot;
+<p><strong>If you want information from a few slides ago, you can find it in your notes.</strong></p>
 
-witchdat &lt;- read_csv(url)</pre>
+<h3>Your turn</h3>
 
-<pre >## Parsed with column specification:
-## cols(
-##   year = col_integer(),
-##   decade = col_integer(),
-##   century = col_integer(),
-##   tried = col_integer(),
-##   deaths = col_integer(),
-##   city = col_character(),
-##   gadm.adm2 = col_character(),
-##   gadm.adm1 = col_character(),
-##   gadm.adm0 = col_character(),
-##   lon = col_double(),
-##   lat = col_double(),
-##   record.source = col_character()
-## )</pre>
+<p>Navigate in the Viewer pane using the <em>floating table of contents</em> to the image of Hillary Clinton in the section called <strong>A fitting dataset</strong>.</p>
+
+<p>Navigate back to this section in your Editor pane by using the <strong>Document Outline</strong> provided by the button in the top right of the Editor.</p>
+
+</article></slide><slide class=""><hgroup><h2>Annotating these notes</h2></hgroup><article  id="annotating-these-notes">
+
+<p>Now you can take notes directly into the script file for these slides.</p>
+
+<p>Let&#39;s create a section at the top of the document called <strong>Useful tips</strong>.</p>
+
+<p>We&#39;ll create a heading directly above the section called <strong>Hi</strong>. (Use your Document Outline to navigate there.)</p>
+
+<p>It looks likes this at the top of the script file.</p>
+
+<pre >## Hi! </pre>
+
+<ul>
+<li>To create a heading use <code>#</code>. The more <code>###</code>, the smaller the heading.</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<p>We can add bullet points with <code>-</code>. So,</p>
+
+<pre >- Euclid
+- Beanie</pre>
+
+<p>renders in your output like this:</p>
+
+<ul>
+<li>Euclid</li>
+<li>Beanie</li>
+</ul>
+
+<h3>Cheatsheet</h3>
+
+<p>You can make tables, insert images and videos, and much more!</p>
+
+<p>There are two cheatsheets on RMarkdown in <strong>Help-Cheatsheets</strong>.</p>
+
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-1">
+
+<p>Ask around for a &quot;what I wish I&#39;d known&quot; story about R or investigate a cheatsheet.</p>
+
+<p>Find a tip that sounds useful to you and add it to your notes in your <strong>Useful tips</strong> section as a bullet point.</p>
+
+<p>Knit your document and bask in the pretty!</p>
+
+<h3>Knitting taking too long?</h3>
+
+<p>Try deleting the images. You can always download a fresh copy of the notes if you want to get them back.</p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Packages</h2></hgroup><article  id="packages">
+
+</article></slide><slide class=""><hgroup><h2>Packages</h2></hgroup><article  id="packages-1">
+
+<p>Packages are collections of other people&#39;s code.</p>
+
+<p>Often someone has already written a script that does what you want to do.</p>
+
+<p>For example, we want to import the witch trials data. We will use a package that helps with data wrangling tasks like this, the <a href='https://www.tidyverse.org/' title=''><code>tidyverse</code></a>.</p>
+
+<p>We&#39;re going to use the metapackage <code>tidyverse</code> to help us with our data analysis.</p>
+
+</article></slide><slide class=""><hgroup><h2>Functions</h2></hgroup><article  id="functions">
+
+<p>The most common element of packages are functions. R also comes preloaded with a <em>base</em> of functions commonly used.</p>
+
+<p>Functions run other people&#39;s code for us, so that we don&#39;t have to reinvent the wheel.</p>
+
+<p>We will use functions to intall and load the <code>tidyverse</code>.</p>
+
+<h3>How to spot a function</h3>
+
+<ul>
+<li><em>functions</em> in R take the form <code>&lt;function()&gt;</code></li>
+</ul>
+
+<h3>Getting more information</h3>
+
+<p>To learn more about a function, type <code>?function</code> into the Console, and the Help pane will display documentation.</p>
+
+</article></slide><slide class=""><hgroup><h2>Installing packages</h2></hgroup><article  id="installing-packages">
+
+<p>We want to install the package <code>tidyverse</code>.</p>
+
+<p>Take a look at the help documentation for the function <code>install.packages()</code>.</p>
+
+<h3>For installation; i.e., first time only.</h3>
+
+<p><code>install.packages(&quot;&lt;name of package&gt;&quot;)</code></p>
+
+<h3>For using.</h3>
+
+<p><code>library(&lt;name of package&gt;)</code></p>
+
+<h3>Pseudo code</h3>
+
+<p>A friendly reminder that <code>&lt;&gt;</code> indicates pseudo code. You can navigate back to that section in your notes in your Viewer.</p>
+
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-2">
+
+<p>We would like to install and use a package called &quot;tidyverse&quot;.</p>
+
+<p>Let&#39;s try.</p>
+
+</article></slide><slide class=""><hgroup><h2>Let&#39;s load the tidyverse</h2></hgroup><article  id="lets-load-the-tidyverse">
+
+<p>Press the little document outline button in the top right corner of the Editor pane.</p>
+
+<p>Navigate to this part of your notes.</p>
+
+<pre class = 'prettyprint lang-r'># This is a code chunk. 
+
+# We can write informative comments with a hash # at the start.
+
+# Load the tidyverse using the library() function.
+# library(tidyverse)</pre>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Importing data</h2></hgroup><article  id="importing-data">
+
+</article></slide><slide class=""><hgroup><h2>Import the witch trials data</h2></hgroup><article  id="import-the-witch-trials-data">
+
+<p>Since the data is stored on an online repository, we can import it via url.</p>
+
+<p>We can import this data using the <code>read_csv()</code> function from the <code>tidyverse</code>.</p>
+
+<p><strong>This function takes one argument, the url, which goes between the () as a &quot;character string&quot;.</strong></p>
+
+<p>There are many types file types, which often need special care.</p>
+
+<p><em>Presenters discuss different file types and old battle stories of importing data.</em></p>
+
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-3">
+
+<p>The data is found here: &quot;<a href='https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv' title=''>https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv</a>&quot;</p>
+
+<p>Try importing the data at the console with <code>read_csv</code>. What output do you see?</p>
+
+<p><code>read_csv</code> with the argument url produces a data object. An object we can assign.</p>
+
+<p>Open a code chunk <em>here</em> and read the data in using <code>read_csv</code> and assign <code>&lt;-</code> the data to an object called <code>witchdat</code></p>
+
+<ul>
+<li><strong>control+alt+i</strong> to open a code chunk.</li>
+<li>press green <strong>play</strong> to run chunk.</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Take a look</h2></hgroup><article  id="take-a-look">
+
+<p>What do you see in your Environment?</p>
+
+<p>Click on it!</p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Exploratory data analysis</h2></hgroup><article  id="exploratory-data-analysis">
 
-</article></slide><slide class=""><hgroup><h2>The command line</h2></hgroup><article  id="the-command-line">
+</article></slide><slide class=""><hgroup><h2>Exploratory data analysis</h2></hgroup><article  id="exploratory-data-analysis-1">
 
-<blockquote>
-<p>todo: move this slide somewhere else, perhaps - sticking it here for now.</p>
-</blockquote>
-
-<p>At some point you&#39;ll need to use the command line.</p>
-
-<p>To break ourselves in, let&#39;s check what version of R we are running.</p>
-
-<p><em>keyboard shortcuts in RStudio</em></p>
+<p>Let&#39;s explore the information in this table.</p>
 
 <ul>
-<li><strong>alt</strong> + <strong>shift</strong> + <strong>t</strong> for <strong>terminal</strong></li>
-<li><strong>control</strong> + <strong>1</strong> for <strong>source</strong> pane</li>
+<li>summary</li>
+<li>wrangling and cleaning</li>
+<li>visualisation</li>
 </ul>
 
-<pre class = 'prettyprint lang-zsh'>R --version</pre>
+</article></slide><slide class=""><hgroup><h2>Summary functions</h2></hgroup><article  id="summary-functions">
 
-<pre >## R version 3.4.4 (2018-03-15) -- &quot;Someone to Lean On&quot;
-## Copyright (C) 2018 The R Foundation for Statistical Computing
-## Platform: x86_64-pc-linux-gnu (64-bit)
-## 
-## R is free software and comes with ABSOLUTELY NO WARRANTY.
-## You are welcome to redistribute it under the terms of the
-## GNU General Public License versions 2 or 3.
-## For more information about these matters see
-## http://www.gnu.org/licenses/.</pre>
+<p>Lots of objects in R <code>&lt;an R object&gt;</code> are friendly to the <code>summary(&lt;an R object&gt;)</code> function.</p>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>References</h2></hgroup><article  id="references">
+<h3>Your turn</h3>
 
-</article></slide><slide class=""><hgroup><h2>References</h2></hgroup><article  id="references-1">
+<p>What&#39;s is the output of <code>summary</code> for <code>witchdat</code>?</p>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<h3>An alternative to <code>summary</code></h3>
+
+<p>An alternative is the <code>skim()</code> function from from the <code>skimr</code> package.</p>
+
+<h3>Your turn</h3>
+
+<ul>
+<li>install the <code>skimr</code> package</li>
+<li>Open a code chunk here and load the <code>skimr</code> package in your notes</li>
+<li>apply the <code>skim</code> function to the <code>witchdat</code> data</li>
+</ul>
+
+<p>What is the difference between the output of <code>summary</code> and <code>skim</code>? Which do you like better and why?</p>
+
+</article></slide><slide class=""><hgroup><h2>Group discussion</h2></hgroup><article  id="group-discussion">
+
+<p><em>Based on this new information, what questions do we add or update?</em></p>
+
+<p>At this point, we often wish to manipulate the data in some way.</p>
+
+<p>This is variously known as wrangling, cleaning, and scrubbing.</p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Data wrangling</h2></hgroup><article  id="data-wrangling">
+
+</article></slide><slide class=""><hgroup><h2>The fine art of wrangling</h2></hgroup><article  id="the-fine-art-of-wrangling">
+
+<center>
+
+<img src="http://p.migdal.pl/imgs/2016-03-15-dark-side-of-science-meme.jpg" style="width:80%">
+
+</center>
+
+</article></slide><slide class=""><hgroup><h2>Change the name of a variable</h2></hgroup><article  id="change-the-name-of-a-variable">
+
+<p>This workshop is based on Steph de Silva&#39;s wonderful <a href='http://rex-analytics.com/witch-hunting-europe-discovery-missingness/' title=''>analysis</a> <em>Witch Hunting in Europe: a discovery of missingness</em>.</p>
+
+<p>One of the first things that Steph does is change the name of the column <code>gadm.adm0</code> to something more human-interpretable, <code>country</code>.</p>
+
+<p>Steph notes, &quot;This is a gross oversimplification of geography in the middle ages of Europe, but it describes the location of the trial in terms that will be most familiar to many modern users.&quot;</p>
+
+</article></slide><slide class=""><hgroup><h2>Follow in the footsteps of greatness</h2></hgroup><article  id="follow-in-the-footsteps-of-greatness">
+
+<p>Let&#39;s use the <code>rename()</code> function to change the name of the variable (column) <code>gadm.adm0</code> to <code>country</code>.</p>
+
+<p>To do this, we&#39;ll learn a very useful operator, the pipe <code>%&gt;%</code>.</p>
+
+</article></slide><slide class=""><hgroup><h2>The pipe</h2></hgroup><article  id="the-pipe">
+
+<p>Piping makes code easier to read (arguably).</p>
+
+<p>For example, we saw a snapshot of the preloaded iris data earlier.</p>
+
+<p>The <code>head()</code> function takes one argument, a table:</p>
+
+<pre >head(&lt;some data table&gt;). </pre>
+
+<p>But we could also <em>pipe</em> <code>%&gt;%</code> the data into the function.</p>
+
+<pre >&lt;some data table&gt; %&gt;% head() </pre>
+
+<h3>Your turn</h3>
+
+<p>Use the pipe function to present the top of the <code>witchdat</code> dataset.</p>
+
+</article></slide><slide class=""><hgroup><h2>Rename a column</h2></hgroup><article  id="rename-a-column">
+
+<p>We can rename a column by constructing a pipe from the table to the <code>rename</code> function</p>
+
+<pre >&lt;my data&gt; %&gt;% 
+  rename(&lt;newname&gt; = &lt;oldname&gt;)</pre>
+
+<h3>Your turn</h3>
+
+<p>Pipe <code>witchdat</code> to the <code>rename</code> function and change <code>gadm.adm0</code> to <code>country</code>.</p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Visualisation</h2></hgroup><article  id="visualisation">
+
+</article></slide><slide class=""><hgroup><h2>The structure of a ggplot</h2></hgroup><article  id="the-structure-of-a-ggplot">
+
+<p>The tidy way of plotting data is with the <code>ggplot2</code> package, which comes with the <code>tidyverse</code>.</p>
+
+<pre >&lt;some data&gt; %&gt;% # pipe the data to ggplot()
+</pre>
+
+<h3>Your turn</h3>
+
+<p>What happens when you <code>%&gt;%</code> the <code>witchdat</code> table into <code>ggplot()</code>?</p>
+
+</article></slide><slide class=""><hgroup><h2>Aesthetics</h2></hgroup><article  id="aesthetics">
+
+<p>We define x and y axes of the plot with aesthetics in <code>ggplot</code>.</p>
+
+<pre >&lt;some data&gt; %&gt;% 
+  ggplot(aes(x = &lt;column name&gt;, y = &lt;column name&gt;))</pre>
+
+<h3>Your turn</h3>
+
+<p>What happens if you set x and y axes to column names in <code>aes</code>?</p>
+
+</article></slide><slide class=""><hgroup><h2>Your turn: my first ggplot</h2></hgroup><article  id="your-turn-my-first-ggplot">
+
+<p>Let&#39;s see how many women were murdered as witches over time.</p>
+
+<p>We&#39;ll add a plot layer <code>+</code> to our ggplot using <code>geom_point</code> for a scatterplot.</p>
+
+<p>Set the x axis to <em>year</em> and the y axis to <em>deaths</em>.</p>
+
+<pre >&lt;data&gt; %&gt;% 
+  ggplot(aes(x = &lt;column with year&gt;, y = &lt;column with deaths&gt;)) +
+  geom_point() # Adds a scatterplot.</pre>
+
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-10">
+
+<p>Using the data visualisation cheatsheet (<strong>Help-Cheatsheets</strong>) to figure out how to add a title layer to your plot.</p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Workshop</h2></hgroup><article  id="workshop">
+
+</article></slide><slide class=""><hgroup><h2>Let&#39;s answer our questions together</h2></hgroup><article  id="lets-answer-our-questions-together">
+
+<p>In groups or alone, choose a question to answer.</p>
+
+<p>Use cheatsheets, talk to eachother,</p>
+
+<h3>Who&#39;s up for presenting their results?</h3>
+
+<h3>What did we discover?</h3>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Further reading</h2></hgroup><article  id="further-reading">
+
+</article></slide><slide class=""><hgroup><h2>Further reading</h2></hgroup><article  id="further-reading-1">
 
 <ul>
 <li><a href='http://r4ds.had.co.nz/' title=''>R for Data Science</a></li>
 <li>The installation instructions are <a href='https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd' title=''>adapted</a> from a previous workshop.</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>The rstats community is the best</h2></hgroup><article  id="the-rstats-community-is-the-best">
+
+<p>I thought you might be interested in a conversation I had while preparing this workshop. The <a href='https://community.rstudio.com/' title=''>rstats community</a> is your best resource.</p>
+
+<blockquote class="twitter-tweet" data-lang="en">
+
+<p lang="en" dir="ltr">
+
+How to teach R to students so they make enough autonomous cognitive links to take more away from the experience than simply successfully running the example? <a href="https://twitter.com/samclifford?ref_src=twsrc%5Etfw"><span class="cite">@samclifford</span></a> <a href="https://twitter.com/MilesMcBain?ref_src=twsrc%5Etfw"><span class="cite">@MilesMcBain</span></a> <a href="https://twitter.com/thejholloway?ref_src=twsrc%5Etfw"><span class="cite">@thejholloway</span></a> <a href="https://twitter.com/visnut?ref_src=twsrc%5Etfw"><span class="cite">@visnut</span></a> <a href="https://t.co/PlNt3M0xY3">https://t.co/PlNt3M0xY3</a>
+
+</p>
+
+— Charles T. Gray (<span class="cite">@cantabile</span>) <a href="https://twitter.com/cantabile/status/1008248732259790849?ref_src=twsrc%5Etfw">June 17, 2018</a>
+
+</blockquote>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Sidenote, I&#39;d recently seen Maelle Salmon speak about the benefits of blogging to engage with the community.</p>
+
+<p>This was the first time I tweeted about a blogpost; it is very reassuring to have people to bounce ideas off.</p>
+
+</article></slide><slide class=""><hgroup><h2>Thank you for getting your R-curious on with us!</h2></hgroup><article  id="thank-you-for-getting-your-r-curious-on-with-us">
+
+<p>We hope you had fun.</p>
+
+<h3>Special thanks</h3>
+
+<ul>
+<li>All the R-Ladies who contributed to this workshop
+
+<ul>
+<li>Di</li>
+<li>Kim</li>
+<li>Steph</li>
+<li>Sarah K.</li>
+<li>Sarah R.</li>
+</ul></li>
+<li>Miles for git support</li>
+<li>test specimen Dr X</li>
 </ul></article></slide>
 
 
