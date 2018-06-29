@@ -1,0 +1,130 @@
+---
+title: "Witch Trials Pivot Tables and other Excel tasks you can also do in R"
+output: 
+  html_document: 
+    toc: true
+    toc_float: true
+---
+
+Which witches and other Excel tasks.....in R. Are there any others that you find useful?
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+```
+
+## Particularly useful packages for this exercise
+
+```{r install.packages}
+library(tidyverse)
+#install.packages("rpivotTable")
+library(rpivotTable)
+```
+
+## Import Witch Trial data
+
+```{r download data}
+# Download data from the authors' repo.
+url <- "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv"
+
+# Use the read_csv function to download the raw data to a dataframe called witchdat
+witchdat <- read_csv(url)
+```
+
+##  Format "cells" in R
+
+In Excel we can format "cells". Which functions can we use in R?
+
+```{r format}
+# Change the name of gadm.adm0 variable
+# witchdat$country <- witchdat$gadm.adm0
+# or we can use dplyr
+witchdat <- witchdat %>% 
+  rename(country=gadm.adm0)
+# Change the class of the deaths variable
+witchdat$deaths <- as.numeric(witchdat$deaths)
+# or we can use dplyr mutate to change 1 variable
+witchdat <- witchdat %>% 
+  mutate(deaths=as.numeric(deaths))
+# or we can use dplyr mutate_all to change all integer variables
+witchdat <- witchdat %>% 
+  mutate_if(is.integer,as.numeric)
+```
+
+Try typing 'as.' in the console to see what other options are available to change formats.
+
+For other formatting we can format the end products that we create, so that can be function or package dependent.
+
+##  "Sort" data in R
+
+In Excel we can sort by columns. Which functions can we use in R?
+
+```{r arrange}
+# Sort by character using arrange from dplyr. We can also pipe base functions such as head.
+witchdat %>% 
+  arrange(city) %>% 
+  head()
+# This also works on numeric variables, sort by year using arrange from dplyr
+witchdat %>% 
+  arrange(year) %>% 
+  head()
+# Or we can arrange in descending order
+witchdat %>% 
+  arrange(desc(year)) %>% 
+  head()
+```
+
+##  Create a "formula" in R
+
+In Excel we can create formulas in cells. Which functions can we use in R?
+
+```{r formula}
+# Create a new variable in our dataframe with mutate from dplyr. 
+witchdat <- witchdat %>% 
+  mutate(triedbutnotdied = tried-deaths)
+# In R missing values are typically N/A values. A handy base function to know is is.na(). Try typing ?is.na in the console.  Let's use this function in a new formula to test if a variable is populated
+witchdat <- witchdat %>% 
+  mutate(missingyear =ifelse(is.na(year),"Yup missing","Not missing"))
+```
+
+##  Filter a "column"
+
+In Excel we can filter by columns. Which functions can we use in R?
+
+```{r filter}
+# Filter which witches were tried in decade 1520 by using dplyr filter. Remember to use == for equals in R, whereas = is an assignment in R
+witchdat %>% 
+  filter(decade==1520) %>% 
+  head()
+```
+
+##  Calculate on "columns"
+
+In Excel we can add a calculation such as sum or a mean to a column. Which functions can we use in R?
+
+```{r calculation}
+# Sum the total deaths. Remember there are NA values so we nee dto tell this sum function to ignore these with na.rm=TRUE
+sum(witchdat$deaths,na.rm=TRUE)
+```
+
+##  Create a "Pivot Table"
+
+In Excel you can create pivot tables. Which functions can we use in R?
+
+R packages typically have vignettes which are tutorials and worked examples using the package. Have a look at this package's [vignette](https://cran.r-project.org/web/packages/rpivotTable/vignettes/rpivotTableIntroduction.html).
+
+```{r pivot}
+# Create an interactive pivot table using the rpivotTable function and package
+rpivotTable(witchdat,rows="country",cols="deaths",vals="Freq")
+```
+
+## Save the "spreadsheet"
+
+In Excel you can save your spreadsheet. Which functions can we use in R?
+
+```{r save}
+# Save dataframe with write_csv from readr package
+write_csv(witchdat,"witchdat.csv")
+```
+
+
+
