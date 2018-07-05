@@ -5,8 +5,8 @@ author: "This workshop is brought to you by R-Ladies: Steph, Sarah, Charles, Kim
 output :
   ioslides_presentation
   # html_document: # Toggle this and comment out ioslides_presentation.
-    #toc: true
-    #toc_float: true
+  # toc: true
+  # toc_float: true
 
 ---
 
@@ -551,7 +551,8 @@ Navigate to this part of your notes.
 # We can write informative comments with a hash # at the start.
 
 # Load the tidyverse using the library() function.
-# library(tidyverse)
+
+library(tidyverse)
 
 ```
 
