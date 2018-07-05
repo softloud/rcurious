@@ -20,6 +20,9 @@ This workshop will help new data scientists or new R users get rolling analyzing
 - Questions that need answered: What can we learn from this data?
 - Hands-on data exploration
 
+
+
+
 # Installation instructions 
 
 We'll go through these instructions during the workshop, so it's up to you whether you'd like to do the following ahead of time. 
