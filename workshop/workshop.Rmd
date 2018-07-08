@@ -5,8 +5,8 @@ author: "This workshop is brought to you by R-Ladies: Steph, Sarah, Charles, Kim
 output :
   ioslides_presentation
   # html_document: # Toggle this and comment out ioslides_presentation.
-  # toc: true
-  # toc_float: true
+  #   toc: true
+  #   toc_float: true
 
 ---
 
@@ -14,7 +14,8 @@ output :
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Hi!
+
+## Hi! 
 
 - [R-Ladies](https://rladies.org/)
 - [useR! 2018](https://user2018.r-project.org/)
@@ -63,7 +64,7 @@ Indeed, there is [little code](http://cantabile.rbind.io/2018/06/17/a-coding-wor
 
 So that you have the experience of getting your hands dirty with code, we'll use pseudo code.
 
-```{}
+```{r eval=FALSE}
 <this is pseudo code>
 
 install.packages("<you write code here>")
@@ -73,9 +74,8 @@ install.packages("<you write code here>")
 
 If I wanted to install a package called `metafor`, I would use the code
 
-```{}
+```{r eval=FALSE}
 install.packages("metafor")
-
 ```
 
 Notice that we drop the `<>`. That's not code, it's *pseudo code* to highlight where your input is.
@@ -88,14 +88,6 @@ Don't be afraid to harness all tools available:
 - Modern day coding practice comprises almost entirely searching "how do I do `<x>` in `<language>`".
 - The [community](https://community.rstudio.com/) is your best resource; talk to each other and make friends and future collaborators.  
 - Cheatsheets (**Help-Cheatsheets**)
-
-```{r}
-# This is a test chunk.
-3 + 5
-
-```
-
-
 
 *** 
 
@@ -173,9 +165,8 @@ A few images to explain why a dataset about witch trials might be appropriate fo
 
 ## A fitting dataset
 
-> todo discuss witchtrials dataset here - but not too much information
+The inspiration for this workshop was an [analysis](http://rex-analytics.com/witch-hunting-europe-discovery-missingness/) by Steph de Silva, of [useR! 2018](https://user2018.r-project.org/blog/2018/05/30/interview-with-steph-de-silva/) keynote renown.
 
-> Perhaps Steph would like to write something here - perhaps just adapt a bit from her analysis.
 
 # Questions, questions that need answering
 
@@ -191,8 +182,9 @@ What would you like to know?
 ```{r echo = FALSE}
 # Below, the <center> syntax is html to centre the gif within. Notice that it is the same syntax as importing a png, jpg, or pdf image. 
 
-# Rmarkdown and chunks support latex, html, bash, python, and whatnot. Due to this flexibility, for some researchers, such as Charles, it is their preferred working document type.  
+# Rmarkdown and chunks support latex, html, bash, python, and whatnot. Due to this flexibility, for some researchers, such as Charles, .Rmd is their preferred working document type.  
 
+# Setting the chunk option to echo = FALSE ensures this isn't in the html output. There are many chunk options in Rmarkdown documents to explore. 
 ```
 
 <center>
@@ -214,7 +206,6 @@ For *this* workshop:
 "The plane is pretty boring without the airport around it."
 
 (Tip of the hat to Julia Lowndes for the aeroplane analogy.)
-
 
 # Installation hell
 
@@ -739,6 +730,7 @@ In groups or alone, choose a question to answer.
 
 Use cheatsheets, talk to eachother.
 
+- Prepare a presentation for those who don't get that far describing (using summary data and visualisations) what questions can and can't be investigated by these data. For example, are the observations restricted in time or location?
 - Use the `leaflet` package to plot where the witches died sized by number of deaths. Make the dots a nice blood red. 
 - Ask a different table you what questions they have about these data and see if you can prepare a markdown presentation to report your results.
 - Why does Steph de Silva talk about the miss
