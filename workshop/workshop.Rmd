@@ -216,8 +216,8 @@ For *this* workshop:
 
 ## Installation overview
 
-- install R (quick) 
-- install RStudio (a little while)
+- install R
+- install RStudio 
 
 Installation instructions [adapted](https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd) with appreciation from a previous workshop. 
 
@@ -503,7 +503,6 @@ We're going to use the metapackage `tidyverse` to help us with our data analysis
 The most common element of packages are functions. R also comes preloaded with a *base* of functions commonly used. 
 
 Functions run other people's code for us, so that we don't have to reinvent the wheel. 
-
 We will use functions to intall and load the `tidyverse`.
 
 ### How to spot a function
