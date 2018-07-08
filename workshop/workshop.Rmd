@@ -117,11 +117,12 @@ Some assistance would be greatly appreciated.
 Also, I think I broke the internet. 
 
 <center>
-<img src="https://memegenerator.net/img/instances/71995321.jpg" style="width:50%">
+<img src="https://memegenerator.net/img/instances/71995321.jpg" style="width:30%">
 </center>
 
+<h3><span style="color:green">green</span></h3>
 
-
+I did it already. Trying an extension question, want to join me? 
 
 # What is R?
 
@@ -147,7 +148,7 @@ To familiarise ourselves with R, we will do what R users do.
 
 We will explore a dataset.
 
-A fitting dataset. 
+A **fitting** dataset. 
 
 A few images to explain why a dataset about witch trials might be appropriate for a workshop hosted by an advocacy group for underrepresented genders.
 
