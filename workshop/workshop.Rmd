@@ -64,7 +64,7 @@ Indeed, there is [little code](http://cantabile.rbind.io/2018/06/17/a-coding-wor
 
 So that you have the experience of getting your hands dirty with code, we'll use pseudo code.
 
-```{r eval=FALSE}
+```{}
 <this is pseudo code>
 
 install.packages("<you write code here>")
@@ -74,7 +74,7 @@ install.packages("<you write code here>")
 
 If I wanted to install a package called `metafor`, I would use the code
 
-```{r eval=FALSE}
+```{}
 install.packages("metafor")
 ```
 
@@ -167,6 +167,11 @@ A few images to explain why a dataset about witch trials might be appropriate fo
 
 The inspiration for this workshop was an [analysis](http://rex-analytics.com/witch-hunting-europe-discovery-missingness/) by Steph de Silva, of [useR! 2018](https://user2018.r-project.org/blog/2018/05/30/interview-with-steph-de-silva/) keynote renown.
 
+Steph, please tell us about the paper that generated this dataset.
+
+*Steph delights all and sundry.*
+
+Thanks, Steph! 
 
 # Questions, questions that need answering
 
@@ -302,7 +307,7 @@ I can store the number 5 in an *object* `x`.
 
 To assign a value we use an arrow `<-`.
 
-```{}
+```{eval=FALSE}
 x <- 5
 ```
 
@@ -531,18 +536,21 @@ We would like to install and use a package called "tidyverse".
 
 Let's try. 
 
-## Let's load the tidyverse 
+## Your turn
+
+### Let's load the tidyverse 
 
 Press the little document outline button in the top right corner of the Editor pane.
 
-Navigate to this part of your notes.
+Navigate to this part of your notes and add code in the chunk that will load the `tidyverse` package.
 
 ```{r Load the tidyverse package}
 # This is a code chunk. 
 
 # We can write informative comments with a hash # at the start.
 
-# Load the tidyverse using the library() function. Press the green arrow in the top right corner of the chunk to run the code here.
+# Load the tidyverse using the library() function. 
+# Press the green arrow in the top right corner of the chunk to run!
 
 # Don't forget, you need to install the package before you can use it. 
 
@@ -667,7 +675,7 @@ Use the pipe function to present the top of the `witchdat` dataset.
 ## Rename a column
 
 We can rename a column by constructing a pipe from the table to the `rename` function
-```
+```{}
 <my data> %>% 
   rename(<newname> = <oldname>)
 ```
@@ -681,7 +689,7 @@ Pipe `witchdat` to the `rename` function and change `gadm.adm0` to `country`.
 
 The tidy way of plotting data is with the `ggplot2` package, which comes with the `tidyverse`.
 
-```
+```{}
 <some data> %>% # pipe the data to ggplot()
 
 ```
@@ -724,7 +732,7 @@ Using the data visualisation cheatsheet (**Help-Cheatsheets**) to figure out how
 
 # Extension exercises
 
-## Let's answer our questions together
+## Questions, find the answers
 
 In groups or alone, choose a question to answer.
 
@@ -733,7 +741,7 @@ Use cheatsheets, talk to eachother.
 - Prepare a presentation for those who don't get that far describing (using summary data and visualisations) what questions can and can't be investigated by these data. For example, are the observations restricted in time or location?
 - Use the `leaflet` package to plot where the witches died sized by number of deaths. Make the dots a nice blood red. 
 - Ask a different table you what questions they have about these data and see if you can prepare a markdown presentation to report your results.
-- Why does Steph de Silva talk about the miss
+- Why does Steph de Silva talk about the missingness? 
 
 ### Who's up for presenting their results? 
 
