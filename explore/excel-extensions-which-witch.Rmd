@@ -1,73 +1,117 @@
 ---
-title: "Witch Trials Pivot Tables and other Excel tasks you can also do in R"
+title: "Tutorial on Pivot Tables and other Excel tasks you can also do in R - Witch Trials"
+author: "Kim Fitter"
 output: 
   html_document: 
     toc: true
     toc_float: true
 ---
 
-Which witches and other Excel tasks.....in R. Are there any others that you find useful?
+Which witches and other Excel tasks.....in R. This tutorial assuming you have already installed R and R studio and had a brief introduction to the R basics. Run each line of code yourself or Knit to HTML to walk through this tutorial.
+
+At the end of the exercise we will have an interactive tabular view of the number of witches tried by country.
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+# This is a comment on the setup chunk, we are using echo=TRUE so that the code is included in the R Markdown document
+knitr::opts_chunk$set(cache = TRUE, echo = TRUE)
 ```
 
 ## Particularly useful packages for this exercise
 
-```{r install.packages}
+```{r load packages}
+# Load packages
 library(tidyverse)
-#install.packages("rpivotTable")
 library(rpivotTable)
 ```
 
+**Tip** Install the package from CRAN the first time you use the package using  `install.packages("<name of package>")` else you will get an Error that there is no package.
+
+**Tip** The latest package version is sometimes available from GitHub so alternatively install from GitHub using the`devtools` package. A package's GitHub README file typically has installation instructions.
+
 ## Import Witch Trial data
 
-```{r download data}
-# Download data from the authors' repo.
-url <- "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv"
+The dataset used in this tutorial is of 43,000 people tried for witchcraft across
+21 European countries over a period of five-and-a-half centuries used for this [economic journal](https://www.researchgate.net/publication/315533575_Witch_Trials). 
 
-# Use the read_csv function to download the raw data to a dataframe called witchdat
+First import the data using the `read_csv` function from the [readr](https://cran.r-project.org/web/packages/readr/index.html) R package which is loaded with the tidyverse, to import the raw data to a data frame called `witchdat`.
+
+A data frame, which is a 2-dimensional object where contents can be different data types.
+
+```{r download data}
+# Download data from the author's GitHub url
+url <- "https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv"
+# The read_csv function also produces default messages describing the parsing of columns which is converting the columns into different types.
 witchdat <- read_csv(url)
 ```
+  
+Let's take a quick look at the `witchdat` data frame. 
+
+In R there are some packages that are included by default; take a look at the packages available in the Global Environment drop down. One such package is called [base](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html) which includes dim function to retrieve the dimensions, the row and column numbers.
+
+```{r dim}
+# Retrieve the number of rows and columns
+dim(witchdat)
+```
+
+Another included package is [utils](https://cran.r-project.org/web/packages/R.utils/index.html) R package which includes the `str` and `structure` functions to view the basic structure. 
+
+```{r structure}
+# Use str function to 'Compactly Display the Structure of an Arbitrary R Object'. All R objects store additional attributes to store metadata about an object. In this str function we set the give.attr to FALSE to exclude these attributes.
+str(witchdat, give.attr=FALSE)
+# Next we will use structure function to view witchdat 
+structure(witchdat)
+# There are other ways of looking at your data. Try the glimpse function from the tibble package. Take a look at the Help description with ?glimpse to find out more
+glimpse(witchdat)
+```
+  
+This is a fairly large data frame!
+
+It looks like there are character variables, double and integer variables.
 
 ##  Format "cells" in R
 
 In Excel we can format "cells". Which functions can we use in R?
 
+A tool for data frame data manipulation is the  [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html) R package. R packages typically have vignettes which are tutorials and worked examples using the package. There is useful documentation in the [Introduction to dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)  vignette.
+
+In order to access the variables we can use a `$*`. Alternatively we can use another method that joins objects and functions using a pipe or `%>%`. This can be useful if we would like to use multiple `dplyr` verbs or functions on an object.
+
+We will be use `<-` to assign the formatting changes to `witchdat`.
+
 ```{r format}
-# Change the name of gadm.adm0 variable
-# witchdat$country <- witchdat$gadm.adm0
-# or we can use dplyr
+# From inspection of witchdat this cryptic name gadm.adm0 refers to country. Use dplyr to rename a variable. 
 witchdat <- witchdat %>% 
   rename(country=gadm.adm0)
-# Change the class of the deaths variable
-witchdat$deaths <- as.numeric(witchdat$deaths)
-# or we can use dplyr mutate to change 1 variable
+# Perform data type conversion of the deaths variable - use dplyr mutate to change this variable
 witchdat <- witchdat %>% 
   mutate(deaths=as.numeric(deaths))
-# or we can use dplyr mutate_all to change all integer variables
+# or we can use dplyr mutate_all to change types of all integer variables (is.integer) to numeric (as.numeric). With mutate_if we don't need the () with is.integer and as.numeric functions as mutate_if will operate on all the columns for which the first test function is TRUE.
 witchdat <- witchdat %>% 
   mutate_if(is.integer,as.numeric)
+# View the structure of witchdat again to see these formatting changes
+str(witchdat, give.attr=FALSE)
 ```
 
-Try typing 'as.' in the console to see what other options are available to change formats.
+Try typing 'as.' in the console to see what other options are available to change data types.
 
-For other formatting we can format the end products that we create, so that can be function or package dependent.
+For other formatting we can also format the end products (such as plots), using the functions available in those R packages.
 
 ##  "Sort" data in R
 
 In Excel we can sort by columns. Which functions can we use in R?
 
+R is different to Excel that we can also view data manipulations without assigning changes to an object. In the sorting examples here we will just view the changes in-line.
+
 ```{r arrange}
-# Sort by character using arrange from dplyr. We can also pipe base functions such as head.
+# Sort by character using arrange from dplyr. We can also pipe other packages functions such as head from the utils package.
 witchdat %>% 
   arrange(city) %>% 
   head()
-# This also works on numeric variables, sort by year using arrange from dplyr
+# This sorting also works on numeric variables, sort by year using arrange from dplyr
 witchdat %>% 
   arrange(year) %>% 
   head()
-# Or we can arrange in descending order
+# Or we can sort in descending order
 witchdat %>% 
   arrange(desc(year)) %>% 
   head()
@@ -78,12 +122,16 @@ witchdat %>%
 In Excel we can create formulas in cells. Which functions can we use in R?
 
 ```{r formula}
-# Create a new variable in our dataframe with mutate from dplyr. 
+# Remember R as a calculator? This is a simple formula
+3+2
+# Create a new variable in our dataframe called triedbutnotdied as the difference between two variables (formula after the =). Use the mutate function from dplyr
 witchdat <- witchdat %>% 
   mutate(triedbutnotdied = tried-deaths)
-# In R missing values are typically N/A values. A handy base function to know is is.na(). Try typing ?is.na in the console.  Let's use this function in a new formula to test if a variable is populated
+# In R missing values are typically NA values. A handy base function to know is is.na(). Try typing ?is.na in the console.  Let's use this function in a new formula to test if a variable is populated
 witchdat <- witchdat %>% 
-  mutate(missingyear =ifelse(is.na(year),"Yup missing","Not missing"))
+  mutate(missingyear = ifelse(is.na(year),"Yup missing","Not missing"))
+# View the structure of witchdat again to see these new variables
+glimpse(witchdat)
 ```
 
 ##  Filter a "column"
@@ -101,30 +149,58 @@ witchdat %>%
 
 In Excel we can add a calculation such as sum or a mean to a column. Which functions can we use in R?
 
+In R Markdown documents we can "highlight" and comment on insights, calculations or data manipulations.
+
 ```{r calculation}
-# Sum the total deaths. Remember there are NA values so we nee dto tell this sum function to ignore these with na.rm=TRUE
+# Sum the total deaths. Remember there are NA values so we need to tell this sum function to ignore these with argument na.rm=TRUE. Using sum on the 'whole column' ie variable witchdat$deaths is intuitively the same way of calculating this sum in Excel
 sum(witchdat$deaths,na.rm=TRUE)
+# Now use dplyr with the select function to select the deaths variable (also the same as deleting the other columns in Excel) then apply the sum on this object
+witchdat %>% 
+  select(deaths) %>% 
+  sum(na.rm = TRUE)
+# Now try the dplyr summarise function and sum function then name this sum object as sum_deaths
+witchdat %>% 
+  summarise(sum_deaths = sum(deaths, na.rm = TRUE))
 ```
 
 ##  Create a "Pivot Table"
 
 In Excel you can create pivot tables. Which functions can we use in R?
 
-R packages typically have vignettes which are tutorials and worked examples using the package. Have a look at this package's [vignette](https://cran.r-project.org/web/packages/rpivotTable/vignettes/rpivotTableIntroduction.html).
+A neat R package that creates interactive pivot tables is [rpivotTable](https://cran.r-project.org/web/packages/rpivotTable/).   Have a look at this package's [vignette](https://cran.r-project.org/web/packages/rpivotTable/vignettes/rpivotTableIntroduction.html).
 
 ```{r pivot}
 # Create an interactive pivot table using the rpivotTable function and package
-rpivotTable(witchdat,rows="country",cols="deaths",vals="Freq")
+rpivotTable(witchdat,rows="country",vals="tried",aggregator="Sum")
 ```
+  
+  
+**Challenge 1** Can you recreate the pivot table as a new R data frame using `dplyr` functions? (Hint ?group_by)
+
+**Challenge 2** On the pivot table widget move the country above the table so the `country` is a pivot table column. Can you extend your challenge 1 answer with `dplyr`  to recreate.
 
 ## Save the "spreadsheet"
 
-In Excel you can save your spreadsheet. Which functions can we use in R?
+In Excel you can save your workbooks and spreadsheets. Which functions can we use in R?
+
+Here are some options in R, depending on what output is needed:  
+
+- The `base` R `write.csv` function to write to a csv file  
+- The `readr` package in the tidyverse, includes the function `write_csv`, which is faster than write.csv  
+- The `xlsx` package `write.xlsx` to write to an Excel workbook  
+
 
 ```{r save}
 # Save dataframe with write_csv from readr package
 write_csv(witchdat,"witchdat.csv")
 ```
+  
+  
+  
+***  
 
+## Acknowledgments
 
+  
+Thanks to Marcia Ferreira @DrMarciaFe, Chris Beltz @BeltzEcology and Ivan Leung @urganmax for reviewing and providing feedback on this tutorial.
 
