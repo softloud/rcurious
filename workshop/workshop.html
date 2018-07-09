@@ -158,8 +158,7 @@ install.packages(&quot;&lt;you write code here&gt;&quot;)
 
 <p>If I wanted to install a package called <code>metafor</code>, I would use the code</p>
 
-<pre >install.packages(&quot;metafor&quot;)
-</pre>
+<pre >install.packages(&quot;metafor&quot;)</pre>
 
 <p>Notice that we drop the <code>&lt;&gt;</code>. That&#39;s not code, it&#39;s <em>pseudo code</em> to highlight where your input is.</p>
 
@@ -172,11 +171,6 @@ install.packages(&quot;&lt;you write code here&gt;&quot;)
 <li>The <a href='https://community.rstudio.com/' title=''>community</a> is your best resource; talk to each other and make friends and future collaborators.<br/></li>
 <li>Cheatsheets (<strong>Help-Cheatsheets</strong>)</li>
 </ul>
-
-<pre class = 'prettyprint lang-r'># This is a test chunk.
-3 + 5</pre>
-
-<pre >## [1] 8</pre>
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
 
@@ -215,9 +209,18 @@ pink</span> (the ragequit option)
 
 <center>
 
-<img src="https://memegenerator.net/img/instances/71995321.jpg" style="width:50%">
+<img src="https://memegenerator.net/img/instances/71995321.jpg" style="width:30%">
 
 </center>
+
+<h3>
+
+<span style="color:green">
+green</span>
+
+</h3>
+
+<p>I did it already. Trying an extension question, want to join me?</p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>What is R?</h2></hgroup><article  id="what-is-r">
 
@@ -245,7 +248,7 @@ pink</span> (the ragequit option)
 
 <p>We will explore a dataset.</p>
 
-<p>A fitting dataset.</p>
+<p>A <strong>fitting</strong> dataset.</p>
 
 <p>A few images to explain why a dataset about witch trials might be appropriate for a workshop hosted by an advocacy group for underrepresented genders.</p>
 
@@ -275,13 +278,13 @@ pink</span> (the ragequit option)
 
 </article></slide><slide class=""><hgroup><h2>A fitting dataset</h2></hgroup><article  id="a-fitting-dataset-2">
 
-<blockquote>
-<p>todo discuss witchtrials dataset here - but not too much information</p>
-</blockquote>
+<p>The inspiration for this workshop was an <a href='http://rex-analytics.com/witch-hunting-europe-discovery-missingness/' title=''>analysis</a> by Steph de Silva, of <a href='https://user2018.r-project.org/blog/2018/05/30/interview-with-steph-de-silva/' title=''>useR! 2018</a> keynote renown.</p>
 
-<blockquote>
-<p>Perhaps Steph would like to write something here - perhaps just adapt a bit from her analysis.</p>
-</blockquote>
+<p>Steph, please tell us about the paper that generated this dataset.</p>
+
+<p><em>Steph delights all and sundry.</em></p>
+
+<p>Thanks, Steph!</p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Questions, questions that need answering</h2></hgroup><article  id="questions-questions-that-need-answering">
 
@@ -324,8 +327,8 @@ pink</span> (the ragequit option)
 </article></slide><slide class=""><hgroup><h2>Installation overview</h2></hgroup><article  id="installation-overview">
 
 <ul>
-<li>install R (quick)</li>
-<li>install RStudio (a little while)</li>
+<li>install R</li>
+<li>install RStudio</li>
 </ul>
 
 <p>Installation instructions <a href='https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd' title=''>adapted</a> with appreciation from a previous workshop.</p>
@@ -424,7 +427,7 @@ pink</span> (the ragequit option)
 
 <p>To assign a value we use an arrow <code>&lt;-</code>.</p>
 
-<pre >x &lt;- 5</pre>
+<pre class = 'prettyprint lang-eval'>x &lt;- 5</pre>
 
 <p>What happens when you type <code>x</code> into the Console after assigning the value 5 to it?</p>
 
@@ -614,9 +617,7 @@ pink</span> (the ragequit option)
 
 <p>The most common element of packages are functions. R also comes preloaded with a <em>base</em> of functions commonly used.</p>
 
-<p>Functions run other people&#39;s code for us, so that we don&#39;t have to reinvent the wheel.</p>
-
-<p>We will use functions to intall and load the <code>tidyverse</code>.</p>
+<p>Functions run other people&#39;s code for us, so that we don&#39;t have to reinvent the wheel. We will use functions to intall and load the <code>tidyverse</code>.</p>
 
 <h3>How to spot a function</h3>
 
@@ -652,18 +653,22 @@ pink</span> (the ragequit option)
 
 <p>Let&#39;s try.</p>
 
-</article></slide><slide class=""><hgroup><h2>Let&#39;s load the tidyverse</h2></hgroup><article  id="lets-load-the-tidyverse">
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-3">
+
+<h3>Let&#39;s load the tidyverse</h3>
 
 <p>Press the little document outline button in the top right corner of the Editor pane.</p>
 
-<p>Navigate to this part of your notes.</p>
+<p>Navigate to this part of your notes and add code in the chunk that will load the <code>tidyverse</code> package.</p>
 
 <pre class = 'prettyprint lang-r'># This is a code chunk. 
 
 # We can write informative comments with a hash # at the start.
 
-# Load the tidyverse using the library() function.
-# library(tidyverse)</pre>
+# Load the tidyverse using the library() function. 
+# Press the green arrow in the top right corner of the chunk to run!
+
+# Don&#39;t forget, you need to install the package before you can use it. </pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Importing data</h2></hgroup><article  id="importing-data">
 
@@ -679,7 +684,7 @@ pink</span> (the ragequit option)
 
 <p><em>Presenters discuss different file types and old battle stories of importing data.</em></p>
 
-</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-3">
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-4">
 
 <p>The data is found here: &quot;<a href='https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv' title=''>https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv</a>&quot;</p>
 
@@ -833,27 +838,33 @@ pink</span> (the ragequit option)
   ggplot(aes(x = &lt;column with year&gt;, y = &lt;column with deaths&gt;)) +
   geom_point() # Adds a scatterplot.</pre>
 
-</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-10">
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-11">
 
 <p>Using the data visualisation cheatsheet (<strong>Help-Cheatsheets</strong>) to figure out how to add a title layer to your plot.</p>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Workshop</h2></hgroup><article  id="workshop">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Extension exercises</h2></hgroup><article  id="extension-exercises">
 
-</article></slide><slide class=""><hgroup><h2>Let&#39;s answer our questions together</h2></hgroup><article  id="lets-answer-our-questions-together">
+</article></slide><slide class=""><hgroup><h2>Questions, find the answers</h2></hgroup><article  id="questions-find-the-answers">
 
 <p>In groups or alone, choose a question to answer.</p>
 
-<p>Use cheatsheets, talk to eachother,</p>
+<p>Use cheatsheets, talk to eachother.</p>
+
+<ul>
+<li>Prepare a presentation for those who don&#39;t get that far describing (using summary data and visualisations) what questions can and can&#39;t be investigated by these data. For example, are the observations restricted in time or location?</li>
+<li>Use the <code>leaflet</code> package to plot where the witches died sized by number of deaths. Make the dots a nice blood red.</li>
+<li>Ask a different table you what questions they have about these data and see if you can prepare a markdown presentation to report your results.</li>
+<li>Why does Steph de Silva talk about the missingness?</li>
+</ul>
 
 <h3>Who&#39;s up for presenting their results?</h3>
-
-<h3>What did we discover?</h3>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Further reading</h2></hgroup><article  id="further-reading">
 
 </article></slide><slide class=""><hgroup><h2>Further reading</h2></hgroup><article  id="further-reading-1">
 
 <ul>
+<li>Steph&#39;s original <a href='http://rex-analytics.com/witch-hunting-europe-discovery-missingness/' title=''>analysis</a></li>
 <li><a href='http://r4ds.had.co.nz/' title=''>R for Data Science</a></li>
 <li>The installation instructions are <a href='https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd' title=''>adapted</a> from a previous workshop.</li>
 </ul>

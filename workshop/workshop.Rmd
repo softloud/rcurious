@@ -5,8 +5,8 @@ author: "This workshop is brought to you by R-Ladies: Steph, Sarah, Charles, Kim
 output :
   ioslides_presentation
   # html_document: # Toggle this and comment out ioslides_presentation.
-    #toc: true
-    #toc_float: true
+  #   toc: true
+  #   toc_float: true
 
 ---
 
@@ -14,7 +14,8 @@ output :
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Hi!
+
+## Hi! 
 
 - [R-Ladies](https://rladies.org/)
 - [useR! 2018](https://user2018.r-project.org/)
@@ -75,7 +76,6 @@ If I wanted to install a package called `metafor`, I would use the code
 
 ```{}
 install.packages("metafor")
-
 ```
 
 Notice that we drop the `<>`. That's not code, it's *pseudo code* to highlight where your input is.
@@ -88,14 +88,6 @@ Don't be afraid to harness all tools available:
 - Modern day coding practice comprises almost entirely searching "how do I do `<x>` in `<language>`".
 - The [community](https://community.rstudio.com/) is your best resource; talk to each other and make friends and future collaborators.  
 - Cheatsheets (**Help-Cheatsheets**)
-
-```{r}
-# This is a test chunk.
-3 + 5
-
-```
-
-
 
 *** 
 
@@ -117,11 +109,12 @@ Some assistance would be greatly appreciated.
 Also, I think I broke the internet. 
 
 <center>
-<img src="https://memegenerator.net/img/instances/71995321.jpg" style="width:50%">
+<img src="https://memegenerator.net/img/instances/71995321.jpg" style="width:30%">
 </center>
 
+<h3><span style="color:green">green</span></h3>
 
-
+I did it already. Trying an extension question, want to join me? 
 
 # What is R?
 
@@ -147,7 +140,7 @@ To familiarise ourselves with R, we will do what R users do.
 
 We will explore a dataset.
 
-A fitting dataset. 
+A **fitting** dataset. 
 
 A few images to explain why a dataset about witch trials might be appropriate for a workshop hosted by an advocacy group for underrepresented genders.
 
@@ -172,9 +165,13 @@ A few images to explain why a dataset about witch trials might be appropriate fo
 
 ## A fitting dataset
 
-> todo discuss witchtrials dataset here - but not too much information
+The inspiration for this workshop was an [analysis](http://rex-analytics.com/witch-hunting-europe-discovery-missingness/) by Steph de Silva, of [useR! 2018](https://user2018.r-project.org/blog/2018/05/30/interview-with-steph-de-silva/) keynote renown.
 
-> Perhaps Steph would like to write something here - perhaps just adapt a bit from her analysis.
+Steph, please tell us about the paper that generated this dataset.
+
+*Steph delights all and sundry.*
+
+Thanks, Steph! 
 
 # Questions, questions that need answering
 
@@ -190,8 +187,9 @@ What would you like to know?
 ```{r echo = FALSE}
 # Below, the <center> syntax is html to centre the gif within. Notice that it is the same syntax as importing a png, jpg, or pdf image. 
 
-# Rmarkdown and chunks support latex, html, bash, python, and whatnot. Due to this flexibility, for some researchers, such as Charles, it is their preferred working document type.  
+# Rmarkdown and chunks support latex, html, bash, python, and whatnot. Due to this flexibility, for some researchers, such as Charles, .Rmd is their preferred working document type.  
 
+# Setting the chunk option to echo = FALSE ensures this isn't in the html output. There are many chunk options in Rmarkdown documents to explore. 
 ```
 
 <center>
@@ -214,13 +212,12 @@ For *this* workshop:
 
 (Tip of the hat to Julia Lowndes for the aeroplane analogy.)
 
-
 # Installation hell
 
 ## Installation overview
 
-- install R (quick) 
-- install RStudio (a little while)
+- install R
+- install RStudio 
 
 Installation instructions [adapted](https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd) with appreciation from a previous workshop. 
 
@@ -310,7 +307,7 @@ I can store the number 5 in an *object* `x`.
 
 To assign a value we use an arrow `<-`.
 
-```{}
+```{eval=FALSE}
 x <- 5
 ```
 
@@ -506,7 +503,6 @@ We're going to use the metapackage `tidyverse` to help us with our data analysis
 The most common element of packages are functions. R also comes preloaded with a *base* of functions commonly used. 
 
 Functions run other people's code for us, so that we don't have to reinvent the wheel. 
-
 We will use functions to intall and load the `tidyverse`.
 
 ### How to spot a function
@@ -539,19 +535,23 @@ We would like to install and use a package called "tidyverse".
 
 Let's try. 
 
-## Let's load the tidyverse 
+## Your turn
+
+### Let's load the tidyverse 
 
 Press the little document outline button in the top right corner of the Editor pane.
 
-Navigate to this part of your notes.
+Navigate to this part of your notes and add code in the chunk that will load the `tidyverse` package.
 
 ```{r Load the tidyverse package}
 # This is a code chunk. 
 
 # We can write informative comments with a hash # at the start.
 
-# Load the tidyverse using the library() function.
-# library(tidyverse)
+# Load the tidyverse using the library() function. 
+# Press the green arrow in the top right corner of the chunk to run!
+
+# Don't forget, you need to install the package before you can use it. 
 
 ```
 
@@ -641,7 +641,6 @@ This is variously known as wrangling, cleaning, and scrubbing.
 
 This workshop is based on Steph de Silva's wonderful [analysis](http://rex-analytics.com/witch-hunting-europe-discovery-missingness/) *Witch Hunting in Europe: a discovery of missingness*.
 
-
 One of the first things that Steph does is change the name of the column `gadm.adm0` to something more human-interpretable, `country`.
 
 Steph notes, "This is a gross oversimplification of geography in the middle ages of Europe, but it describes the location of the trial in terms that will be most familiar to many modern users."
@@ -675,7 +674,7 @@ Use the pipe function to present the top of the `witchdat` dataset.
 ## Rename a column
 
 We can rename a column by constructing a pipe from the table to the `rename` function
-```
+```{}
 <my data> %>% 
   rename(<newname> = <oldname>)
 ```
@@ -689,7 +688,7 @@ Pipe `witchdat` to the `rename` function and change `gadm.adm0` to `country`.
 
 The tidy way of plotting data is with the `ggplot2` package, which comes with the `tidyverse`.
 
-```
+```{}
 <some data> %>% # pipe the data to ggplot()
 
 ```
@@ -730,22 +729,26 @@ Set the x axis to *year* and the y axis to *deaths*.
 
 Using the data visualisation cheatsheet (**Help-Cheatsheets**) to figure out how to add a title layer to your plot. 
 
-# Workshop
+# Extension exercises
 
-## Let's answer our questions together
+## Questions, find the answers
 
 In groups or alone, choose a question to answer.
 
-Use cheatsheets, talk to eachother, 
+Use cheatsheets, talk to eachother.
+
+- Prepare a presentation for those who don't get that far describing (using summary data and visualisations) what questions can and can't be investigated by these data. For example, are the observations restricted in time or location?
+- Use the `leaflet` package to plot where the witches died sized by number of deaths. Make the dots a nice blood red. 
+- Ask a different table you what questions they have about these data and see if you can prepare a markdown presentation to report your results.
+- Why does Steph de Silva talk about the missingness? 
 
 ### Who's up for presenting their results? 
-
-### What did we discover? 
 
 # Further reading
 
 ## Further reading
 
+- Steph's original [analysis](http://rex-analytics.com/witch-hunting-europe-discovery-missingness/) 
 - [R for Data Science](http://r4ds.had.co.nz/)
 - The installation instructions are [adapted](https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd) from a previous workshop. 
 
@@ -774,3 +777,5 @@ We hope you had fun.
     - Sarah R.
 - Miles for git support 
 - test specimen Dr X  
+
+
