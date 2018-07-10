@@ -50,6 +50,8 @@ We are here to learn from you, too.
 
 The plan is to live code in these notes, enabling us to edit these notes live using the wonderful [`xaringan::infinite_moon_reader`](http://slides.yihui.name/xaringan/) function, incorporating feedback.
 
+Incorporating new tools like this is a work in progress.
+
 ## Notes for this workshop
 
 We will all work from a personal copy of these slides. 
@@ -85,9 +87,10 @@ Notice that we drop the `<>`. That's not code, it's *pseudo code* to highlight w
 
 Don't be afraid to harness all tools available:
 
+- Help documentation for packages and functions
+- Cheatsheets (**Help-Cheatsheets**)
 - Modern day coding practice comprises almost entirely searching "how do I do `<x>` in `<language>`".
 - The [community](https://community.rstudio.com/) is your best resource; talk to each other and make friends and future collaborators.  
-- Cheatsheets (**Help-Cheatsheets**)
 
 *** 
 
@@ -120,7 +123,7 @@ I did it already. Trying an extension question, want to join me?
 
 ## What do R-users use R for?
 
-R users are data detectives.
+R users are **data detectives**.
 
 We're going to try to cover everything except *Model*.
 
@@ -177,12 +180,8 @@ Thanks, Steph!
 
 ## What would you like to know?
 
+What *data* do we have available?
 
-*Group discussion*
-
-What would you like to know?
-
-*Write questions on whiteboard*
 
 ```{r echo = FALSE}
 # Below, the <center> syntax is html to centre the gif within. Notice that it is the same syntax as importing a png, jpg, or pdf image. 
@@ -294,22 +293,24 @@ The console is where you can execute single-line R commands.
 
 The console is located, by default, in the lower left pane. 
 
-Try `3 + 2` and press **enter**:
+### Your turn
 
-```{r}
-# Type 3 + 2 here. Here's hoping infinite moon reader works. 
-
-```
+Try `3 + 2` and press **enter**
 
 ## Environment
 
-I can store the number 5 in an *object* `x`.
+I can store the number 5 in an *object* `x`. To assign a value we use an arrow `<-`.
 
-To assign a value we use an arrow `<-`.
+```{r }
+# Say, if I wanted to store the character string "the cake is a lie" 
+# in a variable called cake. 
+cake <- "the cake is a lie"
 
-```{eval=FALSE}
-x <- 5
+# show me the cake
+cake
 ```
+
+### Your turn
 
 What happens when you type `x` into the Console after assigning the value 5 to it?
 

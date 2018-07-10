@@ -136,6 +136,8 @@
 
 <p>The plan is to live code in these notes, enabling us to edit these notes live using the wonderful <a href='http://slides.yihui.name/xaringan/' title=''><code>xaringan::infinite_moon_reader</code></a> function, incorporating feedback.</p>
 
+<p>Incorporating new tools like this is a work in progress.</p>
+
 </article></slide><slide class=""><hgroup><h2>Notes for this workshop</h2></hgroup><article  id="notes-for-this-workshop">
 
 <p>We will all work from a personal copy of these slides.</p>
@@ -167,9 +169,10 @@ install.packages(&quot;&lt;you write code here&gt;&quot;)
 <p>Don&#39;t be afraid to harness all tools available:</p>
 
 <ul>
-<li>Modern day coding practice comprises almost entirely searching &quot;how do I do <code>&lt;x&gt;</code> in <code>&lt;language&gt;</code>&quot;.</li>
-<li>The <a href='https://community.rstudio.com/' title=''>community</a> is your best resource; talk to each other and make friends and future collaborators.<br/></li>
+<li>Help documentation for packages and functions</li>
 <li>Cheatsheets (<strong>Help-Cheatsheets</strong>)</li>
+<li>Modern day coding practice comprises almost entirely searching &quot;how do I do <code>&lt;x&gt;</code> in <code>&lt;language&gt;</code>&quot;.</li>
+<li>The <a href='https://community.rstudio.com/' title=''>community</a> is your best resource; talk to each other and make friends and future collaborators.</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
@@ -226,7 +229,7 @@ green</span>
 
 </article></slide><slide class=""><hgroup><h2>What do R-users use R for?</h2></hgroup><article  id="what-do-r-users-use-r-for">
 
-<p>R users are data detectives.</p>
+<p>R users are <strong>data detectives</strong>.</p>
 
 <p>We&#39;re going to try to cover everything except <em>Model</em>.</p>
 
@@ -290,11 +293,7 @@ green</span>
 
 </article></slide><slide class=""><hgroup><h2>What would you like to know?</h2></hgroup><article  id="what-would-you-like-to-know">
 
-<p><em>Group discussion</em></p>
-
-<p>What would you like to know?</p>
-
-<p><em>Write questions on whiteboard</em></p>
+<p>What <em>data</em> do we have available?</p>
 
 <center>
 
@@ -417,17 +416,24 @@ green</span>
 
 <p>The console is located, by default, in the lower left pane.</p>
 
-<p>Try <code>3 + 2</code> and press <strong>enter</strong>:</p>
+<h3>Your turn</h3>
 
-<pre class = 'prettyprint lang-r'># Type 3 + 2 here. Here&#39;s hoping infinite moon reader works. </pre>
+<p>Try <code>3 + 2</code> and press <strong>enter</strong></p>
 
 </article></slide><slide class=""><hgroup><h2>Environment</h2></hgroup><article  id="environment">
 
-<p>I can store the number 5 in an <em>object</em> <code>x</code>.</p>
+<p>I can store the number 5 in an <em>object</em> <code>x</code>. To assign a value we use an arrow <code>&lt;-</code>.</p>
 
-<p>To assign a value we use an arrow <code>&lt;-</code>.</p>
+<pre class = 'prettyprint lang-r'># Say, if I wanted to store the character string &quot;the cake is a lie&quot; 
+# in a variable called cake. 
+cake &lt;- &quot;the cake is a lie&quot;
 
-<pre class = 'prettyprint lang-eval'>x &lt;- 5</pre>
+# show me the cake
+cake</pre>
+
+<pre >## [1] &quot;the cake is a lie&quot;</pre>
+
+<h3>Your turn</h3>
 
 <p>What happens when you type <code>x</code> into the Console after assigning the value 5 to it?</p>
 
@@ -589,7 +595,7 @@ green</span>
 
 <p>There are two cheatsheets on RMarkdown in <strong>Help-Cheatsheets</strong>.</p>
 
-</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-1">
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-3">
 
 <p>Ask around for a &quot;what I wish I&#39;d known&quot; story about R or investigate a cheatsheet.</p>
 
@@ -647,13 +653,13 @@ green</span>
 
 <p>A friendly reminder that <code>&lt;&gt;</code> indicates pseudo code. You can navigate back to that section in your notes in your Viewer.</p>
 
-</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-2">
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-4">
 
 <p>We would like to install and use a package called &quot;tidyverse&quot;.</p>
 
 <p>Let&#39;s try.</p>
 
-</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-3">
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-5">
 
 <h3>Let&#39;s load the tidyverse</h3>
 
@@ -684,7 +690,7 @@ green</span>
 
 <p><em>Presenters discuss different file types and old battle stories of importing data.</em></p>
 
-</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-4">
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-6">
 
 <p>The data is found here: &quot;<a href='https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv' title=''>https://raw.githubusercontent.com/JakeRuss/witch-trials/master/data/trials.csv</a>&quot;</p>
 
@@ -838,7 +844,7 @@ green</span>
   ggplot(aes(x = &lt;column with year&gt;, y = &lt;column with deaths&gt;)) +
   geom_point() # Adds a scatterplot.</pre>
 
-</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-11">
+</article></slide><slide class=""><hgroup><h2>Your turn</h2></hgroup><article  id="your-turn-13">
 
 <p>Using the data visualisation cheatsheet (<strong>Help-Cheatsheets</strong>) to figure out how to add a title layer to your plot.</p>
 
